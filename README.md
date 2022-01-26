@@ -9,7 +9,6 @@ Karon Fox           kefox@lcmail.lcsc.edu		        PROGRAMMING SPECIALIST, TBD
 Taylor Fox          tffox@lcmail.lcsc.edu		        PROGRAMMING SPECIALIST/WEB DESIGN SPECIALIST
 Raul Arias          jdeliotharias@lcmail.lcsc.edu	    PROGRAMMING SPECIALIST/WEB DESIGN SPECIALIST, TBD
 
-
 REPOSITORY PUSH CONFIRMATION:
     RAUL
     TAYLOR
