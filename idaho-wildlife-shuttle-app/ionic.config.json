@@ -1,0 +1,7 @@
+{
+  "name": "idaho-wildlife-shuttle-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
