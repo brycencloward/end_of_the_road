@@ -1,3 +1,11 @@
 ion-button {
     margin: 10px;
 }
+
+ion-content{
+    --background: var(--ion-color-light);
+}
+
+ion-list {
+    margin: 10px;
+}

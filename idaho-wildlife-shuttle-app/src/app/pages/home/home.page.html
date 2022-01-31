@@ -26,11 +26,11 @@
     <ion-card-header header>
       <ion-card-subtitle>Most recent shuttle</ion-card-subtitle>
     </ion-card-header>
-    <ion-button color="secondary" fill="clear" size="full" footer>VIEW ALL...</ion-button>
+    <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
   </app-shuttle-reservation-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="secondary">
+    <ion-fab-button color="secondary" (click)="shuttle_reservation()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

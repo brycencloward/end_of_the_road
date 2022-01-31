@@ -2,7 +2,7 @@
   <div class="flex-center">
     <ion-card>
       <ion-card-header>
-        <ion-card-title color="secondary">Idaho Wildlife Shuttle</ion-card-title>
+        <ion-card-title color="secondary"><b>Idaho Wildlife Shuttle</b></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -14,9 +14,9 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input type="password"></ion-input>
         </ion-item>
-        <ion-button color="dark" fill="clear" size="full">Forgot Email or Password?</ion-button>
-        <ion-button color="secondary" size="full">Login</ion-button>
-        <ion-button color="secondary" fill="clear" size="full">Register</ion-button>
+        <ion-button color="dark" fill="clear" size="full">Forgot your email or password?</ion-button>
+        <ion-button color="success" size="full" (click)="login()"><b>Login</b></ion-button>
+        <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
