@@ -8,58 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="bus-outline" slot="start" color="primary"></ion-icon>
-        <ion-label>
-          Active
-          <p><b>5/15/22 @ 07:30:00</b></p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Shuttle plan reserved at 03/20/22 @ 17:30:00.</p>
-          <p>Notes: customer has requested accomodations for 5 other passengers. Additionally, a storage trailer must be taken to hold all of their equipment.</p>
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
-        <ion-label>
-          Upcoming
-          <p><b>6/15/22 @ 07:30:00</b></p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Shuttle plan reserved at 03/20/22 @ 17:30:00.</p>
-          <p>Notes: customer has requested accomodations for 5 other passengers. Additionally, a storage trailer must be taken to hold all of their equipment.</p>
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="checkmark-circle-outline" slot="start" color="medium"></ion-icon>
-        <ion-label>
-          Finished
-          <p><b>3/15/22 @ 07:30:00</b></p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Shuttle plan completed at 03/20/22 @ 17:30:00.</p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="trophy" slot="start" color="success"></ion-icon>
-        <ion-label color="success">$450.83</ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+  <app-shuttle-reservation-card
+  status="upcoming" startAt="01/30/22 @ 15:35:00"
+  reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
+  </app-shuttle-reservation-card>
+
+  <app-shuttle-reservation-card
+  status="active" startAt="01/31/22 @ 15:35:00"
+  reservedAt="01/30/22 @ 15:37:00" notes="This customer is going to be bringing an offroad 
+  motorcycle and will need accomodations to transport it.">
+  </app-shuttle-reservation-card>
+  
+  <app-shuttle-reservation-card 
+  status="finished" startAt="01/28/22 @ 15:49:00"
+  reservedAt="01/15/22 @ 12:34:00" notes="This customer is highly-allergic and will need
+  special medication to be on board." payment="$267.54">
+  </app-shuttle-reservation-card>
 </ion-content>
