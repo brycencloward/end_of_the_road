@@ -1,7 +1,15 @@
 ion-content{
-    --background: var(--ion-color-light);
+  --background: var(--ion-color-light);
 }
 
 ion-button {
-    margin: 10px;
+  margin: 10px;
+}
+
+ion-card {
+  margin: 2rem;
+}
+
+ion-item {
+  margin: 1rem;
 }

@@ -8,10 +8,12 @@
 </ion-header>
 
 <ion-content>
+  <!-- first card start -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>What Type of Trips Are You Looking To Take?</ion-card-title>
     </ion-card-header>
+
     <ion-card-content>
       <ion-radio-group>
         <ion-item>
@@ -29,43 +31,63 @@
           <ion-radio value="other" slot="start"></ion-radio>
         </ion-item>
       </ion-radio-group>
+
     </ion-card-content>
   </ion-card>
+  <!-- first card end -->
+
+  <!--second card start  -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Contact Information</ion-card-title>
     </ion-card-header>
+
     <ion-card-content>
-      <ion-item>
+      <ion-item-header>
         <ion-lable position="floating">Full Name</ion-lable>
+      </ion-item-header>
+      <ion-item>
         <ion-input type="name"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item-header>
         <ion-lable position="floating">Email Address</ion-lable>
+      </ion-item-header>
+      <ion-item>
         <ion-input type="email"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item-header>
         <ion-lable position="floating">Password</ion-lable>
+      </ion-item-header>
+      <ion-item>
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item-header>
         <ion-lable position="floating">Confirm Password</ion-lable>
+      </ion-item-header>
+      <ion-item>
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item-header>
         <ion-lable position="floating">Phone Number</ion-lable>
+      </ion-item-header>
+      <ion-item>
         <ion-input type="tel"></ion-input>
       </ion-item>
+
     </ion-card-content>
   </ion-card>
+  <!-- second card end -->
+
+  <!-- third cart start  -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Address Information</ion-card-title>
     </ion-card-header>
+
     <ion-card-content>
       <ion-item>
         <ion-lable position="floating">Address</ion-lable>
@@ -94,18 +116,26 @@
 
     </ion-card-content>
   </ion-card>
+  <!-- third card end -->
+
+  <!-- fourth card start -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Additional Information</ion-card-title>
     </ion-card-header>
-  <ion-card-content>
-    <ion-item>
-      <ion-lable position="floating">Any Additional Comments?</ion-lable>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  </ion-card-content>
+    
+    <ion-card-content>
+      <ion-item>
+        <ion-lable position="floating">Any Additional Comments?</ion-lable>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+    </ion-card-content>
   </ion-card>
+  <!-- fourth card end -->
+
   <hr>
   <ion-button size="full" color="secondary" (click)="register()"><b>Register</b></ion-button>
   <hr>
+
 </ion-content>
