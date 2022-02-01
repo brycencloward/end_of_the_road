@@ -10,20 +10,20 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>What type of trips are you looking to take?</ion-card-title>
+      <ion-card-title>What Type of Trips Are You Looking To Take?</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-radio-group>    
+      <ion-radio-group>
         <ion-item>
           <ion-label>Backpacking</ion-label>
           <ion-radio value="backpacking" slot="start"></ion-radio>
         </ion-item>
-    
+
         <ion-item>
           <ion-label>River Boat Touring</ion-label>
           <ion-radio value="river boat touring" slot="start"></ion-radio>
         </ion-item>
-    
+
         <ion-item>
           <ion-label>Other</ion-label>
           <ion-radio value="other" slot="start"></ion-radio>
@@ -92,11 +92,20 @@
         <ion-input type="tel"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-lable position="floating">Any additional circumstances?</ion-lable>
-        <ion-input type="text"></ion-input>
-      </ion-item>
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Additional Information</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-lable position="floating">Any Additional Comments?</ion-lable>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  </ion-card>
+  <hr>
   <ion-button size="full" color="success" (click)="register()"><b>Register</b></ion-button>
+  <hr>
 </ion-content>

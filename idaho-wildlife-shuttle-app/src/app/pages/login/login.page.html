@@ -4,8 +4,9 @@
       <ion-card-header>
         <ion-card-title color="secondary"><b>Idaho Wildlife Shuttle</b></ion-card-title>
       </ion-card-header>
-    
+
       <ion-card-content>
+<!-- items -->
         <ion-item>
           <ion-label position="floating">Email Address</ion-label>
           <ion-input type="email"></ion-input>
@@ -14,9 +15,12 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input type="password"></ion-input>
         </ion-item>
+<!-- items end -->
+<!-- buttons -->
         <ion-button color="dark" fill="clear" size="full">Forgot your email or password?</ion-button>
         <ion-button color="success" size="full" (click)="login()"><b>Login</b></ion-button>
         <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
+<!-- buttons end -->
       </ion-card-content>
     </ion-card>
   </div>
