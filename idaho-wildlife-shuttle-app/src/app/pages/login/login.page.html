@@ -1,27 +1,32 @@
 <ion-content>
   <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title color="secondary"><b>Idaho Wildlife Shuttle</b></ion-card-title>
-      </ion-card-header>
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="secondary"><b>Idaho Wildlife Shuttle</b></ion-card-title>
+        </ion-card-header>
 
-      <ion-card-content>
-<!-- items -->
-        <ion-item>
-          <ion-label position="floating">Email Address</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-<!-- items end -->
-<!-- buttons -->
-        <ion-button color="dark" fill="clear" size="full">Forgot your email or password?</ion-button>
-        <ion-button color="success" size="full" (click)="login()"><b>Login</b></ion-button>
-        <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
-<!-- buttons end -->
-      </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+  <!-- items -->
+          <ion-item>
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">*Email address required</ion-label>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">*Invalid email address</ion-label>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('password').touched && form.get('password').errors?.required">*Password required</ion-label>
+  <!-- items end -->
+  <!-- buttons -->
+          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid">Forgot your email or password?</ion-button>
+          <ion-button color="success" size="full" [disabled]="!form.valid" (click)="login()"><b>Login</b></ion-button>
+          <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
+  <!-- buttons end -->
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>
