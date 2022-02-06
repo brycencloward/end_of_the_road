@@ -1,37 +1,67 @@
-<ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Idaho Wildlife Shuttle</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="home-pg-body">
+    <ion-card class="header">
+        <ion-card-header>
+            <ion-toolbar color="none">
+                <ion-buttons slot="start">
+                    <ion-menu-button autoHide="false"></ion-menu-button>
+                </ion-buttons>
+                <ion-title>
+                    <img alt="logo" id="header_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+                </ion-title>
+                <div class="header-span" size-sm="4" size-lg="2">
+                    <span class="header-text">
+                    At the end of the road; where the fun begins!
+                </span>
+                </div>
+            </ion-toolbar>
+        </ion-card-header>
+    </ion-card>
+    <ion-content>
+        <ion-list color="secondary">
+            <ion-item color="primary">
+                <ion-avatar slot="start">
+                    <img src="https://avatars.githubusercontent.com/u/37631670?v=4">
+                </ion-avatar>
+                <ion-label>
+                    <h1>Jay Myers</h1>
+                    <p>Trips Planned: <span class="trips">4</span></p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
 
-<ion-content>
-  <ion-list color="secondary">
-    <ion-item color="primary">
-      <ion-avatar slot="start">
-        <img src="https://avatars.githubusercontent.com/u/37631670?v=4">
-      </ion-avatar>
-      <ion-label>
-        <h1>Jay Myers</h1>
-        <p>Trips Planned: <span class="trips">4</span></p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+        <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
+            <ion-card-header header>
+                <ion-card-subtitle>Most recent shuttle</ion-card-subtitle>
+            </ion-card-header>
+            <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
+        </app-shuttle-reservation-card>
 
-  <app-shuttle-reservation-card
-  status="upcoming" startAt="01/30/22 @ 15:35:00"
-  reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
-    <ion-card-header header>
-      <ion-card-subtitle>Most recent shuttle</ion-card-subtitle>
-    </ion-card-header>
-    <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
-  </app-shuttle-reservation-card>
-
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="secondary" (click)="shuttle_reservation()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button color="secondary" (click)="shuttle_reservation()">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </ion-content>
+    <div style=" display: flex;flex-direction: column;height: 100%;">
+        <ion-card class="footer">
+            <ion-footer>
+                <ion-row>
+                    <ion-col center text-center>
+                        <img alt="logo" height="120" src="../../../assets/images/white-logo.png">
+                    </ion-col>
+                    <ion-col center text-center>
+                        <ion-card-content>
+                            <ion-icon name="call-outline" icon-left></ion-icon>
+                            <span>208-456-7891</span>
+                        </ion-card-content>
+                    </ion-col>
+                    <ion-col center text-center>
+                        <ion-card-content>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
+                        </ion-card-content>
+                    </ion-col>
+                </ion-row>
+            </ion-footer>
+        </ion-card>
+    </div>
 </ion-content>

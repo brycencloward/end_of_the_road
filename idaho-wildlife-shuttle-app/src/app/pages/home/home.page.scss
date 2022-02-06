@@ -1,4 +1,4 @@
-ion-content{
+ion-content {
     --background: var(--ion-color-light);
 }
 
@@ -14,3 +14,62 @@ ion-card-subtitle {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+
+/* ------------------------------begin header ------------------------------------------------*/
+
+ion-card.header {
+    background: url('../../../assets/images/header-banner.PNG') no-repeat center center / cover !important;
+    padding: 0;
+    margin: 0;
+    height: 60%;
+}
+
+#header_logo {
+    float: right;
+}
+
+div.header-span {
+    padding-left: 60%;
+    padding-right: 15%;
+}
+
+span.header-text {
+    color: white;
+    font-size: 2em;
+    font-family: Impact, 'Segoe UI', 'Rockwell Extra Bold', Times;
+}
+
+
+/* ------------------------------begin footer ------------------------------------------------*/
+
+ion-card.footer {
+    background: url('../../../assets/images/footer-bg.png') no-repeat center center / cover !important;
+    margin: 0;
+    padding: 2% 8% 2% 8%;
+    color: white;
+    font-family: 'Segoe UI', Impact, 'Rockwell Extra Bold', Times;
+    margin-top: auto;
+}
+
+
+/* ------------------------------begin media queries------------------------------------------*/
+
+@media (max-width: 576px) {
+    ion-card.header {
+        background: none;
+        height: 40%;
+    }
+    #header_logo {
+        float: right;
+    }
+    div.header-span {
+        padding-left: 30%;
+        padding-right: 20%;
+    }
+    span.header-text {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 576px)and (max-width: 768px) {}
