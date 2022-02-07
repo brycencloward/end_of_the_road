@@ -22,7 +22,7 @@
           <app-error-message [field]="form.get('password')" error="required" message="*Password required"></app-error-message>
   <!-- items end -->
   <!-- buttons -->
-          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid">Forgot your email or password?</ion-button>
+          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid" (click)="forgotEmailOrPassword()">Forgot your email or password?</ion-button>
           <ion-button color="success" size="full" [disabled]="!form.valid" (click)="login()"><b>Login</b></ion-button>
           <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
   <!-- buttons end -->
