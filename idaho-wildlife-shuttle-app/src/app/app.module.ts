@@ -21,7 +21,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     ...AppStoreModule,
-    StoreDevtoolsModule.instrument({maxAge: 25})
+    StoreDevtoolsModule.instrument ({
+      maxAge: 25
+    })
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

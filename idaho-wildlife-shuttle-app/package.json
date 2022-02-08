@@ -28,6 +28,7 @@
     "@ionic/angular": "^6.0.0",
     "@ngrx/store": "^13.0.2",
     "@ngrx/store-devtools": "^13.0.2",
+    "@reduxjs/toolkit": "^1.7.2",
     "cordova-plugin-stripe": "^1.5.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
