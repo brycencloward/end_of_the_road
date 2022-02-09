@@ -3,7 +3,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { Store, StoreModule } from '@ngrx/store';
+import { of, throwError } from 'rxjs';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { User } from 'src/app/model/user/User';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { AppState } from 'src/store/AppState';
 import { loadingReducer } from 'src/store/loading/loading.reducers';
 import { recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from 'src/store/login/login.actions';
@@ -18,6 +21,7 @@ describe('LoginPage', () => {
   let page;
   let store: Store<AppState>;
   let toastController: ToastController;
+  let authService: AuthService;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -36,6 +40,7 @@ describe('LoginPage', () => {
     router = TestBed.get(Router);
     store = TestBed.get(Store);
     toastController = TestBed.get(ToastController);
+    authService = TestBed.get(AuthService);
 
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -46,14 +51,6 @@ describe('LoginPage', () => {
     component.ngOnInit();
 
     expect(component.form).not.toBeUndefined();
-  });
-
-  it('should redirect to the home page after clicking "login"', () => {
-    spyOn(router, 'navigate');
-
-    component.login();
-
-    expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
 
   it('should redirect to the registration page after clicking "register"', () => {
@@ -92,7 +89,6 @@ describe('LoginPage', () => {
     fixture.detectChanges();
     
     store.dispatch(recoverPassword());
-
     store.dispatch(recoverPasswordSuccess());
 
     store.select('loading').subscribe(loadingState => {
@@ -103,13 +99,67 @@ describe('LoginPage', () => {
   });
 
   it('should hide loading and show error message when recovery error', () => {
-    spyOn(toastController, 'create');
+    spyOn(toastController, 'create').and.returnValue(<any> Promise.resolve({present: () => {}}));
     
     fixture.detectChanges();
 
     store.dispatch(recoverPassword());
-
     store.dispatch(recoverPasswordFail({error: "message"}));
+
+    store.select('loading').subscribe(loadingState => {
+      expect(loadingState.show).toBeFalsy();
+    })
+
+    expect(toastController.create).toHaveBeenCalledTimes(1);
+  });
+
+  it('should show loading and start login when logging in', () => {
+    fixture.detectChanges();
+
+    component.form.get('email').setValue('valid@email.com');
+    component.form.get('password').setValue('anyPassword');
+
+    page.querySelector('#loginButton').click();
+
+    store.select('loading').subscribe(loadingState => {
+      expect(loadingState.show).toBeTruthy();
+    })
+    store.select('login').subscribe(loginState => {
+      expect(loginState.isLoggingIn).toBeTruthy();
+    })
+  });
+
+  it('should hide loading and send user to home page when user has logged in', () => {
+    spyOn(router, 'navigate');
+    spyOn(authService, 'login').and.returnValue(of(new User()));
+
+    fixture.detectChanges();
+    
+    component.form.get('email').setValue('valid@email.com');
+    component.form.get('password').setValue('anyPassword');
+  
+    page.querySelector('#loginButton').click();
+
+    store.select('loading').subscribe(loadingState => {
+      expect(loadingState.show).toBeFalsy();
+    })
+    store.select('login').subscribe(loginState => {
+      expect(loginState.isLoggedIn).toBeTruthy();
+    })
+
+    expect(router.navigate).toHaveBeenCalledWith(['home']);
+  });
+
+  it('should hide loading and show error message when user failed to login', () => {
+    spyOn(authService, 'login').and.returnValue(throwError({message: 'error'}));
+    spyOn(toastController, 'create').and.returnValue(<any> Promise.resolve({present: () => {}}));
+
+    fixture.detectChanges();
+    
+    component.form.get('email').setValue('error@email.com');
+    component.form.get('password').setValue('anyPassword');
+  
+    page.querySelector('#loginButton').click();
 
     store.select('loading').subscribe(loadingState => {
       expect(loadingState.show).toBeFalsy();
