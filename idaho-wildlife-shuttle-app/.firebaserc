@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "idaho-wildlife-shuttle": {
+      "hosting": {
+        "app": [
+          "idaho-wildlife-shuttle"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "idaho-wildlife-shuttle"
+  }
+}
