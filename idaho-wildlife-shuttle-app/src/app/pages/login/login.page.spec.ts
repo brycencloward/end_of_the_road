@@ -82,7 +82,7 @@ describe('LoginPage', () => {
 
     fixture.detectChanges();
     
-    store.dispatch(recoverPassword());
+    store.dispatch(recoverPassword({email: "any@email.com"}));
     store.dispatch(recoverPasswordSuccess());
 
     store.select('loading').subscribe(loadingState => {
@@ -97,7 +97,7 @@ describe('LoginPage', () => {
     
     fixture.detectChanges();
 
-    store.dispatch(recoverPassword());
+    store.dispatch(recoverPassword({email: "any@email.com"}));
     store.dispatch(recoverPasswordFail({error: "message"}));
 
     store.select('loading').subscribe(loadingState => {

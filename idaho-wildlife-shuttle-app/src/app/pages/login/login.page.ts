@@ -79,7 +79,7 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   forgotEmailOrPassword() {
-    this.store.dispatch(recoverPassword());
+    this.store.dispatch(recoverPassword({email: this.form.get('email').value}));
   }
 
   login() {
