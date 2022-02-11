@@ -1,3 +1,6 @@
 /*
 This is where Index Page Specific Styles go
  */
+.test-article > h1 {
+  color: red;
+}
