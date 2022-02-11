@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -18,17 +19,21 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },  {
+  },
+  {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canLoad: [AuthGuard] // this adds the auth guard fuctionality to any one page
   },
   {
     path: 'shuttle-reservation',
-    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
+    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'reservations',
-    loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule)
+    loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule),
+    canLoad: [AuthGuard]
   }
 
 ];
