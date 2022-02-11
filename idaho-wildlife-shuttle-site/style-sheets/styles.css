@@ -3,15 +3,18 @@ This is where the styles for both pages go
 */
 .nav-container {
   height: 100%;
-  width: 25rem;
+  width: 30rem;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: black;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
+  background-image: url(../assets/Background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 #topBtn {
   display: none;
