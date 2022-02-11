@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="'en'" dir="ltr">
-  <head>
-    <!-- meta tags start -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Services offered Small Shuttle Service From Stanley,
-    Sun Valley, Boise, McCall and surrounding areas as well as Limited Car Moves Provided for
-    Backpackers and River Rafting trips in the Frank Church, Sawtooth, and Whitecloud Wilderness.
-    Download our App now for more information or call/text 208-720-2362">
-    <meta name="keywords" content="Shuttles, Backpacking, River Trips, Sawtooth National Forest,
-    Middle Fork Salmon, Frank Church Wilderness, Sawtooth National Recreation Area,
-    WhiteCloud Wilderness, Salmon River, Main Fork Salmon River">
-    <meta name="author" content="Karon Fox, Taylor Fox, William Grubin, Raul Arias,
-    Nik Trugillo, Jay Myers, Brycen Cloward">
-    <!-- meta tags end -->
-    <title>Idaho Wilderness Shuttles</title>
-    <!-- styles/links start -->
-    <link rel="stylesheet" href="../style-sheets/styles.css">
-    <link rel="stylesheet" href="../style-sheets/index.css">
-    <!-- styles/links end -->
-  </head>
+<head>
+  <!-- meta tags start -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services offered Small Shuttle Service From Stanley,
+  Sun Valley, Boise, McCall and surrounding areas as well as Limited Car Moves Provided for
+  Backpackers and River Rafting trips in the Frank Church, Sawtooth, and Whitecloud Wilderness.
+  Download our App now for more information or call/text 208-720-2362">
+  <meta name="keywords" content="Shuttles, Backpacking, River Trips, Sawtooth National Forest,
+  Middle Fork Salmon, Frank Church Wilderness, Sawtooth National Recreation Area,
+  WhiteCloud Wilderness, Salmon River, Main Fork Salmon River">
+  <meta name="author" content="Karon Fox, Taylor Fox, William Grubin, Raul Arias,
+  Nik Trugillo, Jay Myers, Brycen Cloward">
+  <!-- meta tags end -->
+  <title>Idaho Wilderness Shuttles</title>
+  <!-- styles/links start -->
+  <link rel="stylesheet" href="../style-sheets/styles.css">
+  <link rel="stylesheet" href="../style-sheets/index.css">
+  <!-- styles/links end -->
+</head>
 
-  <body>
-    <!-- header start -->
-    <header>
+<body>
+  <!-- header start -->
+  <header>
+    <div class="bg-container-index" title="Background Image of a River, Mountain, Sky, and Forests">
+      <div class="nav-container">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
 
-    </header>
-    <!-- header end -->
+  <!-- main start -->
+  <main>
+  <!-- feature start -->
+    <button onclick="topFunction()" class="animate__animated animate__pulse" id="topBtn" title="Go to top of page" name="Top Button">Back to Top</button>
+    <article class="test-article">
+      <h1>test</h1>
+    </article>
+  <!-- feature end -->
+  </main>
+  <!-- main end -->
 
-    <main>
-      <!-- feature start -->
-      <article class="test-article">
-        <h1>test</h1>
-      </article>
-      <!-- feature end -->
+  <!-- footer start -->
+  <footer>
 
-    </main>
-  </body>
+  </footer>
+  <!-- footer end -->
+
+  <!-- scripts go here -->
+  <script src="https://kit.fontawesome.com/fc9aee9360.js" crossorigin="anonymous"></script>
+  <script>
+  var mybutton = document.getElementById("topBtn");
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }}
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <!-- scripts end here -->
+</body>
 </html>
