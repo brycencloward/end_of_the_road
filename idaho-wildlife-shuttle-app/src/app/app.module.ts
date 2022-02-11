@@ -26,7 +26,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     ...AppStoreModule,
     StoreDevtoolsModule.instrument ({
       maxAge: 25
-    })
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

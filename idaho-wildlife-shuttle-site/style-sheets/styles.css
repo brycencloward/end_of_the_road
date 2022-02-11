@@ -1,6 +1,14 @@
 /*
 This is where the styles for both pages go
 */
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
+* {
+  font-family: 'Candal', sans-serif;
+}
+* > h1, h2, h3, h4, h5, h6 {
+  font-family: 'Assistant', sans-serif;
+}
 .nav-container {
   height: 100%;
   width: 30rem;
@@ -10,11 +18,41 @@ This is where the styles for both pages go
   right: 0;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
   background-image: url(../assets/Background.png);
-  background-position: center;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+.nav-container > nav {
+  text-align: center;
+  margin-top: 29rem;
+}
+.nav-container > nav > ul > li {
+  list-style: none;
+  padding-bottom: 2rem;
+}
+.nav-container > nav > ul > li > a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+.hero-container-index {
+  z-index: 0;
+}
+nav > ul > li > .hero-h1 {
+  right: 24rem;
+  bottom: 24rem;
+  color: white;
+  position: fixed;
+  font-size: 2rem;
+}
+nav > ul > li > .hero-img {
+  max-width: 100%;
+  width: 17rem;
+  height: auto;
+  position: fixed;
+  object-fit: contain;
+  top: 5rem;
+  right: 6rem;
 }
 #topBtn {
   display: none;
