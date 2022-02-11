@@ -2,8 +2,12 @@
 This is where the styles for both pages go
 */
 @import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
 * {
   font-family: 'Candal', sans-serif;
+}
+* > h1, h2, h3, h4, h5, h6 {
+  font-family: 'Assistant', sans-serif;
 }
 .nav-container {
   height: 90%;
@@ -31,6 +35,21 @@ This is where the styles for both pages go
   font-size: 1.2rem;
   text-decoration: none;
   color: white;
+}
+.hero-container-index {
+  z-index: 0;
+}
+nav > ul > li > .hero-h1 {
+  left: 83rem;
+  bottom: 30rem;
+  color: white;
+  position: fixed;
+  font-size: 2rem;
+}
+nav > ul > li > .hero-img {
+  position: fixed;
+  top: 5rem;
+  right: 3rem;
 }
 #topBtn {
   display: none;
