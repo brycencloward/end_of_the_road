@@ -1,6 +1,10 @@
 /*
 This is where the styles for both pages go
 */
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+* {
+  font-family: 'Candal', sans-serif;
+}
 .nav-container {
   height: 90%;
   width: 30rem;
@@ -14,6 +18,19 @@ This is where the styles for both pages go
   background-position: center;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+.nav-container > nav {
+  text-align: center;
+  margin-top: 25rem;
+}
+.nav-container > nav > ul > li {
+  list-style: none;
+  padding-bottom: 2rem;
+}
+.nav-container > nav > ul > li > a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
 }
 #topBtn {
   display: none;
