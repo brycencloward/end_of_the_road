@@ -10,7 +10,7 @@ This is where the styles for both pages go
   font-family: 'Assistant', sans-serif;
 }
 .nav-container {
-  height: 90%;
+  height: 100%;
   width: 30rem;
   position: fixed;
   z-index: 1;
@@ -19,13 +19,12 @@ This is where the styles for both pages go
   overflow-x: hidden;
   padding-top: 60px;
   background-image: url(../assets/Background.png);
-  background-position: center;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 .nav-container > nav {
   text-align: center;
-  margin-top: 25rem;
+  margin-top: 29rem;
 }
 .nav-container > nav > ul > li {
   list-style: none;
@@ -40,16 +39,20 @@ This is where the styles for both pages go
   z-index: 0;
 }
 nav > ul > li > .hero-h1 {
-  left: 83rem;
-  bottom: 30rem;
+  right: 24rem;
+  bottom: 24rem;
   color: white;
   position: fixed;
   font-size: 2rem;
 }
 nav > ul > li > .hero-img {
+  max-width: 100%;
+  width: 17rem;
+  height: auto;
   position: fixed;
+  object-fit: contain;
   top: 5rem;
-  right: 3rem;
+  right: 6rem;
 }
 #topBtn {
   display: none;
