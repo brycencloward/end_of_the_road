@@ -1,6 +1,19 @@
 /*
 This is where Index Page Specific Styles go
  */
+ .hero-container-index {
+   height: 90%;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+   padding-top: 60px;
+   background-image: url(../assets/idaho-river.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-position: top;
+ }
 .test-article > h1 {
   color: blue;
 }
