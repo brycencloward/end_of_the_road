@@ -8,144 +8,135 @@
 </ion-header>
 
 <ion-content>
-  <!-- first card start -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>What Type of Trips Are You Looking To Take?</ion-card-title>
-    </ion-card-header>
+  <form [formGroup]="registerForm.getForm()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Contact Information</ion-card-title>
+      </ion-card-header>
 
-    <ion-card-content>
-      <ion-radio-group>
+      <ion-card-content>
+        <ion-item-header>
+          <ion-lable position="floating">Full Name</ion-lable>
+        </ion-item-header>
         <ion-item>
-          <ion-label>Backpacking</ion-label>
-          <ion-radio value="backpacking" slot="start"></ion-radio>
+          <ion-input type="name" formControlName="name"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('name')" error="required" message="*Name required">
+          </app-error-message>
         </ion-item>
 
+        <ion-item-header>
+          <ion-lable position="floating">Email Address</ion-lable>
+        </ion-item-header>
         <ion-item>
-          <ion-label>River Boat Touring</ion-label>
-          <ion-radio value="river boat touring" slot="start"></ion-radio>
+          <ion-input type="email" formControlName="email"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('email')" error="required" message="*Email required">
+          </app-error-message>
+          <app-error-message
+          [field]="registerForm.getForm().get('email')" error="email" message="*Email invalid">
+          </app-error-message>
         </ion-item>
 
+        <ion-item-header>
+          <ion-lable position="floating">Password</ion-lable>
+        </ion-item-header>
         <ion-item>
-          <ion-label>Other</ion-label>
-          <ion-radio value="other" slot="start"></ion-radio>
+          <ion-input type="password" formControlName="password"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('password')" error="required" message="*Password required">
+          </app-error-message>
+          <app-error-message
+          [field]="registerForm.getForm().get('password')" error="minlength" message="*Password must be > 5 characters">
+          </app-error-message>
         </ion-item>
-      </ion-radio-group>
 
-    </ion-card-content>
-  </ion-card>
-  <!-- first card end -->
+        <ion-item-header>
+          <ion-lable position="floating">Confirm Password</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="password" formControlName="repeatPassword"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('repeatPassword')" error="required" message="*Password confirmation required">
+          </app-error-message>
+          <app-error-message
+          [field]="registerForm.getForm().get('repeatPassword')" error="isntMatching" message="*Password does not match">
+          </app-error-message>
+        </ion-item>
 
-  <!--second card start  -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Contact Information</ion-card-title>
-    </ion-card-header>
+        <ion-item-header>
+          <ion-lable position="floating">Phone Number</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="tel" formControlName="phone"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('phone')" error="required" message="*Phone number required">
+          </app-error-message>
+        </ion-item>
 
-    <ion-card-content>
-      <ion-item-header>
-        <ion-lable position="floating">Full Name</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="name"></ion-input>
-      </ion-item>
+      </ion-card-content>
+    </ion-card>
 
-      <ion-item-header>
-        <ion-lable position="floating">Email Address</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="email"></ion-input>
-      </ion-item>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Address Information</ion-card-title>
+      </ion-card-header>
 
-      <ion-item-header>
-        <ion-lable position="floating">Password</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="password"></ion-input>
-      </ion-item>
+      <ion-card-content formGroupName="address">
+        <ion-item-header>
+          <ion-lable position="floating">Address</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="text" formControlName="street"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('street')" error="required" message="*Street required">
+          </app-error-message>
+        </ion-item>
 
-      <ion-item-header>
-        <ion-lable position="floating">Confirm Password</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="password"></ion-input>
-      </ion-item>
+        <ion-item-header>
+          <ion-lable position="floating">State</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="text" formControlName="state"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('state')" error="required" message="*State required">
+          </app-error-message>
+        </ion-item>
 
-      <ion-item-header>
-        <ion-lable position="floating">Phone Number</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="tel"></ion-input>
-      </ion-item>
+        <ion-item-header>
+          <ion-lable position="floating">Zip Code</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="tel" formControlName="zipCode"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('zipCode')" error="required" message="*Zip code required">
+          </app-error-message>
+        </ion-item>
 
-    </ion-card-content>
-  </ion-card>
-  <!-- second card end -->
+        <ion-item-header>
+          <ion-lable position="floating">City</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="text" formControlName="city"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('city')" error="required" message="*City required">
+          </app-error-message>
+        </ion-item>
 
-  <!-- third cart start  -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Address Information</ion-card-title>
-    </ion-card-header>
+        <ion-item-header>
+          <ion-lable position="floating">Home Phone Number</ion-lable>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="tel" formControlName="number"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('street')" error="required" message="*Phone number required">
+          </app-error-message>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
 
-    <ion-card-content>
-      <ion-item-header>
-        <ion-lable position="floating">Address</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item-header>
-        <ion-lable position="floating">State</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item-header>
-        <ion-lable position="floating">Zip Code</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item-header>
-        <ion-lable position="floating">City</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item-header>
-        <ion-lable position="floating">Home Phone Number</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="tel"></ion-input>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <!-- third card end -->
-
-  <!-- fourth card start -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Additional Information</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-item-header>
-        <ion-lable position="floating">Any Additional Comments?</ion-lable>
-      </ion-item-header>
-      <ion-item>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <!-- fourth card end -->
-
-  <hr>
-  <ion-button size="full" color="secondary" (click)="register()"><b>Register</b></ion-button>
-  <hr>
-
+    <hr>
+    <ion-button size="full" color="secondary" (click)="register()"><b>Register</b></ion-button>
+    <hr>
+  </form>
 </ion-content>
