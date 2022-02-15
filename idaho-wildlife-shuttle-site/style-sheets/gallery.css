@@ -50,38 +50,8 @@ div.right {
     padding-right: 10%;
 }
 
-@media (min-width: 451px) and (max-width: 820px) {
-    div.left {
-        height: 100px;
-        max-width: 20%;
-    }
-    div.right {
-        padding-right: 6%;
-        width: 35%;
-    }
-    h4.app-link {
-        text-align: left;
-        width: 150px;
-    }
-}
 
-@media screen and (max-width: 450px) {
-    div.left {
-        height: 100px;
-        max-width: 20%;
-    }
-    div.right {
-        padding-right: 4%;
-        width: 35%;
-    }
-    h4.app-link {
-        text-align: left;
-        width: 150px;
-    }
-}
-
-
-/* link attributes */
+/* link attributes for footer*/
 
 a {
     outline: none;
@@ -110,4 +80,34 @@ a:hover {
 a:active {
     background: #265301;
     color: #CDFEAA;
+}
+
+@media (min-width: 451px) and (max-width: 820px) {
+    div.left {
+        height: 100px;
+        max-width: 20%;
+    }
+    div.right {
+        padding-right: 6%;
+        width: 35%;
+    }
+    h4.app-link {
+        text-align: left;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    div.left {
+        height: 100px;
+        max-width: 20%;
+    }
+    div.right {
+        padding-right: 4%;
+        width: 35%;
+    }
+    h4.app-link {
+        text-align: left;
+        width: 150px;
+    }
 }
