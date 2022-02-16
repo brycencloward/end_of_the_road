@@ -65,7 +65,7 @@
         </ion-item>
 
         <ion-item-header>
-          <ion-label position="floating">Phone Number</ion-label>
+          <ion-label position="floating">Mobile Phone Number</ion-label>
         </ion-item-header>
         <ion-item>
           <ion-input type="tel" formControlName="phone"></ion-input>
@@ -84,12 +84,22 @@
 
       <ion-card-content formGroupName="address">
         <ion-item-header>
-          <ion-label position="floating">Address</ion-label>
+          <ion-label position="floating">Street</ion-label>
         </ion-item-header>
         <ion-item>
           <ion-input type="text" formControlName="street"></ion-input>
           <app-error-message
           [field]="registerForm.getForm().get('address').get('street')" error="required" message="*Street required">
+          </app-error-message>
+        </ion-item>
+
+        <ion-item-header>
+          <ion-label position="floating">City</ion-label>
+        </ion-item-header>
+        <ion-item>
+          <ion-input type="text" formControlName="city"></ion-input>
+          <app-error-message
+          [field]="registerForm.getForm().get('address').get('city')" error="required" message="*City required">
           </app-error-message>
         </ion-item>
 
@@ -110,16 +120,6 @@
           <ion-input type="tel" formControlName="zipCode"></ion-input>
           <app-error-message
           [field]="registerForm.getForm().get('address').get('zipCode')" error="required" message="*Zip code required">
-          </app-error-message>
-        </ion-item>
-
-        <ion-item-header>
-          <ion-label position="floating">City</ion-label>
-        </ion-item-header>
-        <ion-item>
-          <ion-input type="text" formControlName="city"></ion-input>
-          <app-error-message
-          [field]="registerForm.getForm().get('address').get('city')" error="required" message="*City required">
           </app-error-message>
         </ion-item>
 
