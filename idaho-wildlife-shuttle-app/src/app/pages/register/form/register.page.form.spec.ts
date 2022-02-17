@@ -21,7 +21,7 @@ describe('RegisterPageForm', () => {
         expect(form.get('email').valid).toBeFalsy();
     });
 
-    it('should password be less than 7 characters be invalid', () => {
+    it('should password be less than 6 characters be invalid', () => {
         form.get('password').setValue('12345');
 
         expect(form.get('password').valid).toBeFalsy();
@@ -41,12 +41,10 @@ describe('RegisterPageForm', () => {
         form.get('repeatPassword').setValue('anyPassword');
         form.get('phone').setValue('anyPhone');
         form.get('address').get('street').setValue('any street');
-        form.get('address').get('number').setValue('any number');
-        form.get('address').get('complement').setValue('any complement');
-        form.get('address').get('neighborhood').setValue('any neighborhood');
-        form.get('address').get('zipCode').setValue('any zip code');
         form.get('address').get('city').setValue('any city');
         form.get('address').get('state').setValue('any state');
+        form.get('address').get('zipCode').setValue('any zip code');
+        form.get('address').get('number').setValue('any number');
 
         expect(form.valid).toBeTruthy();
     });

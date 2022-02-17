@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { HomePageRoutingModule } from './home-routing.module';
-
 import { HomePage } from './home.page';
-import { ShuttleReservationCardComponent } from 'src/app/components/shuttle-reservation-card/shuttle-reservation-card.component';
+import { ShuttleReservationCardModule } from 'src/app/components/shuttle-reservation-card/shuttle-reservation-card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ShuttleReservationCardModule
   ],
   declarations: [
-    HomePage,
-    ShuttleReservationCardComponent
+    HomePage
   ]
 })
 export class HomePageModule {}

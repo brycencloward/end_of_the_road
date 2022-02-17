@@ -19,12 +19,10 @@ export class RegisterPageForm {
             phone: ['', [Validators.required]],
             address: this.formBuilder.group({
                 street: ['', [Validators.required]],
-                number: ['', [Validators.required]],
-                neighborhood: ['', [Validators.required]],
-                complement: ['', [Validators.required]],
-                zipCode: ['', [Validators.required]],
+                city: ['', [Validators.required]],
                 state: ['', [Validators.required]],
-                city: ['', [Validators.required]]
+                zipCode: ['', [Validators.required]],
+                number: ['', [Validators.required]]
             })
         });
 
