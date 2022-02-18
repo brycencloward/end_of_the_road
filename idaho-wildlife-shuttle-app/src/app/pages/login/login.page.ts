@@ -61,6 +61,7 @@ export class LoginPage implements OnInit, OnDestroy {
     if (loginState.error) {
       const toaster = await this.toastController.create({
         position: "bottom",
+        duration: 3000,
         message: loginState.error.message,
         color: "danger"
       });
