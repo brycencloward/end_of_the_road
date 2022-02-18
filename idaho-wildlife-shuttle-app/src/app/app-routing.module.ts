@@ -34,7 +34,11 @@ const routes: Routes = [
     path: 'reservations',
     loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule),
     canLoad: [AuthGuard]
+  },  {
+    path: 'pay-pal-web',
+    loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule)
   }
+
 
 ];
 
