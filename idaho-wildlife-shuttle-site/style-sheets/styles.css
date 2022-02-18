@@ -33,8 +33,7 @@ Home Page
   float: right;
   height:1000px;
   padding-top: 60px;
-  /* find the appropriate color */
-  background: #4F7491 url(../assets/Background.png);
+  background: url(../assets/Background.png), linear-gradient(to right, #416282,#496E8B, #4F7492);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
