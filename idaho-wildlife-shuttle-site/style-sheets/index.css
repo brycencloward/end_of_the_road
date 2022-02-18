@@ -1,10 +1,10 @@
 /*
 This is where Index Page Specific Styles go
- */
+
  .hero-container-index {
    height: 100%;
    width: 100%;
-   position: fixed;
+   xposition: fixed;
    top: 0;
    left: 0;
    overflow-x: hidden;
@@ -17,3 +17,4 @@ This is where Index Page Specific Styles go
 .test-article > h1 {
   color: blue;
 }
+*/
