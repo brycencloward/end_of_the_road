@@ -7,6 +7,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { UserRegister } from 'src/app/model/user/UserRegister';
 import { AppState } from 'src/store/AppState';
 import { loadingReducer } from 'src/store/loading/loading.reducers';
+import { loginReducer } from 'src/store/login/login.reducers';
 import { register, registerFail, registerSuccess } from 'src/store/register/register.actions';
 import { registerReducer } from 'src/store/register/register.reducers';
 import { RegisterPageModule } from './register.module';
@@ -30,6 +31,7 @@ describe('RegisterPage', () => {
         RegisterPageModule,
         StoreModule.forRoot([]),
         StoreModule.forFeature("loading", loadingReducer),
+        StoreModule.forFeature("login", loginReducer),
         StoreModule.forFeature("register", registerReducer)
       ]
     }).compileComponents();
@@ -94,15 +96,15 @@ describe('RegisterPage', () => {
     })
   });
 
-  it('should go to home page when registration successful', () => {
+  it('should login when registration successful', () => {
     fixture.detectChanges();
-
-    spyOn(router, 'navigate');
     
     store.dispatch(register({userRegister: new UserRegister()}));
     store.dispatch(registerSuccess());
 
-    expect(router.navigate).toHaveBeenCalledWith(['home']);
+    store.select('login').subscribe(state => {
+      expect(state.isLoggingIn).toBeTruthy();
+    })
   });
 
   it('should hide loading component when registration fail', () => {
