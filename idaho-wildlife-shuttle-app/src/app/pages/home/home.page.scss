@@ -22,7 +22,7 @@ ion-card.header {
     background: url('../../../assets/images/header-banner.PNG') no-repeat center center / cover !important;
     padding: 0;
     margin: 0;
-    height: 60%;
+    height: 30%;
 }
 
 #header_logo {
@@ -40,7 +40,6 @@ span.header-text {
     font-family: Impact, 'Segoe UI', 'Rockwell Extra Bold', Times;
 }
 
-
 /* ------------------------------begin footer ------------------------------------------------*/
 
 ion-card.footer {
@@ -52,13 +51,12 @@ ion-card.footer {
     margin-top: auto;
 }
 
-
 /* ------------------------------begin media queries------------------------------------------*/
 
 @media (max-width: 576px) {
     ion-card.header {
         background: none;
-        height: 40%;
+        height: 20%;
     }
     #header_logo {
         float: right;
