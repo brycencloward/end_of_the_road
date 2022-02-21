@@ -54,6 +54,32 @@ nav > ul > li > .hero-img {
   object-fit: contain;
 }
 nav > ul > li > h1 {margin-left:-100%}
+/* animate */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #162d44,#176eb3);
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50rem;
+}
+#topBtn:hover {
+  background: linear-gradient(to right, #367fc8,#133957);
+}
+.top-bar {
+  height: 15rem;
+  background-color: #b1bcbf;
+}
+#site-footer {
+  background: linear-gradient(to right, #416282,#496E8B, #4F7492);
+}
 /*
 --------------
 Sub Pages

@@ -44,27 +44,6 @@ nav > ul > li > .hero-img {
   top: 5rem;
   right: 6rem;
 }
-#topBtn {
-  display: none;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #4a8730;
-  color: white;
-  cursor: pointer;
-  padding: 1rem;
-  border-radius: 50rem;
-  animation: pulse;
-  animation-duration: 300ms;
-  transition: 300ms;
-}
-#topBtn:hover {
-  background-color: #8abd74;
-}
 /*  footer css */
 .site-footer {
   background-image: linear-gradient(to right, #183351, #2b4b6a, #426482);
