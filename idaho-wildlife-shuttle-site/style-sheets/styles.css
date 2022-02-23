@@ -3,57 +3,63 @@ This is where the styles for both pages go
 */
 @import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
-* {
-  font-family: 'Candal', sans-serif;
-}
-* > h1, h2, h3, h4, h5, h6 {
-  font-family: 'Assistant', sans-serif;
+/*
+--------------
+GLOBALS
+--------------
+*/
+*,::before,::after{box-sizing:inherit;background-clip:padding-box!important;position:relative}
+* {font-family: 'Assistant', sans-serif;}
+* > h1, h2, h3, h4, h5, h6 {font-family: 'Candal', sans-serif;}
+html, body {height: 100%;}
+body{display: flex; flex-direction: column; padding:0px; margin:0px}
+body > header[id*='site-header']{flex: none; flex-shrink: 0;}
+body > main[id*='site-content']{flex: 1 0 auto; position:relative; overflow:hidden; }
+body > footer[id*='site-footer']{margin-top: auto; flex: none; flex-shrink: 0;}
+ul,li{margin:0px;padding:0px;list-style: none;}
+/*
+--------------
+Home Page
+--------------
+*/
+.hero-container-index {
+  height:100%;
+  background-image: url(../assets/idaho-river.jpg);
+  background-repeat: no-repeat;
+  height:100%
 }
 .nav-container {
-  height: 100%;
-  width: 30rem;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  overflow-x: hidden;
+  width: 400px;
+  float: right;
+  height:1000px;
   padding-top: 60px;
-  background-image: url(../assets/Background.png);
+  background: url(../assets/Background.png), linear-gradient(to right, #416282,#496E8B, #4F7492);
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: bottom;
 }
-.nav-container > nav {
+nav,
+nav ul,
+nav ul a {
+  color:#ffffff;
+  width:100%;
   text-align: center;
-  margin-top: 29rem;
+  overflow:visible;
+  text-decoration:none;
 }
-.nav-container > nav > ul > li {
-  list-style: none;
-  padding-bottom: 2rem;
-}
-.nav-container > nav > ul > li > a {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: white;
-}
-.hero-container-index {
-  z-index: 0;
-}
-nav > ul > li > .hero-h1 {
-  right: 24rem;
-  bottom: 24rem;
-  color: white;
-  position: fixed;
-  font-size: 2rem;
-}
+nav ul a:hover {text-decoration:underline;}
 nav > ul > li > .hero-img {
-  max-width: 100%;
-  width: 17rem;
+  max-width: 17rem;
   height: auto;
-  position: fixed;
   object-fit: contain;
-  top: 5rem;
-  right: 6rem;
 }
+nav > ul > li > h1 {margin-left:-100%}
+.header-separator{margin-top: 10rem;}
+.header-nav-li{
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+/* animate */
 #topBtn {
   display: none;
   position: fixed;
@@ -63,25 +69,42 @@ nav > ul > li > .hero-img {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #4a8730;
+  background: linear-gradient(to right, #162d44,#176eb3);
   color: white;
   cursor: pointer;
   padding: 1rem;
   border-radius: 50rem;
-  animation: pulse;
-  animation-duration: 300ms;
-  transition: 300ms;
 }
-#topBtn:hover {
-  background-color: #8abd74;
+#topBtn:hover {background: linear-gradient(to right, #367fc8,#133957);}
+.top-bar {
+  height: 15rem;
+  background-color: #b1bcbf;
+  color: #2b2e30;
 }
-/* media queries */
-@media screen and (max-height: 450px) {
-  .nav-container {
-    padding-top: 15px;
-  }
-  .nav-container a {
-    font-size: 18px;
-  }
+/* need to make 3 columns 1 row */
+.top-bar > .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
-/* media queries end */
+#site-footer{
+  background: linear-gradient(to right, #112A48, #4F7492);
+  color: #FFFFFF;
+}
+#site-footer a {
+  color: white;
+  text-decoration: none;
+}
+#site-footer a:hover {text-decoration: underline;}
+/*
+--------------
+Sub Pages
+--------------
+*/
+/*
+--------------
+Media Queries
+--------------
+*/
