@@ -17,4 +17,8 @@ export class ShuttleReservationPage implements OnInit {
     this.router.navigate(['home']);
   }
 
+  pay_now(){
+    this.router.navigate(['pay-pal-web'])
+  }
+  
 }
