@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <!-- meta tags start -->
   <meta charset="utf-8">
@@ -9,59 +10,105 @@
   <meta name="author" content="Karon Fox, Taylor Fox, William Grubin, Raul Arias, Nik Trugillo, Jay Myers, Brycen Cloward">
   <!-- meta tags end -->
   <title>Idaho Wilderness Shuttles</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
   <!-- styles/links start -->
   <link rel="stylesheet" href="../style-sheets/styles.css">
   <link rel="stylesheet" href="../style-sheets/index.css">
+  <script src="https://kit.fontawesome.com/5e282ec290.js" crossorigin="anonymous"></script>
   <!-- styles/links end -->
 </head>
-
 <body>
   <!-- header start -->
-  <header>
-      <div class="nav-container" title="Blue Background Image of Vector Mountains">
-        <nav>
-          <ul>
-            <li><img class="hero-img" src="../assets/logo.png" alt="Logo Image of A Canoe On Water In Front Of Trees, Mountains, and The Sun, With 'End of The Road' Above it all"> </li>
-            <li><h1 class="hero-h1">At The End <br> of The Road; <br>Where The <br>Fun Begins!</h1></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="hero-container-index" title="Photo of a River Bed, Forests, Mountains, and Sky">
-      </div>
+  <header id="site-header">
+  <div class="hero-container-index" title="Photo of a River Bed, Forests, Mountains, and Sky">
+    <div class="nav-container" title="Blue Background Image of Vector Mountains">
+      <nav>
+        <ul>
+          <li><img class="hero-img" src="../assets/logo.png" alt="Logo Image of A Canoe On Water In Front Of Trees, Mountains, and The Sun, With 'End of The Road' Above it all"> </li>
+          <li>
+            <h1 class="hero-h1">At The End <br> of The Road; <br>Where The <br>Fun Begins!</h1>
+          </li>
+          <div class="header-separator">
+            <li class="header-nav-li"><a href="index.html">Home</a></li>
+            <li class="header-nav-li"><a href="gallery.html">Gallery</a></li>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div>
   </header>
   <!-- header end -->
 
   <!-- main start -->
-  <main>
-  <!-- feature start -->
+  <main id="site-content">
+    <!-- feature start -->
     <button onclick="topFunction()" class="animate__animated animate__pulse" id="topBtn" title="Go to top of page" name="Top Button">Back to Top</button>
-  <!-- feature end -->
+    <div class="top-bar grid-container">
+      <div class="cell-1">
+        <i class="fa-solid fa-bus-simple bus"></i>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
+      </div>
+      <div class="cell-2">
+        <i class="fa-solid fa-fish fish"></i>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
+      </div>
+      <div class="cell-3">
+        <i class="fa-solid fa-campground tent"></i>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
+      </div>
+    </div>
+    <article class="test">
+      <p>test</p>
+    </article>
+    <!-- feature end -->
   </main>
   <!-- main end -->
 
   <!-- footer start -->
-  <footer>
-
+  <footer id="site-footer">
+    <div class="footer-wrapper">
+      <!-- start left -->
+      <div class="left">
+        <img src="../assets/logo.png" alt="logo">
+        <h4 class="app-link"><a href="" id="footer-link" alt="link to app in store">Download the App to schedule</a></h4>
+      </div>
+      <!-- close left footer -->
+      <!-- start right -->
+      <div class="right">
+        <h2>Contact Us:</h2><br/>
+        Mailing Address:<br/>
+        P.O. Box _ _ _ <br/>
+        Lewiston,<br/>
+        ID 93501 <br/>
+        Phone call or text:<br/>
+        <a href="tel:2087202362" id="footer-link">(208) 720-2362 </a>
+      </div>
+      <!-- close right footer -->
+    </div>
   </footer>
   <!-- footer end -->
 
   <!-- scripts go here -->
   <script>
   var mybutton = document.getElementById("topBtn");
-  window.onscroll = function() {scrollFunction()};
+  window.onscroll = function() {
+    scrollFunction()
+  };
+
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 300) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
-    }}
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
     }
-    </script>
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
   <!-- scripts end here -->
 </body>
+
 </html>
