@@ -47,13 +47,18 @@ nav ul a {
   overflow:visible;
   text-decoration:none;
 }
-nav ul a:hover {text-decoration:underline;;}
+nav ul a:hover {text-decoration:underline;}
 nav > ul > li > .hero-img {
   max-width: 17rem;
   height: auto;
   object-fit: contain;
 }
 nav > ul > li > h1 {margin-left:-100%}
+.header-separator{margin-top: 10rem;}
+.header-nav-li{
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
 /* animate */
 #topBtn {
   display: none;
@@ -70,16 +75,29 @@ nav > ul > li > h1 {margin-left:-100%}
   padding: 1rem;
   border-radius: 50rem;
 }
-#topBtn:hover {
-  background: linear-gradient(to right, #367fc8,#133957);
-}
+#topBtn:hover {background: linear-gradient(to right, #367fc8,#133957);}
 .top-bar {
   height: 15rem;
   background-color: #b1bcbf;
+  color: #2b2e30;
 }
-#site-footer {
-  background: linear-gradient(to right, #416282,#496E8B, #4F7492);
+/* need to make 3 columns 1 row */
+.top-bar > .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
+#site-footer{
+  background: linear-gradient(to right, #112A48, #4F7492);
+  color: #FFFFFF;
+}
+#site-footer a {
+  color: white;
+  text-decoration: none;
+}
+#site-footer a:hover {text-decoration: underline;}
 /*
 --------------
 Sub Pages
