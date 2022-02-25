@@ -43,20 +43,26 @@
   <main id="site-content">
     <!-- feature start -->
     <button onclick="topFunction()" class="animate__animated animate__pulse" id="topBtn" title="Go to top of page" name="Top Button">Back to Top</button>
-    <div class="top-bar grid-container">
-      <div class="cell-1">
+    <!-- top-bar start -->
+    <!-- NEEDS TO BE CENTERED ON PAGE -->
+    <div class="top-bar topbar-grid-container">
+      <div class="top-cell">
         <i class="fa-solid fa-bus-simple bus"></i>
         <p>placeholder for information regarding travel services and what people can do with them.</p>
-      </div>
-      <div class="cell-2">
-        <i class="fa-solid fa-fish fish"></i>
         <p>placeholder for information regarding travel services and what people can do with them.</p>
       </div>
-      <div class="cell-3">
+      <div class="top-cell">
+        <i class="fa-solid fa-fish fish"></i>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
+      </div>
+      <div class="top-cell">
         <i class="fa-solid fa-campground tent"></i>
+        <p>placeholder for information regarding travel services and what people can do with them.</p>
         <p>placeholder for information regarding travel services and what people can do with them.</p>
       </div>
     </div>
+    <!-- top-bar end -->
     <article class="test">
       <p>test</p>
     </article>
@@ -66,16 +72,21 @@
 
   <!-- footer start -->
   <footer id="site-footer">
-    <div class="footer-wrapper">
+    <div class="footer-wrapper footer-grid-container">
       <!-- start left -->
-      <div class="left">
+      <div class="fleft footer-cell">
         <img src="../assets/logo.png" alt="logo">
-        <h4 class="app-link"><a href="" id="footer-link" alt="link to app in store">Download the App to schedule</a></h4>
       </div>
       <!-- close left footer -->
+      <!-- start center footer -->
+      <div class="fcenter footer-cell">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h4 class="app-link"><a href="" id="footer-link" alt="link to app in store">Download the App to schedule</a></h4>
+      </div>
+      <!-- start center footer -->
       <!-- start right -->
-      <div class="right">
-        <h2>Contact Us:</h2><br/>
+      <div class="fright footer-cell">
+        <h2>Contact Us</h2><br/>
         Mailing Address:<br/>
         P.O. Box _ _ _ <br/>
         Lewiston,<br/>
@@ -87,14 +98,12 @@
     </div>
   </footer>
   <!-- footer end -->
-
   <!-- scripts go here -->
   <script>
   var mybutton = document.getElementById("topBtn");
   window.onscroll = function() {
     scrollFunction()
   };
-
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 300) {
       mybutton.style.display = "block";
@@ -102,7 +111,6 @@
       mybutton.style.display = "none";
     }
   }
-
   function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -110,5 +118,4 @@
   </script>
   <!-- scripts end here -->
 </body>
-
 </html>

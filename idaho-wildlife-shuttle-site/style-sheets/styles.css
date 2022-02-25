@@ -53,10 +53,14 @@ nav > ul > li > .hero-img {
   height: auto;
   object-fit: contain;
 }
-nav > ul > li > h1 {margin-left:-100%}
-.header-separator{margin-top: 10rem;}
+nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
+.header-separator{
+  margin-top: 7rem;
+  text-align: left;
+  margin-left: 10rem;
+}
 .header-nav-li{
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-size: 1.3rem;
 }
 /* animate */
@@ -81,13 +85,15 @@ nav > ul > li > h1 {margin-left:-100%}
   background-color: #b1bcbf;
   color: #2b2e30;
 }
-/* need to make 3 columns 1 row */
-.top-bar > .grid-container {
+.topbar-grid-container, .footer-grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  text-align: center;
+}
+.top-cell, .footer-cell {max-width: 30rem;}
+.fa-solid, .fas {
+  font-size: 3rem;
+  margin: 1rem;
 }
 #site-footer{
   background: linear-gradient(to right, #112A48, #4F7492);
