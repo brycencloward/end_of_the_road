@@ -15,10 +15,14 @@ ion-card-subtitle {
     font-weight: bold;
 }
 
+.fab-adjustment {
+    margin-top: 100px;
+}
+
 
 /* ------------------------------begin header ------------------------------------------------*/
 
-ion-card.header {
+ion-header {
     background: url('../../../assets/images/header-banner.PNG') no-repeat center center / cover !important;
     padding: 0;
     margin: 0;
@@ -27,17 +31,23 @@ ion-card.header {
 
 #header_logo {
     float: right;
+    height: 50%;
 }
 
 div.header-span {
     padding-left: 60%;
     padding-right: 15%;
+    position: relative;
+    bottom: 8px;
+    height: 100%;
 }
 
 span.header-text {
     color: white;
     font-size: 2em;
     font-family: Impact, 'Segoe UI', 'Rockwell Extra Bold', Times;
+    position: absolute;
+    bottom: 0px;
 }
 
 /* ------------------------------begin footer ------------------------------------------------*/
@@ -54,7 +64,7 @@ ion-card.footer {
 /* ------------------------------begin media queries------------------------------------------*/
 
 @media (max-width: 576px) {
-    ion-card.header {
+    ion-header {
         background: none;
         height: 20%;
     }
@@ -67,6 +77,12 @@ ion-card.footer {
     }
     span.header-text {
         font-size: 1.5em;
+    }
+}
+
+@media (max-width: 330px){
+    span.header-text {
+        font-size: 1.2em;
     }
 }
 
