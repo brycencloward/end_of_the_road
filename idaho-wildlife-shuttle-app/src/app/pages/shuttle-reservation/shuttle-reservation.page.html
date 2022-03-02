@@ -11,16 +11,35 @@
   <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg" />
   <ion-card>
     <ion-card-content>
-      <p>Address: 500, 8th Ave.</p>
-      <p>Complement: n/a</p>
-      <p>Neighborhood: n/a</p>
-      <p>City: Lewiston, Idaho</p>
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Complement</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Neighborhood</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">City</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
     </ion-card-content>
   </ion-card>
   <ion-list>
     <ion-item lines="inset">
       <ion-label position="floating">Accomodations</ion-label>
       <ion-textarea></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let entry of form">
+      <ion-label>{{entry.description}}</ion-label>
+      <ion-label slot="end">${{entry.price}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
     </ion-item>
   </ion-list>
   <ion-button size="full" color="success" (click)="create_reservation()"><b>Create a reservation</b></ion-button>

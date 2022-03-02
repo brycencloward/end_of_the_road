@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./pay-pal-web.page.scss'],
 })
 export class PayPalWebPage {
-  paymentAmount: string = '100.00';
+  paymentAmount: string = PayPalWebPage.cost;
   currency: string = 'USD';
   currencyIcon: string = 'USD';
+  static cost: string;
   constructor() {
     let _this = this;
     setTimeout(() => {
