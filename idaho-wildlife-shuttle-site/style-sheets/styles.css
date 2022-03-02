@@ -22,7 +22,8 @@ ul,li{margin:0px;padding:0px;list-style: none;}
 Home Page
 --------------
 */
-.hero-container-index {height:100%; background-image: url(../assets/idaho-river.jpg); background-repeat: no-repeat; height:100%}
+.hero-container-index {height:100%; background-image: url(../assets/idaho-river.jpg); background-repeat: no-repeat;}
+.hero-container-gallery {height:100%; background-image: url(../assets/ski.jpg); background-repeat: no-repeat; background-size: cover;}
 .nav-container {
   width: 400px;
   float: right;
@@ -67,6 +68,8 @@ nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
 .top-bar {height: 15rem; background-color: #b1bcbf; color: #2b2e30;}
 .topbar-grid-container, .footer-grid-container {display: grid; grid-template-columns: auto auto auto; text-align: center;}
 .top-cell, .footer-cell {max-width: 30rem;}
+.top-cell {margin: 0px auto;}
+/* .top-cell {margin: 0px auto;} */
 .fa-solid, .fas {font-size: 3rem; margin: 1rem;}
 .download, .phone { font-size: 1rem;}
 #site-footer{background: linear-gradient(to right, #112A48, #4F7492); color: #FFFFFF;}
