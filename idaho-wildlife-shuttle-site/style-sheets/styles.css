@@ -68,9 +68,12 @@ nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
 .topbar-grid-container, .footer-grid-container {display: grid; grid-template-columns: auto auto auto; text-align: center;}
 .top-cell, .footer-cell {max-width: 30rem;}
 .fa-solid, .fas {font-size: 3rem; margin: 1rem;}
+.download, .phone { font-size: 1rem;}
 #site-footer{background: linear-gradient(to right, #112A48, #4F7492); color: #FFFFFF;}
 #site-footer a {color: white; text-decoration: none;}
 #site-footer a:hover {text-decoration: underline;}
+.footer-logo {text-align: left; margin-top: 3rem;}
+.fright {text-align: right; margin-top: 3rem;}
 /*
 --------------
 Sub Pages
