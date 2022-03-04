@@ -75,7 +75,7 @@
       <ion-card-content formGroupName="address">
         <ion-item>
           <ion-label position="floating">Street</ion-label>
-          <ion-input type="text" formControlName="street"></ion-input>
+          <ion-input type="text" formControlName="street" #autocomplete></ion-input>
         </ion-item>
         <app-error-message
         [field]="registerForm.getForm().get('address').get('street')" error="required" message="*Street required">
@@ -103,14 +103,6 @@
         </ion-item>
         <app-error-message
         [field]="registerForm.getForm().get('address').get('zipCode')" error="required" message="*Zip code required">
-        </app-error-message>
-
-        <ion-item>
-          <ion-label position="floating">Home Phone Number</ion-label>
-          <ion-input type="tel" formControlName="number"></ion-input>
-        </ion-item>
-        <app-error-message
-        [field]="registerForm.getForm().get('address').get('number')" error="required" message="*Phone number required">
         </app-error-message>
 
       </ion-card-content>

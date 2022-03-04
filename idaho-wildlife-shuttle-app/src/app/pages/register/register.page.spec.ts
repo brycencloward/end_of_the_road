@@ -143,6 +143,5 @@ describe('RegisterPage', () => {
     component.registerForm.getForm().get('address').get('city').setValue('any city');
     component.registerForm.getForm().get('address').get('state').setValue('any state');
     component.registerForm.getForm().get('address').get('zipCode').setValue('any zip code');
-    component.registerForm.getForm().get('address').get('number').setValue('any number');
   }
 });
