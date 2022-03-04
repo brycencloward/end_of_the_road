@@ -3,12 +3,17 @@ import { Router } from '@angular/router';
 import { PayPalWebPageModule } from '../pay-pal-web/pay-pal-web.module';
 import { PayPalWebPage } from '../pay-pal-web/pay-pal-web.page';
 import { AppState } from 'src/store/AppState';
+import { ViewChild } from '@angular/core';
+import { IonDatetime } from '@ionic/angular';
+import { format, parseISO } from 'date-fns';
+
 
 @Component({
   selector: 'app-shuttle-reservation',
   templateUrl: './shuttle-reservation.page.html',
   styleUrls: ['./shuttle-reservation.page.scss'],
 })
+
 
 export class ShuttleReservationPage implements OnInit {
 
@@ -35,6 +40,7 @@ export class ShuttleReservationPage implements OnInit {
   }
 
   change(cost) {
+
     this.cost = "500.00"
   }
 
@@ -44,4 +50,25 @@ export class ShuttleReservationPage implements OnInit {
     this.router.navigate(['pay-pal-web']);
   }
   
+}
+
+export class dateAndTime {
+  @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
+
+  dateValue = '';
+  dateValue2 = '';
+
+  constructor() {}
+  
+  confirm() {
+    this.datetime.confirm();
+  }
+  
+  reset() {
+    this.datetime.reset();
+  }
+
+  formatDate(value: string) {
+    return format(parseISO(value), 'MMM dd yyyy');
+  }
 }

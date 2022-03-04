@@ -42,6 +42,8 @@
       <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
     </ion-item>
   </ion-list>
+  <!-- Selecting time first, date second -->
+  <ion-datetime presentation="time-date"></ion-datetime>
   <ion-button size="full" color="success" (click)="create_reservation()"><b>Create a reservation</b></ion-button>
   <ion-button size="full" color="success" (click)="pay_now()"><b>Pay Now</b></ion-button>
 </ion-content>
