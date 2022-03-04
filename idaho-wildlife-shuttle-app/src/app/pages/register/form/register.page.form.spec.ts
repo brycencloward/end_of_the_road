@@ -44,7 +44,6 @@ describe('RegisterPageForm', () => {
         form.get('address').get('city').setValue('any city');
         form.get('address').get('state').setValue('any state');
         form.get('address').get('zipCode').setValue('any zip code');
-        form.get('address').get('number').setValue('any number');
 
         expect(form.valid).toBeTruthy();
     });

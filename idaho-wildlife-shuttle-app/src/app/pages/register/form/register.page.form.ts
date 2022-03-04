@@ -1,5 +1,6 @@
 import { FormBuilder, FormGroup, ValidatorFn } from "@angular/forms";
 import { Validators } from '@angular/forms';
+import { findAddressNumber, findCity, findState, findStreet, findZipCode } from "src/app/utilities/address-utilities";
 
 export class RegisterPageForm {
     private formBuilder: FormBuilder;
@@ -21,14 +22,22 @@ export class RegisterPageForm {
                 street: ['', [Validators.required]],
                 city: ['', [Validators.required]],
                 state: ['', [Validators.required]],
-                zipCode: ['', [Validators.required]],
-                number: ['', [Validators.required]]
+                zipCode: ['', [Validators.required]]
             })
         });
 
         form.get('repeatPassword').setValidators(matchPasswordAndRepeatPassword(form));
 
         return form;
+    }
+
+    setAddress(place) {
+        const addressForm = this.form.get('address');
+
+        addressForm.get('street').setValue(findStreet(place.address_components));
+        addressForm.get('city').setValue(findCity(place.address_components));
+        addressForm.get('state').setValue(findState(place.address_components));
+        addressForm.get('zipCode').setValue(findZipCode(place.address_components));
     }
 
     getForm() : FormGroup {
