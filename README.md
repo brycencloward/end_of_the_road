@@ -14,15 +14,3 @@ kefox@lcmail.lcsc.edu
 tffox@lcmail.lcsc.edu
 
 jdeliotharias@lcmail.lcsc.edu
-
-REPOSITORY PUSH CONFIRMATION:
-RAUL
-    
-TAYLOR
-    
-JAY
-    
-WILLIAM
-    
-NIK
-    
