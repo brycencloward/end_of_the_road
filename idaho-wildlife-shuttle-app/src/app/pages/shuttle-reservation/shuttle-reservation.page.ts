@@ -39,9 +39,9 @@ export class ShuttleReservationPage implements OnInit {
     this.router.navigate(['home']);
   }
 
-  change(cost) {
-
-    this.cost = "500.00"
+  changeCost(event) {
+    this.cost = event.detail.value;
+    //console.log("cost changed to", this.cost);
   }
 
   pay_now(){

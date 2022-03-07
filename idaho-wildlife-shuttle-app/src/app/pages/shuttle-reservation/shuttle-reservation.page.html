@@ -36,11 +36,14 @@
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item *ngFor="let entry of form">
-      <ion-label>{{entry.description}}</ion-label>
-      <ion-label slot="end">${{entry.price}}</ion-label>
-      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-    </ion-item>
+    <ion-radio-group (ionChange)="changeCost($event)">
+      <ion-item *ngFor="let entry of form">
+        <ion-label class="ion-text-wrap">{{entry.description}}</ion-label>
+        <ion-label slot="end">${{entry.price}}</ion-label>
+        <!--<ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>-->
+        <ion-radio slot="end" name={{entry.package}} value={{entry.price}}></ion-radio>
+      </ion-item>
+    </ion-radio-group>
   </ion-list>
   <!-- Selecting time first, date second -->
   <ion-datetime presentation="time-date"></ion-datetime>
