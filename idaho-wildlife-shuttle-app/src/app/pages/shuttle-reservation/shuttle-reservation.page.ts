@@ -20,12 +20,16 @@ export class ShuttleReservationPage implements OnInit {
   constructor(private router: Router) { }
 
   public form = [
-      { package: 'A', description: 'White Cloud Wilderness out of Salmon River -- 0.5-day shuttle -- Drop-off and pickup', 
-      price: '250.00' },
-      { package: 'B', description: 'Sawtooth National Forest through Frank Church Wilderness -- 1.5-day tour -- Drop-off and pickup shuttle', 
-      price: '500.00' },
-      { package: 'C', description: 'Snake River to Bear Creek -- 3-day backpacking trip -- Point-to-point shuttle', 
-      price: '1000.00' }
+      { package: 'A', description: 'Any eastside trail head shuttle, this includes Tin Cup, Redfish Lake, Iron Creek, ect. -- SNRA -- Pickup and Drop off', 
+      price: '195.00' },
+      { package: 'B', description: 'Sawtooth Lodge to/from any eastside trailhead -- Drop-off and pickup shuttle price for 3 people', 
+      price: '245.00' },
+      { package: 'C', description: 'Boundry Creek to/from Stanley -- Drop-off and pickup shuttle price for 3 people', 
+      price: '345.00' },
+      { package: 'D', description: 'Sun Valley (SUN) airport to/from Stanley  Drop off and pickup shuttle price for 3 people', 
+      price: '355.00'},
+      { package: 'E', despriction: 'Custom shuttle deposit to be book time and date over the phone', 
+      price: '80.00'}
     ];  
 
   isClicked: false;
