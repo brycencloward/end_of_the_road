@@ -30,7 +30,9 @@ export class ShuttleReservationPage implements OnInit {
 
   isClicked: false;
   
-  cost: string = "250.00";
+  cost: string = "0.00";
+
+  item: string = "No package selected."
 
   ngOnInit() {
   }
@@ -41,11 +43,14 @@ export class ShuttleReservationPage implements OnInit {
 
   changeCost(event) {
     this.cost = event.detail.value;
+    this.item = event.detail.name;
+    console.log(this.item);
     //console.log("cost changed to", this.cost);
   }
 
   pay_now(){
     PayPalWebPage.cost = this.cost;
+    PayPalWebPage.item = this.item;
 
     this.router.navigate(['pay-pal-web']);
   }

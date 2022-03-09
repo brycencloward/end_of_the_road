@@ -1,18 +1,27 @@
-<ion-content>
-  <ion-img src="../assets/images/header-banner.PNG"></ion-img>
-  <ion-card-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="shuttle-reservation"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-card-title>PayPal</ion-card-title>
+<ion-content>
+  <!--<ion-img src="../assets/images/header-banner.PNG"></ion-img>-->
+
+  <ion-card-header>
+    <ion-card-title class="ion-text-center">{{itemName}}</ion-card-title>
     <ion-row>
-      <ion-col>
+      <ion-col class="ion-text-center">
         Payment Total:
       </ion-col>
-      <ion-col>
+      <ion-col class="ion-text-center">
         {{currencyIcon}} ${{paymentAmount}}
       </ion-col>
     </ion-row>
   </ion-card-header>
-  <ion-card-content>
+
+  <ion-card-content class="ion-text-center">
     <div id="paypal-button-container"></div>
   </ion-card-content>
 </ion-content>
@@ -22,4 +31,4 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
       <div id="paypal-button-container"></div>
-  </ion-header>
+</ion-header>

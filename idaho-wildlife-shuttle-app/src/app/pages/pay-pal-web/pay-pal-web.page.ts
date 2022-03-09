@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PayPalWebPage {
   paymentAmount: string = PayPalWebPage.cost;
+  itemName: string = PayPalWebPage.item;
   currency: string = 'USD';
   currencyIcon: string = 'USD';
   static cost: string;
+  static item: string;
   constructor() {
     let _this = this;
     setTimeout(() => {
