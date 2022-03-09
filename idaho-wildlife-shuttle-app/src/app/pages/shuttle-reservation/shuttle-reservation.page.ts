@@ -21,11 +21,11 @@ export class ShuttleReservationPage implements OnInit {
 
   public form = [
       { package: 'A', description: 'White Cloud Wilderness out of Salmon River -- 0.5-day shuttle -- Drop-off and pickup', 
-      price: '250.00', isChecked: false },
+      price: '250.00' },
       { package: 'B', description: 'Sawtooth National Forest through Frank Church Wilderness -- 1.5-day tour -- Drop-off and pickup shuttle', 
-      price: '500.00', isChecked: false },
+      price: '500.00' },
       { package: 'C', description: 'Snake River to Bear Creek -- 3-day backpacking trip -- Point-to-point shuttle', 
-      price: '1000.00', isChecked: false }
+      price: '1000.00' }
     ];  
 
   isClicked: false;
