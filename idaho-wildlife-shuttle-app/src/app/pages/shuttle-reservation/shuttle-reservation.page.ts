@@ -26,9 +26,11 @@ export class ShuttleReservationPage implements OnInit {
       price: '245.00' },
       { package: 'C', description: 'Boundry Creek to/from Stanley -- Drop-off and pickup shuttle price for 3 people', 
       price: '345.00' },
-      { package: 'D', description: 'Sun Valley (SUN) airport to/from Stanley  Drop off and pickup shuttle price for 3 people', 
-      price: '355.00'},
-      { package: 'E', despriction: 'Custom shuttle deposit to be book time and date over the phone', 
+      { package: 'D', description: 'Sun Valley (SUN) airport to/from Stanley -- Drop off and pickup shuttle price for 3 people', 
+      price: '255.00'},
+      { package: 'E', description: 'Boise (BOI) airport to/from Stanley area -- Drop off and pickup shuttle price for up to 3 people', 
+      price: '365.00'},
+      { package: 'F', description: 'Custom shuttle deposit to be book time and date over the phone', 
       price: '80.00'}
     ];  
 

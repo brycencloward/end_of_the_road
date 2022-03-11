@@ -12,28 +12,34 @@
   <ion-card>
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating">Address</ion-label>
+        <ion-label position="floating">Pickup Location</ion-label>
+        <ion-textarea></ion-textarea>
+      <ion-label position="floating">Is this a car move? [Y/N}</ion-label>
+    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Number of persons in your party</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Complement</ion-label>
+        <ion-label position="floating">Is this a car move [Y/N]?</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Neighborhood</ion-label>
+        <ion-label position="floating">Drop of Location</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
-      <ion-item>
-        <ion-label position="floating">City</ion-label>
+      <ion-item lines="inset">
+        <ion-label position="floating">Make and Model of vehicle</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="floating">Special Accomedations (Bikes, Trailer, ect.)</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
     </ion-card-content>
   </ion-card>
   <ion-list>
-    <ion-item lines="inset">
-      <ion-label position="floating">Accomodations</ion-label>
-      <ion-textarea></ion-textarea>
-    </ion-item>
+  
   </ion-list>
   <ion-list>
     <ion-radio-group (ionChange)="changeCost($event)">
