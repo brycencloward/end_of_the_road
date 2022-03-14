@@ -1,27 +1,37 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
-      <ion-back-button text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title>Reservations</ion-title>
-  </ion-toolbar>
+    <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
 </ion-header>
 
-<ion-content>
-  <app-shuttle-reservation-card
-  status="upcoming" startAt="01/30/22 @ 15:35:00"
-  reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
-  </app-shuttle-reservation-card>
+<ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+        <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reservations</ion-title>
+</ion-toolbar>
 
-  <app-shuttle-reservation-card
-  status="active" startAt="01/31/22 @ 15:35:00"
-  reservedAt="01/30/22 @ 15:37:00" notes="This customer is going to be bringing an offroad 
+<ion-content>
+    <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
+    </app-shuttle-reservation-card>
+
+    <app-shuttle-reservation-card status="active" startAt="01/31/22 @ 15:35:00" reservedAt="01/30/22 @ 15:37:00" notes="This customer is going to be bringing an offroad 
   motorcycle and will need accomodations to transport it.">
-  </app-shuttle-reservation-card>
-  
-  <app-shuttle-reservation-card 
-  status="finished" startAt="01/28/22 @ 15:49:00"
-  reservedAt="01/15/22 @ 12:34:00" notes="This customer is highly-allergic and will need
+    </app-shuttle-reservation-card>
+
+    <app-shuttle-reservation-card status="finished" startAt="01/28/22 @ 15:49:00" reservedAt="01/15/22 @ 12:34:00" notes="This customer is highly-allergic and will need
   special medication to be on board." payment="$267.54">
-  </app-shuttle-reservation-card>
+    </app-shuttle-reservation-card>
+
+    <ion-footer>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <a href src="#">Cancelation Policy</a>
+                    <h6>&#169; Jay Myers </h6>
+                </ion-col>
+                <ion-col>
+                    <img alt="logo" id="footer_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-footer>
 </ion-content>

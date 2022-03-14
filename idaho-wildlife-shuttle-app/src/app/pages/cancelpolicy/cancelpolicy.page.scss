@@ -1,16 +1,35 @@
+//Header ------------------------------------------------------
 ion-header {
-    --ion-background-color: linear-gradient(to right, #549feb, #367fc8, #133957, #162d44);
+    background: linear-gradient(to right, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 30%;
 }
 
-img#header_logo {
-    float: right;
-    height: 50%;
+#header_logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
 }
 
-ion-footer {
-    --ion-background-color: linear-gradient(to left, #549feb, #367fc8, #133957, #162d44);
+// Footer ---------------------------------------------------
+ion-grid {
+    background: linear-gradient(to left, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 20%;
+}
+
+#footer_logo {
+    display: block;
+    margin: 0 auto;
+}
+
+ion-col {
+    padding: 4%;
+    margin: 4%;
 }
 
 h6 {
-    color: #acbecf;
+    color: white;
 }

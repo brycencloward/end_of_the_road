@@ -2,7 +2,7 @@ ion-button {
     margin: 10px;
 }
 
-ion-content{
+ion-content {
     --background: var(--ion-color-light);
 }
 
@@ -11,11 +11,47 @@ ion-list {
 }
 
 img {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 ion-datetime {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
+}
+
+//Header ------------------------------------------------------
+ion-header {
+    background: linear-gradient(to right, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 30%;
+}
+
+#header_logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+// Footer ---------------------------------------------------
+ion-grid {
+    background: linear-gradient(to left, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 20%;
+}
+
+#footer_logo {
+    display: block;
+    margin: 0 auto;
+}
+
+ion-col {
+    padding: 4%;
+    margin: 4%;
+}
+
+h6 {
+    color: white;
 }

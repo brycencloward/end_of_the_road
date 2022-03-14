@@ -1,15 +1,51 @@
-ion-content{
-  --background: var(--ion-color-light);
+ion-content {
+    --background: var(--ion-color-light);
 }
 
 ion-button {
-  margin: 10px;
+    margin: 10px;
 }
 
 ion-card {
-  margin: 2rem;
+    margin: 2rem;
 }
 
 ion-item {
-  margin: 1rem;
+    margin: 1rem;
+}
+
+//Header ------------------------------------------------------
+ion-header {
+    background: linear-gradient(to right, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 30%;
+}
+
+#header_logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+// Footer ---------------------------------------------------
+ion-grid {
+    background: linear-gradient(to left, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 20%;
+}
+
+#footer_logo {
+    display: block;
+    margin: 0 auto;
+}
+
+ion-col {
+    padding: 4%;
+    margin: 4%;
+}
+
+h6 {
+    color: white;
 }
