@@ -9,11 +9,16 @@ ion-card-subtitle {text-transform: uppercase; font-weight: bold;}
 /* ------------------------------begin header ------------------------------------------------*/
 
 ion-header {
-    --ion-background-color: linear-gradient(to right, #549feb, #367fc8, #133957, #162d44);
+    background: linear-gradient(to right, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 30%;
 }
-
-img#header_logo {display: block; margin: 0 auto; height: 50%;}
-
+#header_logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
 
 /* ------------------------------begin footer ------------------------------------------------*/
 
