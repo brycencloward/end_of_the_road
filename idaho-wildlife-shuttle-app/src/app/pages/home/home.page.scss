@@ -12,10 +12,7 @@ ion-header {
     --ion-background-color: linear-gradient(to right, #549feb, #367fc8, #133957, #162d44);
 }
 
-img#header_logo {
-    float: right;
-    height: 50%;
-}
+img#header_logo {display: block; margin: 0 auto; height: 50%;}
 
 
 /* ------------------------------begin footer ------------------------------------------------*/
