@@ -1,11 +1,8 @@
 <ion-content class="home-pg-body">
     <ion-header>
-        <img alt="logo" id="header_logo" height="120" float-right src="../../../assets/images/white-logo.png">
-        <div class="header-span" size-sm="4" size-lg="2">
-            <span class="header-text">
-                At the end of the road; where the fun begins!
-            </span>
-        </div>
+        <ion-toolbar>
+            <img alt="logo" id="header_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+        </ion-toolbar>
     </ion-header>
 
 
@@ -35,27 +32,22 @@
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
-    
+
     <div style=" display: flex;flex-direction: column;height: 100%;">
-        <ion-card class="footer">
-            <ion-footer>
-                <ion-row>
-                    <ion-col center text-center>
-                        <img alt="logo" height="120" width="120" src="../../../assets/images/white-logo.png">
-                    </ion-col>
-                    <ion-col center text-center>
-                        <ion-card-content>
-                            <ion-icon name="call-outline" icon-left></ion-icon>
-                            <span>208-456-7891</span>
-                        </ion-card-content>
-                    </ion-col>
-                    <ion-col center text-center>
-                        <ion-card-content>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
-                        </ion-card-content>
-                    </ion-col>
-                </ion-row>
-            </ion-footer>
-        </ion-card>
+        <ion-footer collapse="fade">
+            <ion-toolbar>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <a href src="#">Cancelation Policy</a>
+                            <h6>&copy Jay Myers </h6>
+                        </ion-col>
+                        <ion-col class="ion-align-self-center">
+                            <img alt="logo" id="header_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-toolbar>
+        </ion-footer>
     </div>
 </ion-content>

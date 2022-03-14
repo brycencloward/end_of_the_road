@@ -23,67 +23,30 @@ ion-card-subtitle {
 /* ------------------------------begin header ------------------------------------------------*/
 
 ion-header {
-    background: url('../../../assets/images/header-banner.PNG') no-repeat center center / cover !important;
-    padding: 0;
-    margin: 0;
-    height: 30%;
+    --ion-background-color: linear-gradient(to right, #549feb, #367fc8, #133957, #162d44);
 }
 
-#header_logo {
+img#header_logo {
     float: right;
     height: 50%;
 }
 
-div.header-span {
-    padding-left: 60%;
-    padding-right: 15%;
-    position: relative;
-    bottom: 8px;
-    height: 100%;
-}
-
-span.header-text {
-    color: white;
-    font-size: 2em;
-    font-family: Impact, 'Segoe UI', 'Rockwell Extra Bold', Times;
-    position: absolute;
-    bottom: 0px;
-}
 
 /* ------------------------------begin footer ------------------------------------------------*/
 
-ion-card.footer {
-    background: url('../../../assets/images/footer-bg.png') no-repeat center center / cover !important;
-    margin: 0;
-    padding: 2% 8% 2% 8%;
-    color: white;
-    font-family: 'Segoe UI', Impact, 'Rockwell Extra Bold', Times;
-    margin-top: auto;
+ion-footer {
+    --ion-background-color: linear-gradient(to left, #549feb, #367fc8, #133957, #162d44);
 }
+
+h6 {
+    color: #acbecf;
+}
+
 
 /* ------------------------------begin media queries------------------------------------------*/
 
-@media (max-width: 576px) {
-    ion-header {
-        background: none;
-        height: 20%;
-    }
-    #header_logo {
-        float: right;
-    }
-    div.header-span {
-        padding-left: 30%;
-        padding-right: 20%;
-    }
-    span.header-text {
-        font-size: 1.5em;
-    }
-}
+@media (max-width: 576px) {}
 
-@media (max-width: 330px){
-    span.header-text {
-        font-size: 1.2em;
-    }
-}
+@media (max-width: 330px) {}
 
 @media (min-width: 576px)and (max-width: 768px) {}

@@ -1,0 +1,16 @@
+ion-header {
+    --ion-background-color: linear-gradient(to right, #549feb, #367fc8, #133957, #162d44);
+}
+
+img#header_logo {
+    float: right;
+    height: 50%;
+}
+
+ion-footer {
+    --ion-background-color: linear-gradient(to left, #549feb, #367fc8, #133957, #162d44);
+}
+
+h6 {
+    color: #acbecf;
+}
