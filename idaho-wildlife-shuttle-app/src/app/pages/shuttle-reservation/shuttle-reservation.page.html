@@ -8,13 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg" />
+  <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg"/>
   <ion-card>
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Pickup Location</ion-label>
         <ion-textarea></ion-textarea>
-      <ion-label position="floating">Is this a car move? [Y/N}</ion-label>
     </ion-item>
       <ion-item>
         <ion-label position="floating">Number of persons in your party</ion-label>
@@ -39,7 +38,7 @@
     </ion-card-content>
   </ion-card>
   <ion-list>
-  
+
   </ion-list>
   <ion-list>
     <ion-radio-group (ionChange)="changeCost($event)">
@@ -53,6 +52,6 @@
   </ion-list>
   <!-- Selecting time first, date second -->
   <ion-datetime presentation="time-date"></ion-datetime>
-  <ion-button size="full" color="success" (click)="create_reservation()"><b>Create a reservation</b></ion-button>
-  <ion-button size="full" color="success" (click)="pay_now()"><b>Pay Now</b></ion-button>
+  <ion-button size="full" color="secondary" (click)="create_reservation()"><b>Create a reservation</b></ion-button>
+  <ion-button size="full" color="secondary" (click)="pay_now()"><b>Pay Now</b></ion-button>
 </ion-content>

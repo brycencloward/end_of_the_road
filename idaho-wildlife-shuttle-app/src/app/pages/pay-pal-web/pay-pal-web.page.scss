@@ -1,21 +1,9 @@
+.welcome-card {margin-left: auto; margin-right: auto;
+  ion-img {max-height: 35vh; overflow: hidden;}
+  ion-card-header, ion-card-content {margin: auto;}
+  ion-card {text-align: center;}
+  ion-row {align-self: center;}}
 
-.welcome-card {
-    margin-left: auto;
-    margin-right: auto;
-    ion-img {
-      max-height: 35vh;
-      overflow: hidden;
-    }
-    ion-card-header {
-      margin: auto;
-    }
-    ion-card-content {
-      margin: auto;
-    }
-    ion-card {
-      text-align: center;
-    }
-    ion-row {
-      align-self: center;
-    }
-  }
+ion-card-content {background: linear-gradient(to right, #112A48, #4F7492); height: 100%;}
+ion-card-header {background: linear-gradient(to right, #112A48, #4F7492); height: 20%;}
+// needs more polish
