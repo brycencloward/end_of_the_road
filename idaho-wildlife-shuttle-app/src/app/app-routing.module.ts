@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'pay-pal-web',
     loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule)
+  },  {
+    path: 'cancelpolicy',
+    loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
   }
+
 
 
 ];
