@@ -1,15 +1,16 @@
-<ion-header>
+<ion-content>
+    <ion-header>
+        <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
+    </ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
             <ion-back-button defaultHref="shuttle-reservation"></ion-back-button>
         </ion-buttons>
     </ion-toolbar>
-</ion-header>
 
-<ion-content>
     <!--<ion-img src="../assets/images/header-banner.PNG"></ion-img>-->
     <!-- needs more polish -->
-    <ion-card-header>
+    <ion-card>
         <ion-card-title class="ion-text-center">{{itemName}}</ion-card-title>
         <ion-row>
             <ion-col class="ion-text-center">
@@ -19,16 +20,29 @@
                 {{currencyIcon}} ${{paymentAmount}}
             </ion-col>
         </ion-row>
-    </ion-card-header>
+    </ion-card>
 
     <ion-card-content class="ion-text-center">
         <div id="paypal-button-container"></div>
     </ion-card-content>
-</ion-content>
 
-<ion-header>
-    <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <div id="paypal-button-container"></div>
-</ion-header>
+    <!-- <ion-header>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div id="paypal-button-container"></div>
+    </ion-header> -->
+    <ion-footer>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <a href src="#">Cancelation Policy</a>
+                    <h6>&#169; Jay Myers </h6>
+                </ion-col>
+                <ion-col>
+                    <img alt="logo" id="footer_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-footer>
+</ion-content>

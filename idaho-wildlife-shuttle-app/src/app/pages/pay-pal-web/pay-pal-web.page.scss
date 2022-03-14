@@ -1,9 +1,63 @@
-.welcome-card {margin-left: auto; margin-right: auto;
-  ion-img {max-height: 35vh; overflow: hidden;}
-  ion-card-header, ion-card-content {margin: auto;}
-  ion-card {text-align: center;}
-  ion-row {align-self: center;}}
+.welcome-card {
+    margin-left: auto;
+    margin-right: auto;
+    ion-img {
+        max-height: 35vh;
+        overflow: hidden;
+    }
+    ion-card-header,
+    ion-card-content {
+        margin: auto;
+    }
+    ion-card {
+        text-align: center;
+    }
+    ion-row {
+        align-self: center;
+    }
+}
 
-ion-card-content {background: linear-gradient(to right, #112A48, #4F7492); height: 100%;}
-ion-card-header {background: linear-gradient(to right, #112A48, #4F7492); height: 20%;}
+// ion-card-content {
+//     background: linear-gradient(to right, #112A48, #4F7492);
+//     height: 100%;
+// }
+// ion-card-header {
+//     background: linear-gradient(to right, #112A48, #4F7492);
+//     height: 20%;
+// }
 // needs more polish
+//Header ------------------------------------------------------
+ion-header {
+    background: linear-gradient(to right, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 30%;
+}
+
+#header_logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+// Footer ---------------------------------------------------
+ion-grid {
+    background: linear-gradient(to left, #112A48, #4F7492);
+    padding: 0;
+    margin: 0;
+    height: 20%;
+}
+
+#footer_logo {
+    display: block;
+    margin: 0 auto;
+}
+
+ion-col {
+    padding: 4%;
+    margin: 4%;
+}
+
+h6 {
+    color: white;
+}
