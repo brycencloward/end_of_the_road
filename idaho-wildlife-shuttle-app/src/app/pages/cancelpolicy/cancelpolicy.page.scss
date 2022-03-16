@@ -15,13 +15,15 @@ ion-header {
 // Cancel Policy Card ---------------------------------------
 
 ion-card-title {
-    background-color: red; text-align: center; font-size: 30px;
+    background-color: #982e2e; text-align: center; font-size: 30px;
 }
 
 ion-card-text {
     background-color: black; text-align: center; font-size: 15px; font-weight: bold;
 }
-
+ion-label {
+  text-align: right;
+}
 // Footer ---------------------------------------------------
 ion-grid {
     background: linear-gradient(to left, #112A48, #4F7492);
