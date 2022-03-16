@@ -19,7 +19,7 @@
           <app-error-message [field]="form.get('email')" error="email"
           message="*Email invalid">
           </app-error-message>
- 
+
           <ion-item>
             <ion-label position="floating">Password</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
@@ -35,12 +35,12 @@
           Forgot your email or password?
           </ion-button>
 
-          <ion-button color="success" size="full" [disabled]="!form.valid"
+          <ion-button color="primary" size="full" [disabled]="!form.valid"
           (click)="login()" id="loginButton">
           <b>Login</b>
           </ion-button>
 
-          <ion-button color="success" fill="clear" size="full"
+          <ion-button color="primary" fill="clear" size="full"
           (click)="register()">
           Register
           </ion-button>
