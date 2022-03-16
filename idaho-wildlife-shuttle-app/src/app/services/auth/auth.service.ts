@@ -18,6 +18,8 @@ export class AuthService {
         if(userRegister.email == "error@email.com") {
           observer.error({message: "*Account does not exist or has been previously registered"});
         } else {
+          this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password);
+
           observer.next();
         }
 

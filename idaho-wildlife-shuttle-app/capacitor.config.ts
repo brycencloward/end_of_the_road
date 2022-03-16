@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.wpgrubin.shuttle',
   appName: 'idaho-wildlife-shuttle-app',
   webDir: 'www',
   bundledWebRuntime: false
