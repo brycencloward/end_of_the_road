@@ -6,6 +6,7 @@ import { AppState } from 'src/store/AppState';
 import { ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
+import { PaypalPage } from 'src/app/paypal-mobile/paypal-mobile.page';
 
 
 @Component({
@@ -59,6 +60,12 @@ export class ShuttleReservationPage implements OnInit {
     PayPalWebPage.item = this.item;
 
     this.router.navigate(['pay-pal-web']);
+  }
+  pay_now_mobile(){
+    PaypalPage.cost = this.cost;
+    PaypalPage.item = this.item;
+
+    this.router.navigate(['paypal-mobile']);
   }
   
 }
