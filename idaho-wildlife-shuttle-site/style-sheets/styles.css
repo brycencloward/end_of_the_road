@@ -1,6 +1,7 @@
 /*
 This is where the styles for both pages go
 */
+@import 'animate.css';
 @import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
 /*
@@ -17,6 +18,11 @@ body > header[id*='site-header']{flex: none; flex-shrink: 0;}
 body > main[id*='site-content']{flex: 1 0 auto; position:relative; overflow:hidden; }
 body > footer[id*='site-footer']{margin-top: auto; flex: none; flex-shrink: 0;}
 ul,li{margin:0px;padding:0px;list-style: none;}
+/* NEEDS WORK */
+/* a:hover{
+ animation: 'pulse';
+ animation-duration: 2s;
+} */
 /*
 --------------
 Home Page
@@ -49,26 +55,29 @@ nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
 .header-separator{margin-top: 7rem; text-align: left; margin-left: 10rem;}
 .header-nav-li{margin-top: 1.5rem; font-size: 1.3rem;}
 /* animate */
-#topBtn {
-  display: none;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background: linear-gradient(to right, #162d44,#176eb3);
-  color: white;
-  cursor: pointer;
-  padding: 1rem;
-  border-radius: 50rem;
-}
-#topBtn:hover {background: linear-gradient(to right, #367fc8,#133957);}
 .top-bar {height: 15rem; background-color: #b1bcbf; color: #2b2e30;}
 .topbar-grid-container, .footer-grid-container {display: grid; grid-template-columns: auto auto auto; text-align: center;}
 .top-cell, .footer-cell {max-width: 30rem;}
 .top-cell {margin: 0px auto;}
+.index-parallax {
+  background-image: url("../assets/road-background.jpg");
+  box-shadow: inset 0px 0px 50px 12px #000000;
+  min-height: 40rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 15rem;
+  height: 20rem;
+  border-radius: 5px;
+  background: white;
+}
+.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);} */
+/* <!-- NEEDS CONTENT PROMOTING APP AND WORK --> */
 /* .top-cell {margin: 0px auto;} */
 .fa-solid, .fas {font-size: 3rem; margin: 1rem;}
 .download, .phone { font-size: 1rem;}
