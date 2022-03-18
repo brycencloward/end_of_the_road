@@ -1,0 +1,6 @@
+{
+	"appId": "com.wpgrubin.shuttle",
+	"appName": "idaho-wildlife-shuttle-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -41,6 +41,10 @@ const routes: Routes = [
   },  {
     path: 'cancelpolicy',
     loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
+  },
+  {
+    path: 'paypal-mobile',
+    loadChildren: () => import('./paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
   }
 
 

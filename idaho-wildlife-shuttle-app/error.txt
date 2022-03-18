@@ -1,0 +1,1 @@
+[2m[[22m[40m[1m[31mERROR[39m[22m[49m[2m][22m The [36m--target[39m option is required.
