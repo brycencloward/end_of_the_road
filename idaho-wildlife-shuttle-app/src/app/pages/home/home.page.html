@@ -22,25 +22,12 @@
         <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
     </app-shuttle-reservation-card>
 
-
-
     <ion-fab vertical="center" horizontal="end" slot="fixed" class="fab-adjustment">
         <ion-fab-button color="secondary" (click)="shuttle_reservation()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 
-    <ion-footer>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <a href src="#">Cancelation Policy</a>
-                    <h6>&#169; Idaho Wilderness Shuttle</h6>
-                </ion-col>
-                <ion-col>
-                    <img alt="logo" id="footer_logo" height="120" float-right src="../../../assets/images/white-logo.png">
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-footer>
+    <app-main-footer></app-main-footer>
+
 </ion-content>

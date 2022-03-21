@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { ShuttleReservationCardModule } from 'src/app/components/shuttle-reservation-card/shuttle-reservation-card.module';
+import { MainFooterModule } from 'src/app/components/main-footer/main-footer.module';
+
 
 @NgModule({
   imports: [
@@ -12,7 +14,8 @@ import { ShuttleReservationCardModule } from 'src/app/components/shuttle-reserva
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ShuttleReservationCardModule
+    ShuttleReservationCardModule,
+    MainFooterModule
   ],
   declarations: [
     HomePage
