@@ -14,7 +14,10 @@ export class AuthService {
 
   register(userRegister: UserRegister) : Observable<void> {
     return new Observable<void>(observer => {
-      setTimeout(() => {
+
+      //test 1
+
+      /*setTimeout(() => {
         if(userRegister.email == "error@email.com") {
           observer.error({message: "*Account does not exist or has been previously registered"});
         } else {
@@ -24,7 +27,21 @@ export class AuthService {
         }
 
         observer.complete();
-      }, 3000)
+      }, 3000)*/
+
+      //test 2
+      
+      /*this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then(() => {
+        observer.next();
+        observer.complete();
+      }).catch(error => {
+        observer.next(error);
+        observer.complete();
+      })*/
+
+      //temporary but working
+      this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password);
+      observer.next();
     })
   }
 

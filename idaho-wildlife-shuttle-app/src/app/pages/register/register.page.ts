@@ -9,6 +9,7 @@ import { login } from 'src/store/login/login.actions';
 import { register } from 'src/store/register/register.actions';
 import { RegisterState } from 'src/store/register/RegisterState';
 import { RegisterPageForm } from './form/register.page.form';
+import { Router } from '@angular/router';
 
 declare var google;
 
@@ -24,7 +25,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
   registerStateSubscription: Subscription;
 
-  constructor(private formBuilder: FormBuilder, private store: Store<AppState>, 
+  constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>, 
     private toastController: ToastController) { }
 
   ngOnInit() {
@@ -93,6 +94,10 @@ export class RegisterPage implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(hide());
     }
+  }
+
+  login(){
+    this.router.navigate(['login'])
   }
 
 };
