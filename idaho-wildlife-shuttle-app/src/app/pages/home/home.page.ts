@@ -20,5 +20,4 @@ export class HomePage implements OnInit {
   shuttle_reservation() {
     this.router.navigate(['shuttle-reservation']);
   }
-
 }
