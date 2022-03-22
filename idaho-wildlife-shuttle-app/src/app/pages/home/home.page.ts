@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AngularFireAuth) { }
 
   ngOnInit() {
   }
@@ -20,4 +21,12 @@ export class HomePage implements OnInit {
   shuttle_reservation() {
     this.router.navigate(['shuttle-reservation']);
   }
+
+  logout(){
+    this.auth
+    .signOut()
+    .then(() => this.router.navigate(['login']))
+    .catch((e) => console.log(e.message));
+  }
+
 }
