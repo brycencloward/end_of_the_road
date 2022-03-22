@@ -10,6 +10,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { PayPal } from '@ionic-native/paypal/ngx';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { PayPal } from '@ionic-native/paypal/ngx';
     StoreDevtoolsModule.instrument ({ maxAge: 25 }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [PayPal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [PayPal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

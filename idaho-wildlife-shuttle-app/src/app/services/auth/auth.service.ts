@@ -4,6 +4,7 @@ import { User } from 'src/app/model/user/User';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/compat/app';
 import { UserRegister } from 'src/app/model/user/UserRegister';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AuthService {
   register(userRegister: UserRegister) : Observable<void> {
     return new Observable<void>(observer => {
 
-      //test 1
+      //older version
 
       /*setTimeout(() => {
         if(userRegister.email == "error@email.com") {
@@ -29,18 +30,16 @@ export class AuthService {
         observer.complete();
       }, 3000)*/
 
-      //test 2
-      
-      /*this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then(() => {
-        observer.next();
-        observer.complete();
-      }).catch(error => {
-        observer.next(error);
-        observer.complete();
-      })*/
+      //working user registration + sends verification email (work in progress)
 
-      //temporary but working
-      this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password);
+      this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then((result) => {
+        result.user.sendEmailVerification();
+        //observer.complete();
+        //}).catch((error) => {
+          //observer.next(error);
+          //observer.complete();
+        //window.alert(error.message)
+      })
       observer.next();
     })
   }
