@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">idaho-wildlife-shuttle-app</string>
+    <string name="title_activity_main">idaho-wildlife-shuttle-app</string>
+    <string name="package_name">com.LCstate.shuttle</string>
+    <string name="custom_url_scheme">com.LCstate.shuttle</string>
+</resources>
