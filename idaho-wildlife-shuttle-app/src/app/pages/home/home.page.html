@@ -1,20 +1,20 @@
-<mat-toolbar><a (click)="logout()">Log out</a></mat-toolbar>
 <ion-content class="home-pg-body">
     <ion-header>
         <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
     </ion-header>
 
-    <ion-list color="secondary">
-        <ion-item color="primary">
-            <ion-avatar slot="start">
-                <img src="https://avatars.githubusercontent.com/u/37631670?v=4">
-            </ion-avatar>
-            <ion-label>
-                <h1>Jay Myers</h1>
-                <p>Trips Planned: <span class="trips">4</span></p>
-            </ion-label>
-        </ion-item>
-    </ion-list>
+
+    <ion-item class="account-bar" color="primary">
+        <ion-avatar slot="start">
+            <img src="https://avatars.githubusercontent.com/u/37631670?v=4">
+        </ion-avatar>
+        <ion-label>
+            <h1>Jay Myers</h1>
+            <p>Trips Planned: <span class="trips">4</span></p>
+        </ion-label>
+        <ion-button color="tertiary" (click)="logout()" class="">Log out</ion-button>
+    </ion-item>
+
 
     <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
         <ion-card-header header>

@@ -2,14 +2,6 @@ ion-content {
     --background: var(--ion-color-light);
 }
 
-ion-list {
-    padding: 0;
-    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 20);
-    .trips {
-        font-weight: bold;
-    }
-}
-
 ion-card-subtitle {
     text-transform: uppercase;
     font-weight: bold;
@@ -17,6 +9,17 @@ ion-card-subtitle {
 
 .fab-adjustment {
     margin-top: 100px;
+}
+
+.account-bar {
+    padding: 0;
+    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 20);
+    .trips {
+        font-weight: bold;
+    }
+    ion-button{
+        text-transform: capitalize;
+    }
 }
 
 //Header ------------------------------------------------------
