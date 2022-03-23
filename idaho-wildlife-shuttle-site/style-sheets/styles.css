@@ -1,73 +1,187 @@
 /*
 This is where the styles for both pages go
 */
+
 @import 'animate.css';
 @import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
+
 /*
 --------------
 GLOBALS
 --------------
 */
-*,::before,::after{box-sizing:inherit;background-clip:padding-box!important;position:relative}
-* {font-family: 'Assistant', sans-serif;}
-* > h1, h2, h3, h4, h5, h6 {font-family: 'Candal', sans-serif;}
-html, body {height: 100%;}
-body{display: flex; flex-direction: column; padding:0px; margin:0px}
-body > header[id*='site-header']{flex: none; flex-shrink: 0;}
-body > main[id*='site-content']{flex: 1 0 auto; position:relative; overflow:hidden; }
-body > footer[id*='site-footer']{margin-top: auto; flex: none; flex-shrink: 0;}
-ul,li{margin:0px;padding:0px;list-style: none;}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    background-clip: padding-box!important;
+    position: relative
+}
+
+* {
+    font-family: 'Assistant', sans-serif;
+}
+
+*>h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Candal', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px
+}
+
+body>header[id*='site-header'] {
+    flex: none;
+    flex-shrink: 0;
+}
+
+body>main[id*='site-content'] {
+    flex: 1 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* body>footer[id*='site-footer'] {
+    margin-top: auto;
+    flex: none;
+    flex-shrink: 0;
+} */
+
+ul,
+li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+
 /* NEEDS WORK */
+
+
 /* a:hover{
  animation: 'pulse';
  animation-duration: 2s;
 } */
+
+
 /*
 --------------
 Home Page
 --------------
 */
-.hero-container-index {height:100%; background-image: url(../assets/idaho-river.jpg); background-repeat: no-repeat;}
-.hero-container-gallery {height:100%; background-image: url(../assets/ski.jpg); background-repeat: no-repeat; background-size: cover;}
-.nav-container {
-  width: 400px;
-  float: right;
-  height:1000px;
-  padding-top: 60px;
-  background: url(../assets/Background.png), linear-gradient(to right, #416282,#496E8B, #4F7492);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
+
+.hero-container-index {
+    height: 100%;
+    background-image: url(../assets/idaho-river.jpg);
+    background-repeat: no-repeat;
 }
+
+.hero-container-gallery {
+    height: 100%;
+    background-image: url(../assets/ski.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-container {
+    width: 400px;
+    float: right;
+    height: 1000px;
+    padding-top: 60px;
+    background: url(../assets/Background.png), linear-gradient(to right, #416282, #496E8B, #4F7492);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
 nav,
 nav ul,
 nav ul a {
-  color:#ffffff;
-  width:100%;
-  text-align: center;
-  overflow:visible;
-  text-decoration:none;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    overflow: visible;
+    text-decoration: none;
 }
-nav ul a:hover {text-decoration:underline;}
-nav > ul > li > .hero-img {max-width: 17rem; height: auto; object-fit: contain;}
-nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
-.header-separator{margin-top: 7rem; text-align: left; margin-left: 10rem;}
-.header-nav-li{margin-top: 1.5rem; font-size: 1.3rem;}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+nav>ul>li>.hero-img {
+    max-width: 17rem;
+    height: auto;
+    object-fit: contain;
+}
+
+nav>ul>li>h1 {
+    margin-left: -100%;
+    margin-top: 20%;
+}
+
+.header-separator {
+    margin-top: 7rem;
+    text-align: left;
+    margin-left: 10rem;
+}
+
+.header-nav-li {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+
 /* animate */
-.top-bar {height: 15rem; background-color: #b1bcbf; color: #2b2e30;}
-.topbar-grid-container, .footer-grid-container {display: grid; grid-template-columns: auto auto auto; text-align: center;}
-.top-cell, .footer-cell {max-width: 30rem;}
-.top-cell {margin: 0px auto;}
-.index-parallax {
-  background-image: url("../assets/road-background.jpg");
-  box-shadow: inset 0px 0px 50px 12px #000000;
-  min-height: 40rem;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.top-bar {
+    height: 15rem;
+    background-color: #b1bcbf;
+    color: #2b2e30;
 }
+
+.topbar-grid-container,
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+}
+
+.top-cell,
+.footer-cell {
+    max-width: 30rem;
+}
+
+.top-cell {
+    margin: 0px auto;
+}
+
+.index-parallax {
+    background-image: url("../assets/road-background.jpg");
+    box-shadow: inset 0px 0px 50px 12px #000000;
+    min-height: 40rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 /* .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -77,22 +191,95 @@ nav > ul > li > h1 {margin-left:-100%; margin-top: 20%;}
   background: white;
 }
 .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);} */
+
+
 /* <!-- NEEDS CONTENT PROMOTING APP AND WORK --> */
+
+
 /* .top-cell {margin: 0px auto;} */
-.fa-solid, .fas {font-size: 3rem; margin: 1rem;}
-.download, .phone { font-size: 1rem;}
-#site-footer{background: linear-gradient(to right, #112A48, #4F7492); color: #FFFFFF;}
-#site-footer a {color: white; text-decoration: none;}
-#site-footer a:hover {text-decoration: underline;}
-.footer-logo {text-align: left; margin-top: 3rem;}
-.fright {text-align: right; margin-top: 3rem;}
+
+.fa-solid,
+.fas {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.download,
+.phone {
+    font-size: 1rem;
+}
+
+#site-footer {
+    background: linear-gradient(to right, #112A48, #4F7492);
+    color: #FFFFFF;
+}
+
+#site-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.fright {
+    text-align: right;
+    margin-top: 3rem;
+    margin-right: 6%;
+}
+
+
 /*
 --------------
 Sub Pages
 --------------
 */
+
+
 /*
 --------------
 Media Queries
 --------------
 */
+
+@media screen and (max-width: 600px) {
+    nav>ul>li>.hero-img {
+        max-width: 12rem;
+    }
+    nav>ul>li>h1 {
+        margin-left: auto;
+        margin-top: 20%;
+    }
+    .footer-logo {
+        width: 80%;
+    }
+    .fleft {
+        width: 80%;
+        padding-left: 2%;
+    }
+    .fleft p {
+        font-size: .65em;
+        padding-top: 60%;
+    }
+    .fright {
+        font-size: .85em;
+        margin-top: 6%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .nav-container {
+        width: 100%;
+    }
+    .header-separator {
+        margin-top: 3rem;
+        text-align: center;
+        margin-left: auto;
+    }
+}
