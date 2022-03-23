@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
+import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 
 @Component({
   selector: 'app-pay-pal-web',
   templateUrl: './pay-pal-web.page.html',
   styleUrls: ['./pay-pal-web.page.scss'],
 })
+
 export class PayPalWebPage {
   paymentAmount: string = PayPalWebPage.cost;
   itemName: string = PayPalWebPage.item;
+
   currency: string = 'USD';
   currencyIcon: string = 'USD';
+
   static cost: string;
   static item: string;
-  constructor() {
+
+  constructor(private loginAuth: AuthGuard) {
     let _this = this;
+
     setTimeout(() => {
       // Render the PayPal button into #paypal-button-container
       <any>window['paypal'].Buttons({
@@ -42,5 +48,9 @@ export class PayPalWebPage {
         }
       }).render('#paypal-button-container');
     }, 500)
+  }
+
+  ngOnInit() {
+    this.loginAuth.canLoad();
   }
 }

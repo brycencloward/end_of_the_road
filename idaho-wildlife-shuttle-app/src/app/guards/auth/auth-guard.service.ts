@@ -19,6 +19,7 @@ export class AuthGuard implements CanLoad {
         if(loginState.isLoggedIn) {
           return of(true);
         }
+        
         this.router.navigateByUrl('login');
         return of(false);
       })

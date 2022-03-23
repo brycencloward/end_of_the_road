@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { login, loginFail, loginSuccess, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.actions";
+import { login, loginFail, loginSuccess, logout, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.actions";
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthService } from "src/app/services/auth/auth.service";
 import { of } from "rxjs";

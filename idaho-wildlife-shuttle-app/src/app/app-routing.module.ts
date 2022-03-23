@@ -22,29 +22,33 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)/*,
-    canLoad: [AuthGuard] // this adds the auth guard fuctionality to any one page */
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canLoad: [AuthGuard] // this adds the auth guard fuctionality to any one page
   },
   {
     path: 'shuttle-reservation',
-    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)/*,
-    canLoad: [AuthGuard]*/
+    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'reservations',
-    loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule)/*,
-    canLoad: [AuthGuard]*/
+    loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'pay-pal-web',
-    loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule)
-  },  {
+    loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule),
+    canLoad: [AuthGuard]
+  },
+  {
     path: 'cancelpolicy',
-    loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
+    loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'paypal-mobile',
-    loadChildren: () => import('./paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
+    loadChildren: () => import('./paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule),
+    canLoad: [AuthGuard]
   }
 
 

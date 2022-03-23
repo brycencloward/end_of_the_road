@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+import { AuthGuard } from '../guards/auth/auth-guard.service';
 
 @Component({
   selector: 'app-paypal',
@@ -7,11 +8,18 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
   styleUrls: ['paypal-mobile.page.scss'],
 })
 export class PaypalPage {
-  constructor(private payPal: PayPal) { }
+  constructor(private payPal: PayPal, private loginAuth: AuthGuard) { }
+
+  ngOnInit() {
+    this.loginAuth.canLoad();
+  }
+
   paymentAmount: string = PaypalPage.cost;
   itemName: string = PaypalPage.item;
+
   currency: string = 'USD';
   currencyIcon: string = 'USD';
+
   static cost: string;
   static item: string;
 

@@ -7,7 +7,7 @@ import { ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
 import { PaypalPage } from 'src/app/paypal-mobile/paypal-mobile.page';
-
+import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 
 @Component({
   selector: 'app-shuttle-reservation',
@@ -15,10 +15,9 @@ import { PaypalPage } from 'src/app/paypal-mobile/paypal-mobile.page';
   styleUrls: ['./shuttle-reservation.page.scss'],
 })
 
-
 export class ShuttleReservationPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginAuth: AuthGuard) { }
 
   public form = [
       { package: 'A', description: 'Any eastside trail head shuttle, this includes Tin Cup, Redfish Lake, Iron Creek, ect. -- SNRA -- Pickup and Drop off', 
@@ -42,6 +41,7 @@ export class ShuttleReservationPage implements OnInit {
   item: string = "No package selected."
 
   ngOnInit() {
+    this.loginAuth.canLoad();
   }
 
   create_reservation() {

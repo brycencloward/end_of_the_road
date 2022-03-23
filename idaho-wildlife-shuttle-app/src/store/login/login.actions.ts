@@ -8,3 +8,5 @@ export const recoverPasswordFail = createAction("[Recover password] fail", props
 export const login = createAction("[Login]", props<{email: string, password: string}>());
 export const loginSuccess = createAction("[Login] success", props<{user: User}>());
 export const loginFail = createAction("[Login] fail", props<{error: any}>());
+
+export const logout = createAction("[Logout]");

@@ -1,6 +1,7 @@
+import { actionSheetController } from "@ionic/core";
 import { createReducer, on } from "@ngrx/store";
 import { AppInitialState } from "./AppInitialState";
-import { login, loginFail, loginSuccess, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.actions";
+import { login, loginFail, loginSuccess, logout, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.actions";
 import { LoginState } from "./LoginState";
 
 const initialState: LoginState = AppInitialState.login;
@@ -52,6 +53,13 @@ const reducer = createReducer(initialState,
             error: action.error,
             isLoggedIn: false,
             isLoggingIn: false   
+        }
+    }),
+    on(logout, currentState => {
+        return {
+            ...currentState,
+            isLoggedIn: false,
+            isLoggingIn: false
         }
     })
 )
