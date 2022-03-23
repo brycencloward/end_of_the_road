@@ -3,15 +3,15 @@
   <access origin="*" />
   
   <feature name="PayPalMobile">
-    <param name="ios-package" value="PayPalMobileCordovaPlugin" onload="true"/>
+    <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin"/>
   </feature>
 
   <feature name="Geolocation">
-    <param name="ios-package" value="CDVLocation"/>
+    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
   </feature>
 
   <feature name="CordovaStripe">
-    <param name="ios-package" value="CordovaStripe"/>
+    <param name="android-package" value="com.zyramedia.cordova.stripe.CordovaStripe"/>
   </feature>
 
   
