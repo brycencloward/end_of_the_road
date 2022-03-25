@@ -18,7 +18,7 @@ export class AuthService {
 
       this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then((result) => {
         result.user.sendEmailVerification();
-        /*test*/
+        /*second test*/
       })
       observer.next();
     })
