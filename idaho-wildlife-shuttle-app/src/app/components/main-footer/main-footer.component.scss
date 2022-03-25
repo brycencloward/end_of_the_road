@@ -11,9 +11,16 @@ ion-grid {
     margin: 0 auto;
 }
 
+ion-button {
+    // padding: 4%;
+    // margin: 4%;
+    text-transform: capitalize;
+}
+
 ion-col {
     padding: 4%;
     margin: 4%;
+    text-transform: capitalize;
 }
 
 h6 {

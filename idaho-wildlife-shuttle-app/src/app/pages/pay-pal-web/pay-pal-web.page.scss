@@ -17,6 +17,10 @@
     }
 }
 
+ion-content{
+    --background: var(--ion-color-light);
+}
+
 // ion-card-content {
 //     background: linear-gradient(to right, #112A48, #4F7492);
 //     height: 100%;

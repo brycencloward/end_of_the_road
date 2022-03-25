@@ -2,25 +2,18 @@
     <ion-header>
         <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
     </ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="shuttle-reservation"></ion-back-button>
         </ion-buttons>
+        <ion-title>PayPal Payment</ion-title>
     </ion-toolbar>
 
     <!--<ion-img src="../assets/images/header-banner.PNG"></ion-img>-->
     <!-- needs more polish -->
-    <ion-card>
-        <ion-card-title class="ion-text-center">{{itemName}}</ion-card-title>
-        <ion-row>
-            <ion-col class="ion-text-center">
-                Payment Total:
-            </ion-col>
-            <ion-col class="ion-text-center">
-                {{currencyIcon}} ${{paymentAmount}}
-            </ion-col>
-        </ion-row>
-    </ion-card>
+    <ion-row class="ion-justify-content-center">
+        <b>Payment Total: ${{paymentAmount}} {{currencyIcon}}</b>
+    </ion-row>
 
     <ion-card-content class="ion-text-center">
         <div id="paypal-button-container"></div>
@@ -33,5 +26,4 @@
         <div id="paypal-button-container"></div>
     </ion-header> -->
     <app-main-footer></app-main-footer>
-    
 </ion-content>

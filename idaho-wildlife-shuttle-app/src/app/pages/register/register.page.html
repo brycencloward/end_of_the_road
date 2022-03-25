@@ -6,7 +6,7 @@
     <ion-buttons slot="start">
         <ion-back-button title="" defaultHref="login"></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>Account Creation</ion-title>
 </ion-toolbar>
 
 <ion-content>
@@ -98,9 +98,11 @@
             </ion-card-content>
         </ion-card>
 
-        <hr>
-        <ion-button size="full" color="secondary" (click)="register()"><b>Register</b></ion-button>
-        <hr>
+        <ion-row>
+            <hr>
+                <ion-button size="default" expand="full" shape="round" color="primary" (click)="register()"><b>Register</b></ion-button>
+            <hr>
+        </ion-row>
     </form>
 
     <app-main-footer></app-main-footer>

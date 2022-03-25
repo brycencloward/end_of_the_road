@@ -2,11 +2,13 @@
   <ion-grid>
       <ion-row>
           <ion-col>
-              <a (click)="cancelation_policy()">Cancelation Policy</a>
-              <h6>&#169; Idaho Wilderness Shuttle</h6>
+            <ion-button color="danger" (click)="cancelation_policy()">Cancellation Policy</ion-button>
+            <div></div>
+            <app-logout-button></app-logout-button>
+            <h6 float-right>&#169; Idaho Wilderness Shuttle</h6>
           </ion-col>
           <ion-col>
-              <img alt="logo" id="footer_logo" height="120" float-right src="../../../assets/images/white-logo.png">
+            <img alt="logo" id="footer_logo" height="120" float-right src="../../../assets/images/white-logo.png">
           </ion-col>
       </ion-row>
   </ion-grid>

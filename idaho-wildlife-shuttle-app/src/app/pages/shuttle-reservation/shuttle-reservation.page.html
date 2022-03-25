@@ -2,61 +2,70 @@
     <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
 </ion-header>
 
-<ion-toolbar color="secondary">
+<ion-toolbar color="primary">
     <ion-buttons slot="start">
         <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Shuttle Reservation</ion-title>
+    <ion-title>Reservation Creation</ion-title>
 </ion-toolbar>
 
 <ion-content>
-    <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg" />
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label position="floating">Pickup Location</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating">Number of Persons in Your Party</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating">Is This a Car Move [Y/N]?</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating">Drop Off Location</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item lines="inset">
-                <ion-label position="floating">Make and Model of Vehicle</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item lines="inset">
-                <ion-label position="floating">Special Accomedations (Bikes, Trailer, ect.)</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-        </ion-card-content>
-    </ion-card>
-    <ion-list>
+    <div class="flex-center">
+        <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg" />
+        <ion-card>
+            <ion-card-content>
+                <ion-title color="primary"><b>Shuttle Information</b></ion-title> 
+                <ion-item>
+                    <ion-label position="floating">Pickup Location</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Number of Persons</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Is vehicle relocation required? [Y/N]</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Drop Off Location</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item lines="inset">
+                    <ion-label position="floating">Manufacturer & Model of Vehicle</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item lines="inset">
+                    <ion-label position="floating">Accommodations</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
 
-    </ion-list>
-    <ion-list>
-        <ion-radio-group (ionChange)="changeCost($event)">
-            <ion-item *ngFor="let entry of form">
-                <ion-label class="ion-text-wrap">{{entry.description}}</ion-label>
-                <ion-label slot="end">${{entry.price}}</ion-label>
-                <!--<ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>-->
-                <ion-radio slot="end" name={{entry.package}} value={{entry.price}}></ion-radio>
-            </ion-item>
-        </ion-radio-group>
-    </ion-list>
-    <!-- Selecting time first, date second -->
-    <ion-datetime presentation="time-date"></ion-datetime>
-    <ion-button size="full" color="secondary" (click)="create_reservation()"><b>Create a reservation</b></ion-button>
-    <ion-button size="full" color="secondary" (click)="pay_now()"><b>Pay Now</b></ion-button>
-    <ion-button size="full" color="secondary" (click)="pay_now_mobile()"><b>Pay Now (Mobile)</b></ion-button>
-    <!-- Footer -->
+        <ion-list>
+            <ion-title color="primary"><b>Date & Time Selection</b></ion-title>
+            <ion-datetime presentation="time-date"></ion-datetime>
+        </ion-list>
+
+        <ion-list>
+            <ion-title color="primary"><b>Available Packages</b></ion-title>
+            <ion-radio-group (ionChange)="changeCost($event)">
+                <ion-item *ngFor="let entry of form">
+                    <ion-label class="ion-text-wrap">{{entry.description}}</ion-label>
+                    <ion-label slot="end">${{entry.price}}</ion-label>
+                    <!--<ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>-->
+                    <ion-radio slot="end" name={{entry.package}} value={{entry.price}}></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-list>
+
+    </div>
+
+    <ion-row class="ion-justify-content-center">
+        <ion-button shape="round" size="small" color="primary" (click)="create_reservation()"><b>Save Your Reservation</b></ion-button>
+        <ion-button shape="round" size="small" color="primary" (click)="pay_now()"><b>Web Payment</b></ion-button>
+        <ion-button shape="round" size="small" color="primary" (click)="pay_now_mobile()"><b>Mobile Payment</b></ion-button>
+    </ion-row>
+    
     <app-main-footer></app-main-footer>
 </ion-content>

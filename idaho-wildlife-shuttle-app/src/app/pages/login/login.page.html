@@ -30,20 +30,21 @@
           </app-error-message>
 
           <ion-button color="dark" fill="clear" size="full"
-          [disabled]="!form.get('email').valid"
+          [disabled]="!form.get('email').valid" class="ion-text-capitalize"
           (click)="forgotEmailOrPassword()" id="recoverPasswordButton">
           Forgot your email or password?
           </ion-button>
 
-          <ion-button color="primary" size="full" [disabled]="!form.valid"
-          (click)="login()" id="loginButton">
-          <b>Login</b>
-          </ion-button>
-
-          <ion-button color="primary" fill="clear" size="full"
-          (click)="register()">
-          <b>Register</b>
-          </ion-button>
+          <ion-row class="ion-justify-content-center">
+            <ion-button shape="round" color="primary" size="full" [disabled]="!form.valid"
+            (click)="login()" id="loginButton">
+            <b>Login</b>
+            </ion-button>
+            <ion-button shape="round" color="primary" fill="full" size="full"
+            (click)="register()">
+            <b>Register</b>
+            </ion-button>
+          </ion-row>
         </ion-card-content>
       </ion-card>
     </form>
