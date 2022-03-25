@@ -3,8 +3,7 @@
         <img alt="logo" id="header_logo" src="../../../assets/images/white-logo.png">
     </ion-header>
 
-
-    <ion-item class="account-bar" color="primary">
+    <ion-item class="account-bar" color="primary" *ngFor="let entry of form">
         <ion-avatar slot="start">
             <img src="https://avatars.githubusercontent.com/u/37631670?v=4">
         </ion-avatar>
@@ -12,7 +11,7 @@
             <h1>Jay Myers</h1>
             <p>Trips Planned: <span class="trips">4</span></p>
         </ion-label>
-        <ion-button color="tertiary" (click)="logout()" class="">Log out</ion-button>
+        <app-logout-button></app-logout-button>
     </ion-item>
 
 
