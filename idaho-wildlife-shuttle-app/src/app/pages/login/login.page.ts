@@ -73,6 +73,7 @@ export class LoginPage implements OnInit, OnDestroy {
     if (loginState.isRecoveredPassword) {;
       const toaster = await this.toastController.create({
         position: "bottom",
+        duration: 3000,
         message: "Recovery email sent",
         color: "secondary"
       });

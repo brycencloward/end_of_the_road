@@ -2,16 +2,16 @@
 <widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <access origin="*" />
   
+  <feature name="CardIO">
+    <param name="ios-package" value="CardIOCordovaPlugin" onload="false"/>
+  </feature>
+
   <feature name="PayPalMobile">
     <param name="ios-package" value="PayPalMobileCordovaPlugin" onload="true"/>
   </feature>
 
   <feature name="Geolocation">
     <param name="ios-package" value="CDVLocation"/>
-  </feature>
-
-  <feature name="CordovaStripe">
-    <param name="ios-package" value="CordovaStripe"/>
   </feature>
 
   
