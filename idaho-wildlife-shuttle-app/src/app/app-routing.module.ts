@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'shuttle-reservation',
-    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
+    loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'reservations',
@@ -36,7 +37,8 @@ const routes: Routes = [
   },
   {
     path: 'pay-pal-web',
-    loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule)
+    loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'cancelpolicy',
