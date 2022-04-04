@@ -1,3 +1,9 @@
 ion-content{
     --background: var(--ion-color-light);
 }
+
+ion-row {
+    ion-button {
+        text-transform: capitalize;
+    }
+}
