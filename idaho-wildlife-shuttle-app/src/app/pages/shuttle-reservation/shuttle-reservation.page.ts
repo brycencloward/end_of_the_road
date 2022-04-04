@@ -6,7 +6,7 @@ import { AppState } from 'src/store/AppState';
 import { ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
-import { PaypalPage } from 'src/app/paypal-mobile/paypal-mobile.page';
+import { PaypalPage } from '../paypal-mobile/paypal-mobile.page';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 
 @Component({

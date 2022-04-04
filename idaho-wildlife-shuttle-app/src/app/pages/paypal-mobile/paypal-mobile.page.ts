@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
-import { AuthGuard } from '../guards/auth/auth-guard.service';
+import { AuthGuard } from '../../guards/auth/auth-guard.service';
 
 @Component({
   selector: 'app-paypal',
