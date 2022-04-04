@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'paypal-mobile',
-    loadChildren: () => import('./paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
+    loadChildren: () => import('./pages/paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
     //, canLoad: [AuthGuard]
   }
 
