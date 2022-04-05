@@ -10,3 +10,9 @@ ion-header {
   margin: 0 auto;
   height: 100%;
 }
+
+ion-row {
+  ion-button {
+    text-transform: capitalize;
+  }
+}

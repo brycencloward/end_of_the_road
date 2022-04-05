@@ -20,17 +20,17 @@ export class ShuttleReservationPage implements OnInit {
   constructor(private router: Router, private loginAuth: AuthGuard) { }
 
   public form = [
-      { package: 'A', description: 'Any eastside trail head shuttle, this includes Tin Cup, Redfish Lake, Iron Creek, ect. -- SNRA -- Pickup and Drop off', 
+      { package: 'A', description: 'Any eastside trailhead shuttle; to include Tin Cup, Redfish Lake, Iron Creek, etc. -- Sawtooth National Recreation Area -- Pickup and drop off', 
       price: '195.00' },
       { package: 'B', description: 'Sawtooth Lodge to/from any eastside trailhead -- Drop-off and pickup shuttle price for 3 people', 
       price: '245.00' },
       { package: 'C', description: 'Boundry Creek to/from Stanley -- Drop-off and pickup shuttle price for 3 people', 
       price: '345.00' },
-      { package: 'D', description: 'Sun Valley (SUN) airport to/from Stanley -- Drop off and pickup shuttle price for 3 people', 
+      { package: 'D', description: 'Sun Valley airport to/from Stanley -- Drop off and pickup shuttle price for 3 people', 
       price: '255.00'},
-      { package: 'E', description: 'Boise (BOI) airport to/from Stanley area -- Drop off and pickup shuttle price for up to 3 people', 
+      { package: 'E', description: 'Boise airport to/from Stanley area -- Drop off and pickup shuttle price for up to 3 people', 
       price: '365.00'},
-      { package: 'F', description: 'Custom shuttle deposit to be book time and date over the phone', 
+      { package: 'F', description: 'Custom shuttle deposit; to be arranged over the phone', 
       price: '80.00'}
     ];  
 
@@ -67,7 +67,6 @@ export class ShuttleReservationPage implements OnInit {
 
     this.router.navigate(['paypal-mobile']);
   }
-  
 }
 
 export class dateAndTime {
