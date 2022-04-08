@@ -40,6 +40,16 @@ export class ShuttleReservationPage implements OnInit {
 
   item: string = "No package selected."
 
+  //date picker
+  dateValue = format(new Date(), 'MMM dd, yyyy, HH:mm');
+  formattedString = this.dateValue;
+  showpicker = false;
+
+  dateChanged(value){
+    this.dateValue =value;
+    this.formattedString = format(parseISO(value),'MMM dd, yyyy, HH:mm');
+  }
+
   ngOnInit() {
     this.loginAuth.canLoad();
   }

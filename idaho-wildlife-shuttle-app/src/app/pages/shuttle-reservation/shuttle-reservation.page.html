@@ -41,7 +41,15 @@
     </ion-card>
 
     <ion-list>
-        <ion-datetime presentation="time-date"></ion-datetime>
+            <ion-label>Date and Time: </ion-label>
+            <ion-text slot="end">
+                {{formattedString}}
+            </ion-text>
+        <ion-datetime 
+        presentation="date-time"
+        #datetime
+        (ionChange)="dateChanged(datetime.value)">
+        </ion-datetime>
     </ion-list>
 
     <ion-list>
