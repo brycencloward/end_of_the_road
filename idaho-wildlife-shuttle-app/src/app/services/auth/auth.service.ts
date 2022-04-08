@@ -5,22 +5,26 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/compat/app';
 import { UserRegister } from 'src/app/model/user/UserRegister';
 import { Router } from '@angular/router'
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private auth: AngularFireAuth) { }
+  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore) { }
 
   register(userRegister: UserRegister) : Observable<void> {
     return new Observable<void>(observer => {
-
       this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then((result) => {
         result.user.sendEmailVerification();
-        /*second test*/
       })
       observer.next();
+      this.firestore.collection('users').doc(userRegister.email).set({
+        name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
+        address: userRegister.address
+      });
     })
   }
 

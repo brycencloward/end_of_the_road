@@ -12,6 +12,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { PayPal } from '@ionic-native/paypal/ngx';
 import { AuthService } from './services/auth/auth.service';
 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { AuthService } from './services/auth/auth.service';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     ...AppStoreModule,
     StoreDevtoolsModule.instrument ({ maxAge: 25 }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
@@ -30,4 +33,5 @@ import { AuthService } from './services/auth/auth.service';
   providers: [PayPal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
