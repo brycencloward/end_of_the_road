@@ -11,6 +11,11 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { PayPal } from '@ionic-native/paypal/ngx';
 import { AuthService } from './services/auth/auth.service';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
+import { Capacitor } from '@capacitor/core';
+import { provideFirestore, getFirestore, enableIndexedDbPersistence } from '@angular/fire/firestore'
+import { provideAuth, getAuth, initializeAuth, indexedDBLocalPersistence } from '@angular/fire/auth'
 
 @NgModule({
   declarations: [
@@ -24,6 +29,24 @@ import { AuthService } from './services/auth/auth.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ...AppStoreModule,
+    provideFirebaseApp(() => {
+      const app = initializeApp(environment.firebaseConfig);
+
+      if(Capacitor.isNativePlatform) {
+        initializeAuth(app, {
+          persistence: indexedDBLocalPersistence
+        });
+      }
+
+      return app;
+    }),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => {
+      const firestore = getFirestore();
+      enableIndexedDbPersistence(firestore);
+
+      return firestore;
+    }),
     StoreDevtoolsModule.instrument ({ maxAge: 25 }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
