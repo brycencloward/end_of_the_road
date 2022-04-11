@@ -13,7 +13,7 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
-    implementation "com.stripe:stripe-android:4.1.2"
+
 }
 apply from: "../../node_modules/com.paypal.cordova.mobilesdk/src/android/build.gradle"
 

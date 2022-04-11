@@ -17,6 +17,8 @@ import { Capacitor } from '@capacitor/core';
 import { provideFirestore, getFirestore, enableIndexedDbPersistence } from '@angular/fire/firestore'
 import { provideAuth, getAuth, initializeAuth, indexedDBLocalPersistence } from '@angular/fire/auth'
 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { provideAuth, getAuth, initializeAuth, indexedDBLocalPersistence } from 
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     ...AppStoreModule,
     provideFirebaseApp(() => {
       const app = initializeApp(environment.firebaseConfig);
@@ -53,4 +56,5 @@ import { provideAuth, getAuth, initializeAuth, indexedDBLocalPersistence } from 
   providers: [PayPal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
