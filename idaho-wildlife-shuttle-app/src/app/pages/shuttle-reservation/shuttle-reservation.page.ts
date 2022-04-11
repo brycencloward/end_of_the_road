@@ -6,7 +6,6 @@ import { AppState } from 'src/store/AppState';
 import { ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
-import { PaypalPage } from '../paypal-mobile/paypal-mobile.page';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 
 @Component({
@@ -61,21 +60,15 @@ export class ShuttleReservationPage implements OnInit {
   changeCost(event) {
     this.cost = event.detail.value;
     this.item = event.detail.name;
-    console.log(this.item);
-    //console.log("cost changed to", this.cost);
   }
 
   pay_now(){
     PayPalWebPage.cost = this.cost;
     PayPalWebPage.item = this.item;
 
-    this.router.navigate(['pay-pal-web']);
-  }
-  pay_now_mobile(){
-    PaypalPage.cost = this.cost;
-    PaypalPage.item = this.item;
-
-    this.router.navigate(['paypal-mobile']);
+    if(this.item != "No package selected."){
+      this.router.navigate(['pay-pal-web']);
+    }
   }
 }
 
