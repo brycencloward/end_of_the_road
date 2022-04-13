@@ -45,11 +45,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
   },
   {
-    path: 'paypal-mobile',
-    loadChildren: () => import('./pages/paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
-    , canLoad: [AuthGuard]
-  },
-  {
     path: 'movecar',
     loadChildren: () => import('./pages/movecar/movecar.module').then( m => m.MovecarPageModule)
   }
