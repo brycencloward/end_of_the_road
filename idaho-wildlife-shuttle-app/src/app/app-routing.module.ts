@@ -28,12 +28,12 @@ const routes: Routes = [
   {
     path: 'shuttle-reservation',
     loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
-    // , canLoad: [AuthGuard]
+    , canLoad: [AuthGuard]
   },
   {
     path: 'reservations',
     loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule)
-    // , canLoad: [AuthGuard]
+    , canLoad: [AuthGuard]
   },
   {
     path: 'pay-pal-web',
