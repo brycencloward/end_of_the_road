@@ -90,6 +90,8 @@ export class LoginPage implements OnInit, OnDestroy {
     this.store.dispatch(login({email: this.form.get('email').value, password: this.form.get('password').value}));
 
     var username: string = this.form.get('email').value;
+    HomePage.useremail = username;
+
     var re = /@.*/g;
 
     username = username.replace(re, "");
