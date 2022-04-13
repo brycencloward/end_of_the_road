@@ -10,7 +10,7 @@
 </ion-toolbar>
 
 <ion-content>
-    <img src="https://snakeriverwaterkeeper.org/wp-content/uploads/2014/04/snake-river-tributaries.jpg" />
+    <img src="/assets/images/app_map.png" />
     <ion-card>
         <ion-card-content>
             <ion-item>
@@ -65,7 +65,8 @@
 
     <ion-row class="ion-justify-content-center">
         <ion-button shape="round" size="small" color="primary" (click)="create_reservation()"><b>Save Your Reservation</b></ion-button>
-        <ion-button shape="round" size="small" color="primary" (click)="pay_now()"><b>Pay Now</b></ion-button>
+        <ion-button shape="round" size="small" color="primary" (click)="pay_now()"><b>Web Payment</b></ion-button>
+        <ion-button shape="round" size="small" color="primary" (click)="pay_now_mobile()"><b>Mobile Payment</b></ion-button>
     </ion-row>
     
     <app-main-footer></app-main-footer>
