@@ -87,15 +87,15 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   login() {
-    this.store.dispatch(login({email: this.form.get('email').value, password: this.form.get('password').value}));
+    this.store.dispatch(login({email: this.form.get('email').value, password: this.form.get('password').value})); // dispatch the user-entered values to the NgRx side effect (function)
 
-    var username: string = this.form.get('email').value;
-    HomePage.useremail = username;
+    var useremail: string = this.form.get('email').value; // set the temporary email to the email entered by the user
+    HomePage.useremail = useremail; // pass the temporary email to the home page
 
-    var re = /@.*/g;
+    var re = /@.*/g; // re == regular expression; this is going to look for all instances of the '@' symbol, followed by 0 or more of any characters
 
-    username = username.replace(re, "");
-    HomePage.username = username;
+    var username = useremail.replace(re, ""); // default case; replaces anything matching the above regular expression with NULL
+    HomePage.username = username; // default case; sets the username displayed on the home page to the suffix of the same user's email address
   }
 
   register() {

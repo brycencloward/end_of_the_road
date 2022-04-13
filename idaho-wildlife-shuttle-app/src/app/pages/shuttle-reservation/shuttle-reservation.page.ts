@@ -15,8 +15,8 @@ import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
   styleUrls: ['./shuttle-reservation.page.scss'],
 })
 
+// TODO: export date, time, location, accomodations, and/or package details to Firestore collections for the current user
 export class ShuttleReservationPage implements OnInit {
-
   constructor(private router: Router, private loginAuth: AuthGuard) { }
 
   public form = [
