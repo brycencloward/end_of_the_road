@@ -43,16 +43,15 @@ const routes: Routes = [
   {
     path: 'cancelpolicy',
     loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
+
   },
   {
     path: 'movecar',
     loadChildren: () => import('./pages/movecar/movecar.module').then( m => m.MovecarPageModule)
-  }
+  },
 
 
 
-
-];
 
 @NgModule({
   imports: [
