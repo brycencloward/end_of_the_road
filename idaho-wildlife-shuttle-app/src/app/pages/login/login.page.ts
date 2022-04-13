@@ -8,6 +8,7 @@ import { AppState } from 'src/store/AppState';
 import { hide, show } from 'src/store/loading/loading.actions';
 import { login, recoverPassword } from 'src/store/login/login.actions';
 import { LoginState } from 'src/store/login/LoginState';
+import { HomePage } from '../home/home.page';
 import { LoginPageForm } from './login.page.form';
 
 @Component({
@@ -87,6 +88,12 @@ export class LoginPage implements OnInit, OnDestroy {
 
   login() {
     this.store.dispatch(login({email: this.form.get('email').value, password: this.form.get('password').value}));
+
+    var username: string = this.form.get('email').value;
+    var re = /@.*/g;
+
+    username = username.replace(re, "");
+    HomePage.username = username;
   }
 
   register() {

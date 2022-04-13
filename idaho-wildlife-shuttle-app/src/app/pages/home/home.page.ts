@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/store/AppState';
 import { logout } from 'src/store/login/login.actions';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
+import { UserRegister } from 'src/app/model/user/UserRegister';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,9 @@ export class HomePage implements OnInit {
 
   constructor(private router: Router, private auth: AngularFireAuth,
     private store: Store<AppState>, private loginAuth: AuthGuard) { }
+
+  static username: string;
+  userName: string = HomePage.username;
 
   ngOnInit() {
     this.loginAuth.canLoad();
@@ -32,13 +36,4 @@ export class HomePage implements OnInit {
   shuttle_reservation() {
     this.router.navigate(['shuttle-reservation']);
   }
-
-  logout() {
-    this.store.dispatch(logout());
-
-    this.router.navigate(['login']);
-
-    // .catch((e) => console.log(e.message));
-  }
-
 }
