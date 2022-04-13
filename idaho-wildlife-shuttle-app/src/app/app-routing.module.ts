@@ -28,12 +28,12 @@ const routes: Routes = [
   {
     path: 'shuttle-reservation',
     loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
-    , canLoad: [AuthGuard]
+    // , canLoad: [AuthGuard]
   },
   {
     path: 'reservations',
     loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule)
-    , canLoad: [AuthGuard]
+    // , canLoad: [AuthGuard]
   },
   {
     path: 'pay-pal-web',
@@ -48,7 +48,12 @@ const routes: Routes = [
     path: 'paypal-mobile',
     loadChildren: () => import('./pages/paypal-mobile/paypal-mobile.module').then( m => m.PaypalMobilePageModule)
     , canLoad: [AuthGuard]
+  },
+  {
+    path: 'movecar',
+    loadChildren: () => import('./pages/movecar/movecar.module').then( m => m.MovecarPageModule)
   }
+
 
 
 
