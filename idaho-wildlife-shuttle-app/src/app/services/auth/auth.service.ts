@@ -25,6 +25,9 @@ export class AuthService {
         name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
         address: userRegister.address
       });
+      this.firestore.collection('users').doc(userRegister.email).collection('reservations').add({
+        test: userRegister.name
+      });
     })
   }
 
