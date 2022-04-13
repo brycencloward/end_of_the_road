@@ -48,10 +48,8 @@ const routes: Routes = [
   {
     path: 'movecar',
     loadChildren: () => import('./pages/movecar/movecar.module').then( m => m.MovecarPageModule)
-  },
-
-
-
+  }
+];
 
 @NgModule({
   imports: [
