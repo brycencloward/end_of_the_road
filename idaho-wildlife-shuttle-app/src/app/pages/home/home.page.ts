@@ -9,6 +9,7 @@ import { logout } from 'src/store/login/login.actions';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 import { UserRegister } from 'src/app/model/user/UserRegister';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { doc, getDoc } from 'firebase/firestore'
 
 @Component({
   selector: 'app-home',
@@ -26,20 +27,26 @@ export class HomePage implements OnInit {
   static useremail: string;
 
   userName: string = HomePage.username;
-  userEmail: string = HomePage.username;
-
-  userRef = this.firestore.collection('users').doc(this.userEmail);
-
-  /*userRef.get().then((doc) => {
-    if(doc.exists) {
-      console.log("Document data:", doc.data());
-    } else {
-      console.log("No such document!");
-    }
-  })*/
+  userEmail: string = HomePage.useremail;
 
   ngOnInit() {
     this.loginAuth.canLoad();
+
+    const userRef = this.firestore.collection('users').doc(this.userEmail);
+    console.log(this.userEmail);
+
+    userRef.get().toPromise().then((doc) => {
+      if(doc.exists) {
+        console.log("Document data: ", doc.data());
+        
+        this.userName = doc.get('name');
+        console.log(this.userName);
+      } else {
+        console.log("No such document!");
+      }
+    }).catch((error) => {
+      console.log("Error retrieveing document: ", error);
+    });
   }
 
   ngOnDestroy() {
@@ -60,5 +67,4 @@ export class HomePage implements OnInit {
 
     // .catch((e) => console.log(e.message));
   }
-
 }
