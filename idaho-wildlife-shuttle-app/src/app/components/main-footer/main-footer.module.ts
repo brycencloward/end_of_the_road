@@ -8,8 +8,7 @@ import { DeleteUserModule } from '../delete-user/delete-user.module';
 @NgModule({
   imports: [
     CommonModule,
-    LogoutButtonModule,
-    DeleteUserModule
+    LogoutButtonModule
   ],
   exports: [
     MainFooterComponent

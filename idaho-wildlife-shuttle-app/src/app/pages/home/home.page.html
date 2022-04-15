@@ -1,5 +1,4 @@
 <ion-content class="home-pg-body">
-
     <ion-item class="account-bar" color="primary">
         <!-- TODO: add live-database profile picture population -->
         <!-- <ion-avatar slot="start">
@@ -7,8 +6,8 @@
         </ion-avatar> -->
 
         <ion-label>
-            <h1>Welcome, {{userName}}!</h1>
-            <p>Trips Planned: <span class="trips">4</span></p>
+            <ion-title>Welcome, {{userName}}!</ion-title>
+            <ion-button color="tertiary" shape="round" size="small" (click)="account()">Edit Your Profile</ion-button>
         </ion-label>
     </ion-item>
 

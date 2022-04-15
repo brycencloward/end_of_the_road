@@ -1,5 +1,13 @@
 ion-content {
     --background: var(--ion-color-light);
+
+    ion-item {
+        ion-label {
+            ion-button {
+                text-transform: capitalize;
+            }
+        }
+    }
 }
 
 ion-card-subtitle {

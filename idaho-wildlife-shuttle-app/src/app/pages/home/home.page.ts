@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { LoginState } from 'src/store/login/LoginState';
-import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/store/AppState';
-import { logout } from 'src/store/login/login.actions';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
-import { UserRegister } from 'src/app/model/user/UserRegister';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { doc, getDoc } from 'firebase/firestore'
 
 @Component({
   selector: 'app-home',
@@ -60,11 +55,7 @@ export class HomePage implements OnInit {
     this.router.navigate(['shuttle-reservation']);
   }
 
-  logout() {
-    this.store.dispatch(logout());
-
-    this.router.navigate(['login']);
-
-    // .catch((e) => console.log(e.message));
+  account() {
+    this.router.navigate(['account']);
   }
 }

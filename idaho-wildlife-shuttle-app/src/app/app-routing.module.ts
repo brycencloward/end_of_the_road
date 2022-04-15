@@ -46,9 +46,11 @@ const routes: Routes = [
 
   },
   {
-    path: 'movecar',
-    loadChildren: () => import('./pages/movecar/movecar.module').then( m => m.MovecarPageModule)
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
+    , canLoad: [AuthGuard]
   }
+
 ];
 
 @NgModule({
