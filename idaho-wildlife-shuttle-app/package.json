@@ -40,6 +40,7 @@
     "card.io.cordova.mobilesdk": "^2.1.0",
     "com.paypal.cordova.mobilesdk": "^3.5.0",
     "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-res": "^0.15.4",
     "date-fns": "^2.28.0",
     "firebase": "^9.6.6",
     "rxfire": "^6.0.0",
