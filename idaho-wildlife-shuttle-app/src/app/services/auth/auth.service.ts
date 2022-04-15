@@ -29,8 +29,7 @@ export class AuthService {
         address: userRegister.address
       });
 
-      this.firestore.collection('users').doc(userRegister.email).collection('reservations').add({
-        test: userRegister.name
+      this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('reservation1').set({
       });
     });
   }
