@@ -1,4 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
+import { delay } from "rxjs/operators";
 import { hide, show } from "./loading.actions";
 import { LoadingState } from "./LoadingState";
 
@@ -8,6 +9,7 @@ const initialState: LoadingState = {
 
 const reducer = createReducer(initialState,
     on(show, () => {
+        delay(4000);
         return {show: true};
     }),
     on(hide, () => {
