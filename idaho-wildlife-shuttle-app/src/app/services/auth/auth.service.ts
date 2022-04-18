@@ -4,8 +4,6 @@ import { User } from 'src/app/model/user/User';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/compat/app';
 import { UserRegister } from 'src/app/model/user/UserRegister';
-import { Router } from '@angular/router'
-import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PayPalWebPageModule } from '../pay-pal-web/pay-pal-web.module';
 import { PayPalWebPage } from '../pay-pal-web/pay-pal-web.page';
-import { AppState } from 'src/store/AppState';
 import { ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 @Component({
   selector: 'app-shuttle-reservation',
@@ -16,7 +16,8 @@ import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 
 // TODO: export date, time, location, accomodations, and/or package details to Firestore collections for the current user
 export class ShuttleReservationPage implements OnInit {
-  constructor(private router: Router, private loginAuth: AuthGuard) { }
+  constructor(private router: Router, private loginAuth: AuthGuard,
+              private firestore: AngularFirestore) { }
 
   public form = [
       { package: 'A', description: 'Any eastside trailhead shuttle; to include Tin Cup, Redfish Lake, Iron Creek, etc. -- Sawtooth National Recreation Area -- Pickup and drop off', 
@@ -36,8 +37,7 @@ export class ShuttleReservationPage implements OnInit {
   isClicked: false;
   
   cost: string = "0.00";
-
-  item: string = "No package selected."
+  name: string = "";
 
   //date picker
   dateValue = format(new Date(), 'MMM dd, yyyy, HH:mm');
@@ -54,22 +54,64 @@ export class ShuttleReservationPage implements OnInit {
   }
 
   create_reservation() {
-    if(this.item != "No package selected."){
+    /*if(this.item != "No package selected."){
       this.router.navigate(['pay-pal-web']);
-    }
-    }
+    }*/
+    const auth = getAuth();
+    
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const userEmail = user.email;
+        console.log(userEmail);
 
-  changeCost(event) {
-    this.cost = event.detail.value;
-    this.item = event.detail.name;
-    console.log(this.item);
-    //console.log("cost changed to", this.cost);
+        const userRef = this.firestore.collection('users').doc(userEmail);
+        console.log(userRef);
+
+        // TODO: implement current saved reservation count checker and
+        // use it to increment the names of the respective documents as
+        // they're generated, accordingly.
+        userRef.get().toPromise().then((doc) => {
+          if(doc.exists) {
+            console.log("Document data: ", doc.data());
+          } else {
+            console.log("No such document!");
+          }
+        }).catch((error) => {
+          console.log("Error retrieveing document: ", error);
+        });
+
+        this.firestore.collection('users').doc(userEmail).collection('reservations').doc('reservation1').set({
+          description: this.name, price: this.cost
+        });
+      } else {
+        console.log("User is signed out.");
+      }
+    });    
+  }
+
+  changeCurrentPackage(event) {
+    var reservation: string = event.detail.value;
+
+    var re = /_.*/g;
+    var details;
+
+    details = reservation.replace(re, "");
+    this.name = details;
+    console.log(this.name);
+
+    re = /.*_/g;
+
+    details = reservation.replace(re, "");
+    this.cost = details;
+    console.log(this.cost);
+    // console.log("cost changed to", this.cost);
   }
 
   pay_now(){
-    if(this.item != "No package selected."){
+    if(this.name != "No package selected."){
       PayPalWebPage.cost = this.cost;
-      PayPalWebPage.item = this.item;
+      PayPalWebPage.item = this.name;
 
       this.router.navigate(['pay-pal-web']);
     }

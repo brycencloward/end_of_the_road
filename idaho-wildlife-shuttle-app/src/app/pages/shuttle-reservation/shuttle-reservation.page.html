@@ -49,12 +49,12 @@
     </ion-list>
 
     <ion-list>
-        <ion-radio-group (ionChange)="changeCost($event)">
+        <ion-radio-group (ionChange)="changeCurrentPackage($event)">
             <ion-item *ngFor="let entry of form">
                 <ion-label class="ion-text-wrap">{{entry.description}}</ion-label>
                 <ion-label slot="end">${{entry.price}}</ion-label>
                 <!--<ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>-->
-                <ion-radio slot="end" name={{entry.package}} value={{entry.price}}></ion-radio>
+                <ion-radio slot="end" name={{entry.package}} value={{entry.description}}_{{entry.price}}></ion-radio>
             </ion-item>
         </ion-radio-group>
     </ion-list>
