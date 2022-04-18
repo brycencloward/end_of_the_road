@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pay-pal-web',
@@ -17,7 +18,7 @@ export class PayPalWebPage {
   static cost: string;
   static item: string;
 
-  constructor(private loginAuth: AuthGuard) {
+  constructor(private router: Router, private loginAuth: AuthGuard) {
     let _this = this;
 
     setTimeout(() => {
@@ -48,6 +49,10 @@ export class PayPalWebPage {
         }
       }).render('#paypal-button-container');
     }, 500)
+  }
+
+  toHome(){
+    this.router.navigate(['reservations']);
   }
 
   ngOnInit() {
