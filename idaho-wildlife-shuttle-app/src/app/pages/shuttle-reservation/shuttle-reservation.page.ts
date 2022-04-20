@@ -66,32 +66,42 @@ export class ShuttleReservationPage implements OnInit {
         console.log(userEmail);
 
         var reservation_name: string;
-        var reservation_iteration: number;
+        var reservation_date: number;
+
+        // TODO: Change data types from strings to default date datatype for comparisons.
+        var currentDate = new Date();
+        var leastDate;
 
         const userRef = this.firestore.collection('users').doc(userEmail);
         console.log(userRef);
 
         const resRef = this.firestore.collection('users').doc(userEmail).collection('reservations');
+        // const dateQuery = resRef.where('date', '<=', currentDate);
+
         resRef.get().toPromise().then((querySnapshot) => {
           const tempDoc = querySnapshot.docs.map((doc) => {
             console.log(doc.id);
+            console.log(doc.get('date'));
 
-            reservation_name = doc.id;
-            reservation_iteration = Number(reservation_name);
-
-            if(reservation_iteration < 20) {
-              reservation_iteration++;
-            } else {
-              reservation_iteration = 1;
+            if(leastDate == "") {
+              leastDate = doc.get('date');
             }
 
-            reservation_name = "reservation" + String(reservation_iteration);
-            console.log(reservation_name);
+            if(leastDate > currentDate) {
+              leastDate = currentDate;
+              console.log("The new least date is: ", leastDate);
+            }
 
-            return { id: doc.id, ...doc.data() }
+            return { leastDate }
           });
 
+          var temp;
+
           console.log(tempDoc);
+
+          this.firestore.collection('users').doc(userEmail).collection('reservations').doc('reservation2').set({
+            description: this.name, price: this.cost, date: new Date()
+          });
         });
 
         // TODO: implement current saved reservation count checker and
@@ -105,10 +115,6 @@ export class ShuttleReservationPage implements OnInit {
           }
         }).catch((error) => {
           console.log("Error retrieveing document: ", error);
-        });
-
-        this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
-          description: this.name, price: this.cost
         });
       } else {
         console.log("User is signed out.");
