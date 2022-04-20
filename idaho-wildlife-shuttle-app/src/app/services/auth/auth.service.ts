@@ -28,6 +28,7 @@ export class AuthService {
       });
 
       this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('reservation1').set({
+        description: "You haven't created any reservations yet! Click the \"+\" and start planning your adventures today!", price: "N/A"
       });
     });
   }

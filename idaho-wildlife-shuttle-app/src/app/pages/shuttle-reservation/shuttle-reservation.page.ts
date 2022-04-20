@@ -65,8 +65,34 @@ export class ShuttleReservationPage implements OnInit {
         const userEmail = user.email;
         console.log(userEmail);
 
+        var reservation_name: string;
+        var reservation_iteration: number;
+
         const userRef = this.firestore.collection('users').doc(userEmail);
         console.log(userRef);
+
+        const resRef = this.firestore.collection('users').doc(userEmail).collection('reservations');
+        resRef.get().toPromise().then((querySnapshot) => {
+          const tempDoc = querySnapshot.docs.map((doc) => {
+            console.log(doc.id);
+
+            reservation_name = doc.id;
+            reservation_iteration = Number(reservation_name);
+
+            if(reservation_iteration < 20) {
+              reservation_iteration++;
+            } else {
+              reservation_iteration = 1;
+            }
+
+            reservation_name = "reservation" + String(reservation_iteration);
+            console.log(reservation_name);
+
+            return { id: doc.id, ...doc.data() }
+          });
+
+          console.log(tempDoc);
+        });
 
         // TODO: implement current saved reservation count checker and
         // use it to increment the names of the respective documents as
@@ -81,7 +107,7 @@ export class ShuttleReservationPage implements OnInit {
           console.log("Error retrieveing document: ", error);
         });
 
-        this.firestore.collection('users').doc(userEmail).collection('reservations').doc('reservation1').set({
+        this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
           description: this.name, price: this.cost
         });
       } else {
