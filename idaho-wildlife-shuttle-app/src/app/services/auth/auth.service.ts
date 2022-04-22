@@ -18,9 +18,11 @@ export class AuthService {
     return new Observable<void>(observer => {
       this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then((result) => {
         result.user.sendEmailVerification();
+        observer.next();
+        observer.complete();
       });
 
-      observer.next();
+      
 
       this.firestore.collection('users').doc(userRegister.email).set({
         name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
