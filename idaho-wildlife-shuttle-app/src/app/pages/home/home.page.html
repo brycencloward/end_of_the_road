@@ -19,11 +19,9 @@
         <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
     </app-shuttle-reservation-card>
 
-    <ion-fab vertical="center" horizontal="end" slot="fixed" class="fab-adjustment">
-        <ion-fab-button color="secondary" (click)="shuttle_reservation()">
-            <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+    <ion-row class="ion-justify-content-center">
+        <ion-button shape="round" size="small" color="primary" (click)="shuttle_reservation()"><b>Create Reservation</b></ion-button>
+    </ion-row>
 
     <app-main-footer></app-main-footer>
 </ion-content>
