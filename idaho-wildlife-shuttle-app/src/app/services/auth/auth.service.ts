@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/compat/app';
 import { UserRegister } from 'src/app/model/user/UserRegister';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +23,24 @@ export class AuthService {
         observer.complete();
       });
 
-      
+      /*const auth = getAuth();
+
+      updateProfile(auth.currentUser, {
+        displayName: userRegister.name, photoURL: ""
+      }).then(() => {
+        // Profile updated!
+        console.log("Display name successfully updated.");
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        console.log(error);
+        // ...
+      });*/
 
       this.firestore.collection('users').doc(userRegister.email).set({
         name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
-        address: userRegister.address
+        street: userRegister.address.street, city: userRegister.address.city,
+        state: userRegister.address.state, zipCode: userRegister.address.zipCode
       });
 
       this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('reservation1').set({

@@ -1,11 +1,28 @@
 ion-content {
     --background: var(--ion-color-light);
 
+    ion-button {
+        --color: #F8F8FF;
+        text-transform: capitalize;
+    }
+
     ion-item {
         ion-label {
             ion-button {
                 text-transform: capitalize;
             }
+        }
+    }
+
+    app-shuttle-reservation-card {
+        ion-button {
+            text-transform: capitalize;
+        }
+    }
+
+    ion-row {
+        ion-button {
+            text-transform: capitalize;
         }
     }
 }
@@ -15,7 +32,7 @@ ion-card-subtitle {
     font-weight: bold;
 }
 
-.fab-adjustment {
+/*.fab-adjustment {
     margin-top: 100px;
 }
 
@@ -39,7 +56,7 @@ ion-header {
     display: block;
     margin: 0 auto;
     height: 100%;
-}
+}*/
 
 /* --------------------begin media queries----------------------*/
 

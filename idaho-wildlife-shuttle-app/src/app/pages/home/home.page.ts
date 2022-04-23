@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/store/AppState';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 @Component({
   selector: 'app-home',
@@ -27,20 +28,21 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.loginAuth.canLoad();
 
-    const userRef = this.firestore.collection('users').doc(this.userEmail);
-    console.log(this.userEmail);
-
-    userRef.get().toPromise().then((doc) => {
-      if(doc.exists) {
-        console.log("Document data: ", doc.data());
-        
-        this.userName = doc.get('name');
-        console.log(this.userName);
+    const auth = getAuth();
+    
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        if(user.displayName) {
+          console.log(user.displayName);
+          this.userName = user.displayName;
+        } else {
+          console.log(user.email);
+          this.userName = user.email;
+        }
       } else {
-        console.log("No such document!");
+        console.log("No user is currently signed in.");
       }
-    }).catch((error) => {
-      console.log("Error retrieveing document: ", error);
     });
   }
 

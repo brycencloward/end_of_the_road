@@ -101,8 +101,4 @@ export class LoginPage implements OnInit, OnDestroy {
   register() {
     this.router.navigate(['register']);
   }
-
-  debug() {
-    this.router.navigate(['home'])
-  }
 }

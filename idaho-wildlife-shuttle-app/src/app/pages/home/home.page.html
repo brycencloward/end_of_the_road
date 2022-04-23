@@ -7,8 +7,9 @@
 
         <ion-label>
             <ion-title>Welcome, {{userName}}!</ion-title>
-            <ion-button color="tertiary" shape="round" size="small" (click)="account()">Edit Your Profile</ion-button>
         </ion-label>
+
+        <ion-button fill="clear" (click)="account()">Edit Your Profile</ion-button>
     </ion-item>
 
     <!-- TODO: add live-database shuttle reservation card population on home page-->
@@ -16,11 +17,11 @@
         <ion-card-header header>
             <ion-card-subtitle>Most recent shuttle</ion-card-subtitle>
         </ion-card-header>
-        <ion-button color="secondary" fill="clear" size="full" footer (click)="reservations()">VIEW ALL...</ion-button>
+        <ion-button color="primary" fill="clear" size="full" footer (click)="reservations()">View All...</ion-button>
     </app-shuttle-reservation-card>
 
     <ion-row class="ion-justify-content-center">
-        <ion-button shape="round" size="small" color="primary" (click)="shuttle_reservation()"><b>Create Reservation</b></ion-button>
+        <ion-button shape="round" size="small" color="primary" (click)="shuttle_reservation()"><b>Create A Reservation</b></ion-button>
     </ion-row>
 
     <app-main-footer></app-main-footer>

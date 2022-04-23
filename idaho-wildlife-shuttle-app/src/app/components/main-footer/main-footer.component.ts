@@ -15,5 +15,4 @@ export class MainFooterComponent implements OnInit {
   cancelation_policy(){
     this.router.navigate(['cancelpolicy']);
   }
-
 }

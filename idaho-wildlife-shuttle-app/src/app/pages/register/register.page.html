@@ -53,6 +53,12 @@
                 </ion-item>
                 <app-error-message [field]="registerForm.getForm().get('phone')" error="required" message="*Phone number required">
                 </app-error-message>
+                <app-error-message [field]="registerForm.getForm().get('phone')" error="minlength" message="*Phone number must be exactly 10 digits in length">
+                </app-error-message>
+                <app-error-message [field]="registerForm.getForm().get('phone')" error="maxlength" message="*Phone number must be exactly 10 digits in length">
+                </app-error-message>
+                <app-error-message [field]="registerForm.getForm().get('phone')" error="pattern" message="*Phone number must be only numbers, no symbols or hyphens">
+                </app-error-message>
 
             </ion-card-content>
         </ion-card>

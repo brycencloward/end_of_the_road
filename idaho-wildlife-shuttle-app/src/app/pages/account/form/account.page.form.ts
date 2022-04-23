@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup, ValidatorFn } from "@angular/forms";
 import { Validators } from '@angular/forms';
 import { findAddressNumber, findCity, findState, findStreet, findZipCode } from "src/app/utilities/address-utilities";
 
-export class RegisterPageForm {
+export class AccountPageForm {
     private formBuilder: FormBuilder;
     private form: FormGroup;
 
@@ -13,16 +13,16 @@ export class RegisterPageForm {
 
     private createForm() : FormGroup {
         let form = this.formBuilder.group({
-            name: ['', [Validators.required]],
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
+            name: ['', []],
+            email: ['', [, Validators.email]],
+            password: ['', [, Validators.minLength(6)]],
             repeatPassword: [''],
-            phone: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]{10}")]],
+            phone: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern("[0-9]{10}")]],
             address: this.formBuilder.group({
-                street: ['', [Validators.required]],
-                city: ['', [Validators.required]],
-                state: ['', [Validators.required]],
-                zipCode: ['', [Validators.required]]
+                street: ['', []],
+                city: ['', []],
+                state: ['', []],
+                zipCode: ['', []]
             })
         });
 

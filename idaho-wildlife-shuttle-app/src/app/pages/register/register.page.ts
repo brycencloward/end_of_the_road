@@ -25,8 +25,8 @@ export class RegisterPage implements OnInit, OnDestroy {
 
   registerStateSubscription: Subscription;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>, 
-    private toastController: ToastController) { }
+  constructor(private router: Router, private formBuilder: FormBuilder,
+    private store: Store<AppState>, private toastController: ToastController) { }
 
   ngOnInit() {
     this.createForm();
