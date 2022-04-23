@@ -25,14 +25,24 @@ export class HomePage implements OnInit {
   userName: string = HomePage.username;
   userEmail: string = HomePage.useremail;
 
+  reservation_names = {};
+  reservation_dates = {};
+  reservation_descriptions = {};
+  reservation_prices = {};
+
   ngOnInit() {
     this.loginAuth.canLoad();
+
+    const currentDate = new Date();
+    console.log(currentDate.toDateString());
 
     const auth = getAuth();
     
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // https://firebase.google.com/docs/reference/js/firebase.User
+        this.userEmail = user.email;
+
         if(user.displayName) {
           console.log(user.displayName);
           this.userName = user.displayName;
@@ -40,6 +50,23 @@ export class HomePage implements OnInit {
           console.log(user.email);
           this.userName = user.email;
         }
+
+        const resRef = this.firestore.collection('users').doc(user.email).collection('reservations');
+
+        resRef.get().toPromise().then((querySnapshot) => {
+          const tempDoc = querySnapshot.docs.map((doc) => {
+            return { id: doc.id, date: doc.get('date'), price: doc.get('price'), description: doc.get('description'), ...doc.data() }
+          });
+
+          for(let i = 0; i < tempDoc.length; i++) {
+            this.populateReservations(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price);
+          }
+
+          console.log(this.reservation_names);
+          console.log(this.reservation_dates);
+          console.log(this.reservation_descriptions);
+          console.log(this.reservation_prices);
+        });
       } else {
         console.log("No user is currently signed in.");
       }
@@ -59,5 +86,12 @@ export class HomePage implements OnInit {
 
   account() {
     this.router.navigate(['account']);
+  }
+
+  populateReservations(reservation_name: string, reservation_date: string, reservation_description: string, reservation_price: string) {
+    this.reservation_names += reservation_name;
+    this.reservation_dates += reservation_date;
+    this.reservation_descriptions += reservation_description;
+    this.reservation_prices += reservation_price;
   }
 }

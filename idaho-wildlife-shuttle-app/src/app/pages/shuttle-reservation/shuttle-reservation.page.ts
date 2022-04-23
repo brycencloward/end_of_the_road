@@ -39,13 +39,13 @@ export class ShuttleReservationPage implements OnInit {
   cost: string = "0.00";
   name: string = "";
 
-  //date picker
+  // Date picker:
   dateValue = format(new Date(), 'MMM dd, yyyy, HH:mm');
   formattedString = this.dateValue;
   showpicker = false;
 
   dateChanged(value){
-    this.dateValue =value;
+    this.dateValue = value;
     this.formattedString = format(parseISO(value),'MMM dd, yyyy, HH:mm');
   }
 
@@ -54,6 +54,9 @@ export class ShuttleReservationPage implements OnInit {
   }
 
   create_reservation() {
+    // Optional functionality for redirecting users
+    // to the payment page immediately upon creating
+    // a shuttle reservation.
     /*if(this.item != "No package selected."){
       this.router.navigate(['pay-pal-web']);
     }*/
@@ -63,60 +66,44 @@ export class ShuttleReservationPage implements OnInit {
       if (user) {
         // https://firebase.google.com/docs/reference/js/firebase.User
         const userEmail = user.email;
-        console.log(userEmail);
 
         var reservation_name: string;
         var reservation_number: number = 0;
 
-        // TODO: Change data types from strings to default timestamp datatype for comparisons.
-
-        const userRef = this.firestore.collection('users').doc(userEmail);
-        console.log(userRef);
-
         const resRef = this.firestore.collection('users').doc(userEmail).collection('reservations');
+        // Another potential avenue for querying dates/timestamps for comparison.
         // const dateQuery = resRef.where('date', '<=', currentDate);
 
         resRef.get().toPromise().then((querySnapshot) => {
           const tempDoc = querySnapshot.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() }
+            return { id: doc.id, date: doc.get('date'), price: doc.get('price'), ...doc.data() }
           });
 
-          console.log(tempDoc);
+          // console.log(tempDoc);
 
-          /*if(tempDoc.length == 1) {
+          // The algorithm below is a solution to 
+          // replacing the first placeholder reservation
+          if(tempDoc[0].price == "N/A") {
             reservation_number = 0;
-          } else {*/
-          for(let i = 0; i < tempDoc.length; i++) {
-            if(Number(tempDoc[i].id) > reservation_number) {
-              reservation_number = Number(tempDoc[i].id);
+          } else { 
+            for(let i = 0; i < tempDoc.length; i++) {
+              if(Number(tempDoc[i].id) > reservation_number) {
+                reservation_number = Number(tempDoc[i].id);
+              }
             }
           }
-          // }
 
           reservation_number++;
-          console.log("reservation_number: ", reservation_number);
+          // console.log("reservation_number: ", reservation_number);
           reservation_name = String(reservation_number);
-          console.log("reservation_name: ", reservation_name);
+          // console.log("reservation_name: ", reservation_name);
 
           this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
-            description: this.name, price: this.cost, date: new Date()
+            description: this.name, price: this.cost, date: (new Date()).toDateString()
           });
         });
-
-        // TODO: implement current saved reservation count checker and
-        // use it to increment the names of the respective documents as
-        // they're generated, accordingly.
-        userRef.get().toPromise().then((doc) => {
-          if(doc.exists) {
-            console.log("Document data: ", doc.data());
-          } else {
-            console.log("No such document!");
-          }
-        }).catch((error) => {
-          console.log("Error retrieveing document: ", error);
-        });
       } else {
-        console.log("User is signed out.");
+        console.log("No user currently signed in.");
       }
     });    
   }
@@ -124,6 +111,8 @@ export class ShuttleReservationPage implements OnInit {
   changeCurrentPackage(event) {
     var reservation: string = event.detail.value;
 
+    // Regular expression checking for anything
+    // following an underscore:
     var re = /_.*/g;
     var details;
 
@@ -131,12 +120,13 @@ export class ShuttleReservationPage implements OnInit {
     this.name = details;
     console.log(this.name);
 
+    // Regular expression checking for anything
+    // followed by an underscore:
     re = /.*_/g;
 
     details = reservation.replace(re, "");
     this.cost = details;
     console.log(this.cost);
-    // console.log("cost changed to", this.cost);
   }
 
   pay_now(){
