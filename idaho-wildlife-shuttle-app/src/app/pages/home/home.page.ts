@@ -62,10 +62,10 @@ export class HomePage implements OnInit {
             this.populateReservations(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price);
           }
 
-          console.log(this.reservation_names);
+          /*console.log(this.reservation_names);
           console.log(this.reservation_dates);
           console.log(this.reservation_descriptions);
-          console.log(this.reservation_prices);
+          console.log(this.reservation_prices);*/
         });
       } else {
         console.log("No user is currently signed in.");
