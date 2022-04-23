@@ -43,7 +43,7 @@ export class AuthService {
         state: userRegister.address.state, zipCode: userRegister.address.zipCode
       });
 
-      this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('reservation1').set({
+      this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('1').set({
         description: "You haven't created any reservations yet! Click the \"+\" and start planning your adventures today!",
         price: "N/A", date: new Date()
       });

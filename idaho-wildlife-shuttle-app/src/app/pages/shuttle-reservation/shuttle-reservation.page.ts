@@ -66,11 +66,9 @@ export class ShuttleReservationPage implements OnInit {
         console.log(userEmail);
 
         var reservation_name: string;
-        var reservation_date: number;
+        var reservation_number: number = 0;
 
-        // TODO: Change data types from strings to default date datatype for comparisons.
-        var currentDate = new Date();
-        var leastDate;
+        // TODO: Change data types from strings to default timestamp datatype for comparisons.
 
         const userRef = this.firestore.collection('users').doc(userEmail);
         console.log(userRef);
@@ -80,26 +78,27 @@ export class ShuttleReservationPage implements OnInit {
 
         resRef.get().toPromise().then((querySnapshot) => {
           const tempDoc = querySnapshot.docs.map((doc) => {
-            console.log(doc.id);
-            console.log(doc.get('date'));
-
-            if(leastDate == "") {
-              leastDate = doc.get('date');
-            }
-
-            if(leastDate > currentDate) {
-              leastDate = currentDate;
-              console.log("The new least date is: ", leastDate);
-            }
-
-            return { leastDate }
+            return { id: doc.id, ...doc.data() }
           });
-
-          var temp;
 
           console.log(tempDoc);
 
-          this.firestore.collection('users').doc(userEmail).collection('reservations').doc('reservation2').set({
+          /*if(tempDoc.length == 1) {
+            reservation_number = 0;
+          } else {*/
+          for(let i = 0; i < tempDoc.length; i++) {
+            if(Number(tempDoc[i].id) > reservation_number) {
+              reservation_number = Number(tempDoc[i].id);
+            }
+          }
+          // }
+
+          reservation_number++;
+          console.log("reservation_number: ", reservation_number);
+          reservation_name = String(reservation_number);
+          console.log("reservation_name: ", reservation_name);
+
+          this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
             description: this.name, price: this.cost, date: new Date()
           });
         });
