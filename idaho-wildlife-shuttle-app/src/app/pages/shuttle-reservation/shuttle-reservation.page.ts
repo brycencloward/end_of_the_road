@@ -99,7 +99,7 @@ export class ShuttleReservationPage implements OnInit {
           // console.log("reservation_name: ", reservation_name);
 
           this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
-            description: this.name, price: this.cost, date: (new Date()).toDateString()
+            description: this.name, price: this.cost, date: this.dateValue
           });
         });
       } else {
