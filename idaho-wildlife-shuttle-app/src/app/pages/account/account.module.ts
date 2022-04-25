@@ -6,6 +6,7 @@ import { AccountPageRoutingModule } from './account-routing.module';
 import { AccountPage } from './account.page';
 import { MainFooterModule } from 'src/app/components/main-footer/main-footer.module';
 import { ErrorMessageModule } from 'src/app/components/error-message/error-message.module';
+import { DeleteUserModule } from 'src/app/components/delete-user/delete-user.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ErrorMessageModule } from 'src/app/components/error-message/error-messa
     IonicModule,
     AccountPageRoutingModule,
     MainFooterModule,
-    ErrorMessageModule
+    ErrorMessageModule,
+    DeleteUserModule
   ],
   declarations: [AccountPage]
 })
