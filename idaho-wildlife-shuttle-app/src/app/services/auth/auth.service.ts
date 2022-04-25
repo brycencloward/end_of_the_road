@@ -45,7 +45,7 @@ export class AuthService {
 
       this.firestore.collection('users').doc(userRegister.email).collection('reservations').doc('1').set({
         description: "You haven't created any reservations yet! Click the \"+\" and start planning your adventures today!",
-        price: "N/A", date: (new Date()).toDateString()
+        price: "N/A", date: (new Date()).toDateString(), isPayed: false
       });
     });
   }

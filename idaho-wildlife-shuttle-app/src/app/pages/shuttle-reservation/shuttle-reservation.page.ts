@@ -7,6 +7,7 @@ import { format, parseISO } from 'date-fns';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-shuttle-reservation',
@@ -40,13 +41,13 @@ export class ShuttleReservationPage implements OnInit {
   name: string = "";
 
   // Date picker:
-  dateValue = format(new Date(), 'MMM dd, yyyy, HH:mm');
+  dateValue = (moment(new Date())).format('DD-MMM-YYYY HH:mm:ss');
   formattedString = this.dateValue;
   showpicker = false;
 
   dateChanged(value){
-    this.dateValue = value;
-    this.formattedString = format(parseISO(value),'MMM dd, yyyy, HH:mm');
+    this.dateValue = (moment(value)).format('DD-MMM-YYYY HH:mm:ss');
+    this.formattedString = this.dateValue;
   }
 
   ngOnInit() {
@@ -99,7 +100,7 @@ export class ShuttleReservationPage implements OnInit {
           // console.log("reservation_name: ", reservation_name);
 
           this.firestore.collection('users').doc(userEmail).collection('reservations').doc(reservation_name).set({
-            description: this.name, price: this.cost, date: this.dateValue
+            description: this.name, price: this.cost, date: this.dateValue, isPayed: false
           });
         });
       } else {
