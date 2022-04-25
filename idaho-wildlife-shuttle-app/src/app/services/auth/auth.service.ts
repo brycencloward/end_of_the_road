@@ -19,6 +19,9 @@ export class AuthService {
     return new Observable<void>(observer => {
       this.auth.createUserWithEmailAndPassword(userRegister.email, userRegister.password).then((result) => {
         result.user.sendEmailVerification();
+        result.user.updateProfile({
+          displayName: userRegister.name
+        })
         observer.next();
         observer.complete();
       });
