@@ -138,24 +138,3 @@ export class ShuttleReservationPage implements OnInit {
     }
   }
 }
-
-export class dateAndTime {
-  @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
-
-  dateValue = '';
-  dateValue2 = '';
-
-  constructor() {}
-  
-  confirm() {
-    this.datetime.confirm();
-  }
-  
-  reset() {
-    this.datetime.reset();
-  }
-
-  formatDate(value: string) {
-    return format(parseISO(value), 'MMM dd yyyy');
-  }
-}
