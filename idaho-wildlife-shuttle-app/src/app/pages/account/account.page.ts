@@ -49,6 +49,10 @@ export class AccountPage implements OnInit {
 
       if(this.accountForm.getForm().value.email) {
         updateEmail(auth.currentUser, this.accountForm.getForm().value.email).then(() => {
+          this.firestore.collection('users').doc(auth.currentUser.email).update({
+            email: this.accountForm.getForm().value.email
+          });
+          sendEmailVerification(auth.currentUser)
           // Email updated!
           console.log("Email address successfully updated.");
           // ...
