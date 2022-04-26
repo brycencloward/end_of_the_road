@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
-import { getAuth, updateEmail, updatePassword, updateProfile } from "firebase/auth";
+import { getAuth, updateEmail, updatePassword, updateProfile, sendEmailVerification } from "firebase/auth";
 import { FormBuilder } from '@angular/forms';
 import { AccountPageForm } from './form/account.page.form';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -35,6 +35,9 @@ export class AccountPage implements OnInit {
           displayName: this.accountForm.getForm().value.name, photoURL: ""
         }).then(() => {
           // Profile updated!
+          this.firestore.collection('users').doc(auth.currentUser.email).update({
+            name: this.accountForm.getForm().value.name
+          });
           console.log("Display name successfully updated.");
           // ...
         }).catch((error) => {
