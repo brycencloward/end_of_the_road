@@ -86,7 +86,7 @@ export class PayPalWebPage {
   }
 
   toHome(){
-    this.router.navigate(['reservations']);
+    this.router.navigate(['home']);
   }
 
   ngOnInit() {

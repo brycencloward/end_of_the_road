@@ -44,6 +44,15 @@
             (click)="register()">
             <b>Register</b>
             </ion-button>
+            <!--  This can be used to access the app if FirebaseAuth is
+                  not working correctly, after disabling/commenting out the
+                  imported canLoad() function in the app-routing.module.ts
+                  file.
+            <ion-button shape="round" color="primary" fill="full" size="full"
+            (click)="debug()">
+            <b>Debug</b>
+            </ion-button>
+            -->
           </ion-row>
         </ion-card-content>
       </ion-card>
