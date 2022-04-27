@@ -18,6 +18,7 @@ export class PayPalWebPage {
 
   static cost: string;
   static item: string;
+  static id: any;
 
   constructor(private router: Router, private loginAuth: AuthGuard) {
     let _this = this;

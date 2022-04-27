@@ -39,6 +39,7 @@ export class ShuttleReservationPage implements OnInit {
   
   cost: string = "0.00";
   name: string = "";
+  id: string;
 
   // Date picker:
   dateValue = (moment(new Date())).format('DD-MMM-YYYY HH:mm:ss');
@@ -134,6 +135,7 @@ export class ShuttleReservationPage implements OnInit {
     if(this.name != "No package selected."){
       PayPalWebPage.cost = this.cost;
       PayPalWebPage.item = this.name;
+      PayPalWebPage.id   = this.id;
 
       this.router.navigate(['pay-pal-web']);
     }

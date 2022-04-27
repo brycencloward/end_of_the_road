@@ -25,10 +25,13 @@ export class HomePage implements OnInit {
   userName: string = HomePage.username;
   userEmail: string = HomePage.useremail;
 
-  reservation_names = {};
+  /* reservation_names = {};
   reservation_dates = {};
   reservation_descriptions = {};
   reservation_prices = {};
+  payment_statuses = {}; */
+
+  public form: any = [];
 
   ngOnInit() {
     this.loginAuth.canLoad();
@@ -55,17 +58,22 @@ export class HomePage implements OnInit {
 
         resRef.get().toPromise().then((querySnapshot) => {
           const tempDoc = querySnapshot.docs.map((doc) => {
-            return { id: doc.id, date: doc.get('date'), price: doc.get('price'), description: doc.get('description'), ...doc.data() }
+            return { id: doc.id, date: doc.get('date'), price: doc.get('price'), description: doc.get('description'), isPayed: doc.get('isPayed'), ...doc.data() }
           });
 
           for(let i = 0; i < tempDoc.length; i++) {
-            this.populateReservations(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price);
+            this.populateReservations(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price, tempDoc[i].isPayed);
           }
 
-          /*console.log(this.reservation_names);
+          /* console.log(this.reservation_names);
           console.log(this.reservation_dates);
           console.log(this.reservation_descriptions);
-          console.log(this.reservation_prices);*/
+          console.log(this.reservation_prices);
+          console.log(this.payment_statuses); */
+
+          /* console.log(this.form);
+          console.log(this.form.length);
+          console.log(this.form.name); */
         });
       } else {
         console.log("No user is currently signed in.");
@@ -88,10 +96,17 @@ export class HomePage implements OnInit {
     this.router.navigate(['account']);
   }
 
-  populateReservations(reservation_name: string, reservation_date: string, reservation_description: string, reservation_price: string) {
-    this.reservation_names += reservation_name;
+  populateReservations(reservation_name: string, reservation_date: string, reservation_description: string, reservation_price: string, payment_status: string) {
+    /* this.reservation_names += reservation_name;
     this.reservation_dates += reservation_date;
     this.reservation_descriptions += reservation_description;
     this.reservation_prices += reservation_price;
+    this.payment_statuses += payment_status; */
+
+    this.form += {  name: reservation_name, date: reservation_date,
+                   description: reservation_description, price: reservation_price,
+                   status: payment_status };
+
+    console.log(this.form[0].name);
   }
 }
