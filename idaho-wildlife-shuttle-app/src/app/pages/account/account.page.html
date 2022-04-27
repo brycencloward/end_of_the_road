@@ -6,7 +6,6 @@
 </ion-toolbar>
 
 <ion-content>
-    <app-delete-user></app-delete-user>
     <form [formGroup]="accountForm.getForm()">
     <ion-card>
         <ion-card-header>
@@ -19,15 +18,6 @@
                 <ion-input type="name" formControlName="name"></ion-input>
             </ion-item>
             <app-error-message [field]="accountForm.getForm().get('name')" error="required" message="*Name required">
-            </app-error-message>
-
-            <ion-item>
-                <ion-label position="floating">Email Address</ion-label>
-                <ion-input type="email" formControlName="email"></ion-input>
-            </ion-item>
-            <app-error-message [field]="accountForm.getForm().get('email')" error="required" message="*Email required">
-            </app-error-message>
-            <app-error-message [field]="accountForm.getForm().get('email')" error="email" message="*Email invalid">
             </app-error-message>
 
             <ion-item>
@@ -101,6 +91,7 @@
     <ion-row>
         <hr>
             <ion-button size="default" expand="full" shape="round" color="primary" (click)="update()">Update Credentials</ion-button>
+            <app-delete-user></app-delete-user>
         <hr>
     </ion-row>
   </form>

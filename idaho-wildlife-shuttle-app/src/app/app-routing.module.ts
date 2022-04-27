@@ -23,16 +23,11 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-    , canLoad: [AuthGuard] // this adds the auth-guard fuctionality to any desired page
+    , canLoad: [AuthGuard] // This adds the auth-guard fuctionality to any desired page.
   },
   {
     path: 'shuttle-reservation',
     loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
-    , canLoad: [AuthGuard]
-  },
-  {
-    path: 'reservations',
-    loadChildren: () => import('./pages/reservations/reservations.module').then( m => m.ReservationsPageModule)
     , canLoad: [AuthGuard]
   },
   {
@@ -43,14 +38,12 @@ const routes: Routes = [
   {
     path: 'cancelpolicy',
     loadChildren: () => import('./pages/cancelpolicy/cancelpolicy.module').then( m => m.CancelpolicyPageModule)
-
   },
   {
     path: 'account',
     loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
     , canLoad: [AuthGuard]
   }
-
 ];
 
 @NgModule({

@@ -38,6 +38,7 @@ export class AccountPage implements OnInit {
           this.firestore.collection('users').doc(auth.currentUser.email).update({
             name: this.accountForm.getForm().value.name
           });
+          alert("Display name successfully updated.");
           console.log("Display name successfully updated.");
           // ...
         }).catch((error) => {
@@ -54,6 +55,7 @@ export class AccountPage implements OnInit {
           });
           sendEmailVerification(auth.currentUser)
           // Email updated!
+          alert("Email address successfully updated.");
           console.log("Email address successfully updated.");
           // ...
         }).catch((error) => {
@@ -66,6 +68,7 @@ export class AccountPage implements OnInit {
       if(this.accountForm.getForm().value.password) {
         updatePassword(auth.currentUser, this.accountForm.getForm().value.password).then(() => {
           // Update successful.
+          alert("Password successfully updated.");
           console.log("Password successfully updated.");
         }).catch((error) => {
           // An error ocurred
@@ -78,7 +81,7 @@ export class AccountPage implements OnInit {
         this.firestore.collection('users').doc(auth.currentUser.email).update({
           phone: this.accountForm.getForm().value.phone
         });
-
+        alert("Phone number successfully updated.");
         console.log("Phone number successfully updated.");
       }
 
@@ -86,7 +89,7 @@ export class AccountPage implements OnInit {
         this.firestore.collection('users').doc(auth.currentUser.email).update({
           street: this.accountForm.getForm().get('address').value.street
         });
-
+        alert("Street address successfully updated.");
         console.log("Street address successfully updated.");
       }
 
@@ -94,7 +97,7 @@ export class AccountPage implements OnInit {
         this.firestore.collection('users').doc(auth.currentUser.email).update({
           city: this.accountForm.getForm().get('address').value.city
         });
-
+        alert("City successfully updated.");
         console.log("City successfully updated.");
       }
       
@@ -102,7 +105,7 @@ export class AccountPage implements OnInit {
         this.firestore.collection('users').doc(auth.currentUser.email).update({
           state: this.accountForm.getForm().get('address').value.state
         });
-
+        alert("State successfully updated.");
         console.log("State successfully updated.");
       }
 
@@ -110,7 +113,7 @@ export class AccountPage implements OnInit {
         this.firestore.collection('users').doc(auth.currentUser.email).update({
           street: this.accountForm.getForm().get('address').value.zipCode
         });
-
+        alert("Zip code successfully updated.");
         console.log("Zip code successfully updated.")
       }
     }
