@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PayPalWebPage } from '../pay-pal-web/pay-pal-web.page';
-import { ViewChild } from '@angular/core';
-import { IonDatetime } from '@ionic/angular';
-import { format, parseISO } from 'date-fns';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -38,7 +35,7 @@ export class ShuttleReservationPage implements OnInit {
   isClicked: false;
   
   cost: string = "0.00";
-  name: string = "";
+  name: string = "No package selected.";
   id: string;
 
   // Date picker:

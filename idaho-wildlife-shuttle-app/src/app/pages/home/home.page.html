@@ -13,7 +13,11 @@
     </ion-item>
 
     <!-- TODO: add live-database shuttle reservation card population on home page-->
-    <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
+    <ion-item *ngFor="let entry of form">
+        <app-shuttle-reservation-card id={{entry.name}} status={{entry.date_status}} reservedAt={{entry.date}} notes={{entry.description}} payment={{entry.price}} isPayed={{entry.payment_status}}></app-shuttle-reservation-card>
+    </ion-item>
+
+    <!-- <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!">
     </app-shuttle-reservation-card>
 
     <app-shuttle-reservation-card status="active" startAt="01/31/22 @ 15:35:00" reservedAt="01/30/22 @ 15:37:00" notes="This customer is going to be bringing an offroad 
@@ -22,7 +26,7 @@
 
     <app-shuttle-reservation-card status="finished" startAt="01/28/22 @ 15:49:00" reservedAt="01/15/22 @ 12:34:00" notes="This customer is highly-allergic and will need
     special medication to be on board." payment="$267.54">
-    </app-shuttle-reservation-card>
+    </app-shuttle-reservation-card> -->
 
     <ion-row class="ion-justify-content-center">
         <ion-button shape="round" size="small" color="primary" (click)="shuttle_reservation()"><b>Create A Reservation</b></ion-button>

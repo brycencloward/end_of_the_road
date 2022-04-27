@@ -6,6 +6,7 @@ import { AppState } from 'src/store/AppState';
 import { AuthGuard } from 'src/app/guards/auth/auth-guard.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +32,7 @@ export class HomePage implements OnInit {
   reservation_prices = {};
   payment_statuses = {}; */
 
-  public form: any = [];
+  public form: Array<{}> = [];
 
   ngOnInit() {
     this.loginAuth.canLoad();
@@ -62,8 +63,14 @@ export class HomePage implements OnInit {
           });
 
           for(let i = 0; i < tempDoc.length; i++) {
-            this.populateReservations(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price, tempDoc[i].isPayed);
+            this.populateReservationForm(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price, tempDoc[i].isPayed);
           }
+
+          /* for(let entry of this.form) {
+            console.log(entry);
+          } */
+
+          console.log(this.form);
 
           /* console.log(this.reservation_names);
           console.log(this.reservation_dates);
@@ -96,17 +103,28 @@ export class HomePage implements OnInit {
     this.router.navigate(['account']);
   }
 
-  populateReservations(reservation_name: string, reservation_date: string, reservation_description: string, reservation_price: string, payment_status: string) {
+  populateReservationForm(reservation_name: string, reservation_date: string, reservation_description: string, reservation_price: string, payment_status: string) {
     /* this.reservation_names += reservation_name;
     this.reservation_dates += reservation_date;
     this.reservation_descriptions += reservation_description;
     this.reservation_prices += reservation_price;
     this.payment_statuses += payment_status; */
+    var date_status: string = "finished";
 
-    this.form += {  name: reservation_name, date: reservation_date,
-                   description: reservation_description, price: reservation_price,
-                   status: payment_status };
+    // This small algorithm checks if the date stored in the reservation
+    // takes place after the current date, and if so, sets the date_status
+    // property to "upcoming," indicating that the reservation has not taken place, yet.
+    var currentDate = (moment(new Date())).format('DD-MMM-YYYY HH:mm:ss');
+    if(moment(reservation_date).isAfter(currentDate)) {
+      date_status = "upcoming";
+    }
 
-    console.log(this.form[0].name);
+    var reservation_object = {  "name": reservation_name, "date": reservation_date, 
+                                "date_status": date_status, "description": reservation_description, 
+                                "price": reservation_price, "payment_status": payment_status  };
+
+    // This initialization sets the data stored at the position after last in
+    // the array of objects to the newly initialized temporary object "reservation_object."
+    this.form[this.form.length] = reservation_object;
   }
 }
