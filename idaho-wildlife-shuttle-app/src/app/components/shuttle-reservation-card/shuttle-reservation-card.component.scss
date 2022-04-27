@@ -1,4 +1,14 @@
 ion-card {
+    ion-card-content {
+        ion-item {
+            --background: var(--ion-color-light);
+
+            ion-button {
+                text-transform: capitalize;
+            }
+        }
+    }
+
     p {
         white-space: normal;
     }

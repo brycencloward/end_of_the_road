@@ -4,7 +4,8 @@ ion-button {
 }
 
 ion-content {
-    --background: url(../../../assets/images/Background.png) no-repeat bottom/cover fixed;
+    --background: var(--ion-color-light);
+    // --background: url(../../../assets/images/Background.png) no-repeat bottom/cover fixed;
 }
 
 ion-list {

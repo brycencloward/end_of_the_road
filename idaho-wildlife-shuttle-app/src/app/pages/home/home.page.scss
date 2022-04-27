@@ -1,5 +1,6 @@
 ion-content {
-    --background: url(../../../assets/images/Background.png) no-repeat bottom/cover fixed;
+    --background: var(--ion-color-light);
+    // --background: url(../../../assets/images/Background.png) no-repeat bottom/cover fixed;
 
     ion-button {
         // --color: #5260ff;
@@ -7,6 +8,12 @@ ion-content {
     }
 
     ion-item {
+        app-shuttle-reservation-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
         ion-label {
             ion-button {
                 text-transform: capitalize;
@@ -20,7 +27,7 @@ ion-content {
         }
     }
 
-    ion-row {
+    ion-row {        
         ion-button {
             text-transform: capitalize;
         }
