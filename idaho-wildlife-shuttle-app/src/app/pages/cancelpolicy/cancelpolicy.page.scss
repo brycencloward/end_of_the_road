@@ -1,4 +1,8 @@
-//Header ------------------------------------------------------
+ion-content {
+    --background: url(../../../assets/images/Background.png) no-repeat bottom/cover fixed;
+}
+
+// Header ------------------------------------------------------
 ion-header {
     background: linear-gradient(to right, #112A48, #4F7492);
     padding: 0;
