@@ -40,12 +40,12 @@ export class ShuttleReservationPage implements OnInit {
 
   // Date picker:
   dateValue = (moment(new Date())).format('DD-MMM-YYYY HH:mm:ss');
-  formattedString = this.dateValue;
+  formattedString = (moment(this.dateValue).format('DD-MMM-YYYY HH:mm'));
   showpicker = false;
 
   dateChanged(value){
     this.dateValue = (moment(value)).format('DD-MMM-YYYY HH:mm:ss');
-    this.formattedString = this.dateValue;
+    this.formattedString = (moment(value)).format('DD-MMM-YYYY HH:mm');
   }
 
   ngOnInit() {
@@ -104,7 +104,9 @@ export class ShuttleReservationPage implements OnInit {
       } else {
         console.log("No user currently signed in.");
       }
-    });    
+    });
+
+    this.router.navigate(['home']);
   }
 
   changeCurrentPackage(event) {
