@@ -37,3 +37,7 @@ npm-debug.log*
 .runtimeconfig.json
 environment.prod.ts
 environment.prod.ts
+
+
+src/environments/
+
