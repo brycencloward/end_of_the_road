@@ -39,5 +39,5 @@ environment.prod.ts
 environment.prod.ts
 
 
-src/environments/
-
+**/environments/
+/index.html
