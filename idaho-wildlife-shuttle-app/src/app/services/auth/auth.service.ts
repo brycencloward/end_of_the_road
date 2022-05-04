@@ -20,8 +20,11 @@ export class AuthService {
         result.user.sendEmailVerification();
         result.user.updateProfile({
           displayName: userRegister.name
-        })
+        });
         observer.next();
+        observer.complete();
+      }).catch(error => {
+        observer.error(error);
         observer.complete();
       });
 
@@ -35,7 +38,7 @@ export class AuthService {
         description: "You haven't created any reservations yet! Click the \"+\" and start planning your adventures today!",
         price: "N/A", date: (new Date()).toDateString(), isPayed: false
       });
-    });
+    })
   }
 
   recoverEmailPassword(email: string) : Observable<void> {
