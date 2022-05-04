@@ -20,10 +20,13 @@ export class AuthService {
         result.user.sendEmailVerification();
         result.user.updateProfile({
           displayName: userRegister.name
-        })
+        });
         observer.next();
         observer.complete();
-      });
+      }).catch(error => {
+        observer.error(error);
+        observer.complete();
+      })
 
       this.firestore.collection('users').doc(userRegister.email).set({
         name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
@@ -44,7 +47,7 @@ export class AuthService {
         observer.next();
         observer.complete();
       }).catch(error => {
-        observer.next(error);
+        observer.error(error);
         observer.complete();
       })
     })
