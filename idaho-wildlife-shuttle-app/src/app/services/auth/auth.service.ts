@@ -44,7 +44,7 @@ export class AuthService {
         observer.next();
         observer.complete();
       }).catch(error => {
-        observer.next(error);
+        observer.error(error);
         observer.complete();
       })
     })
@@ -55,7 +55,7 @@ export class AuthService {
       this.auth.setPersistence(firebase.default.auth.Auth.Persistence.LOCAL).then(() => {
         this.auth.signInWithEmailAndPassword(email, password)
         .then((firebaseUser: firebase.default.auth.UserCredential) => {
-          observer.next();
+          observer.next({email, id: firebaseUser.user.uid});
           observer.complete();
         }).catch(error => {
           observer.error(error);

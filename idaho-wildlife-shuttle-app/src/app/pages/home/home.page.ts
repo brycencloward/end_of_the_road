@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
     this.loginAuth.canLoad();
 
     const currentDate = new Date();
-    console.log(currentDate.toDateString());
+    // console.log(currentDate.toDateString());
 
     const auth = getAuth();
     

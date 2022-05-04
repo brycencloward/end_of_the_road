@@ -63,7 +63,7 @@ export class RegisterPage implements OnInit, OnDestroy {
   private watchRegisterState() {
     this.registerStateSubscription = this.store.select('register').subscribe(state => {
       this.toggleLoading(state);
-
+      
       this.onRegistered(state);
       this.onError(state);
     })

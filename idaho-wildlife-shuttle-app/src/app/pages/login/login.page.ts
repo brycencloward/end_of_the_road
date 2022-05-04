@@ -29,6 +29,7 @@ export class LoginPage implements OnInit, OnDestroy {
     this.form = new LoginPageForm(this.formBuilder).createForm();
 
     this.loginStateSubscription = this.store.select('login').subscribe(loginState => {
+      // console.log("loginStateSubscription: ", loginState);
       this.onIsRecoveredPassword(loginState);
 
       this.onIsLoggedIn(loginState);
@@ -45,6 +46,8 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   private toggleLoading(loginState: LoginState) {
+    //console.log("toggleLoading(): ", loginState);
+
     if (loginState.isLoggingIn || loginState.isRecoveringPassword) {
       this.store.dispatch(show());
     } else {
@@ -53,12 +56,16 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   private onIsLoggedIn(loginState: LoginState){
+    // console.log("onIsLoggedIn(): ", loginState);
+
     if (loginState.isLoggedIn) {
       this.navController.navigateRoot('home');
     }
   }
 
   private async onError(loginState: LoginState) {
+    // console.log("onError(): ", loginState);
+
     if (loginState.error) {
       const toaster = await this.toastController.create({
         position: "bottom",
@@ -71,6 +78,8 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   private async onIsRecoveredPassword(loginState: LoginState){
+    // console.log("onIsRecoveredPassword(): ", loginState);
+
     if (loginState.isRecoveredPassword) {;
       const toaster = await this.toastController.create({
         position: "bottom",
