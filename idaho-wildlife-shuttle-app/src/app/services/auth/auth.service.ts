@@ -26,7 +26,7 @@ export class AuthService {
       }).catch(error => {
         observer.error(error);
         observer.complete();
-      })
+      });
 
       this.firestore.collection('users').doc(userRegister.email).set({
         name: userRegister.name, email: userRegister.email, phone: userRegister.phone,
@@ -38,7 +38,7 @@ export class AuthService {
         description: "You haven't created any reservations yet! Click the \"+\" and start planning your adventures today!",
         price: "N/A", date: (new Date()).toDateString(), isPayed: false
       });
-    });
+    })
   }
 
   recoverEmailPassword(email: string) : Observable<void> {
