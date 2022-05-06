@@ -22,70 +22,73 @@ export class HomePage implements OnInit {
 
   static username: string;
   static useremail: string;
+  static guest: string = "true"
 
   userName: string = HomePage.username;
   userEmail: string = HomePage.useremail;
 
-  /* reservation_names = {};
-  reservation_dates = {};
-  reservation_descriptions = {};
-  reservation_prices = {};
-  payment_statuses = {}; */
+  guestStatus: string = HomePage.guest;
+
+  currentDate: string = String(new Date());
 
   public form: Array<{}> = [];
 
   ngOnInit() {
     this.loginAuth.canLoad();
 
+    console.log(this.guestStatus);
+    
     const currentDate = new Date();
     // console.log(currentDate.toDateString());
 
-    const auth = getAuth();
+    if(this.guestStatus == "false") {
+      const auth = getAuth();
     
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        this.userEmail = user.email;
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          this.userEmail = user.email;
 
-        if(user.displayName) {
-          console.log(user.displayName);
-          this.userName = user.displayName;
-        } else {
-          console.log(user.email);
-          this.userName = user.email;
-        }
-
-        const resRef = this.firestore.collection('users').doc(user.email).collection('reservations');
-
-        resRef.get().toPromise().then((querySnapshot) => {
-          const tempDoc = querySnapshot.docs.map((doc) => {
-            return { id: doc.id, date: doc.get('date'), price: doc.get('price'), description: doc.get('description'), isPayed: doc.get('isPayed'), ...doc.data() }
-          });
-
-          for(let i = 0; i < tempDoc.length; i++) {
-            this.populateReservationForm(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price, tempDoc[i].isPayed);
+          if(user.displayName) {
+            console.log(user.displayName);
+            this.userName = user.displayName;
+          } else {
+            console.log(user.email);
+            this.userName = user.email;
           }
 
-          /* for(let entry of this.form) {
-            console.log(entry);
-          } */
+          const resRef = this.firestore.collection('users').doc(user.email).collection('reservations');
 
-          console.log(this.form);
+          resRef.get().toPromise().then((querySnapshot) => {
+            const tempDoc = querySnapshot.docs.map((doc) => {
+              return { id: doc.id, date: doc.get('date'), price: doc.get('price'), description: doc.get('description'), isPayed: doc.get('isPayed'), ...doc.data() }
+            });
 
-          /* console.log(this.reservation_names);
-          console.log(this.reservation_dates);
-          console.log(this.reservation_descriptions);
-          console.log(this.reservation_prices);
-          console.log(this.payment_statuses); */
+            for(let i = 0; i < tempDoc.length; i++) {
+              this.populateReservationForm(tempDoc[i].id, tempDoc[i].date, tempDoc[i].description, tempDoc[i].price, tempDoc[i].isPayed);
+            }
 
-          /* console.log(this.form);
-          console.log(this.form.length);
-          console.log(this.form.name); */
-        });
-      } else {
-        console.log("No user is currently signed in.");
-      }
-    });
+            /* for(let entry of this.form) {
+              console.log(entry);
+            } */
+
+            console.log(this.form);
+
+            /* console.log(this.reservation_names);
+            console.log(this.reservation_dates);
+            console.log(this.reservation_descriptions);
+            console.log(this.reservation_prices);
+            console.log(this.payment_statuses); */
+
+            /* console.log(this.form);
+            console.log(this.form.length);
+            console.log(this.form.name); */
+          });
+        } else {
+          console.log("No user is currently signed in.");
+        }
+      });
+    }
   }
 
   ngOnDestroy() {

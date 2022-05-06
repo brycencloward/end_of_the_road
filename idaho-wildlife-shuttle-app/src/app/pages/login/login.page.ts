@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { NavController, ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { MainFooterComponent } from 'src/app/components/main-footer/main-footer.component';
 import { AppState } from 'src/store/AppState';
 import { hide, show } from 'src/store/loading/loading.actions';
 import { login, recoverPassword } from 'src/store/login/login.actions';
 import { LoginState } from 'src/store/login/LoginState';
 import { HomePage } from '../home/home.page';
+import { ShuttleReservationPage } from '../shuttle-reservation/shuttle-reservation.page';
 import { LoginPageForm } from './login.page.form';
 
 @Component({
@@ -96,6 +98,10 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   login() {
+    HomePage.guest = "false";
+    MainFooterComponent.guest = "false";
+    ShuttleReservationPage.guest = "false";
+
     this.store.dispatch(login({email: this.form.get('email').value, password: this.form.get('password').value})); // dispatch the user-entered values to the NgRx side effect (function)
 
     var useremail: string = this.form.get('email').value; // set the temporary email to the email entered by the user
@@ -111,7 +117,11 @@ export class LoginPage implements OnInit, OnDestroy {
     this.router.navigate(['register']);
   }
 
-  debug() {
+  continueAsGuest() {
+    HomePage.guest = "true";
+    MainFooterComponent.guest = "true";
+    ShuttleReservationPage.guest = "true";
+
     this.router.navigate(['home']);
   }
 }

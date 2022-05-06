@@ -10,6 +10,8 @@ import { register } from 'src/store/register/register.actions';
 import { RegisterState } from 'src/store/register/RegisterState';
 import { RegisterPageForm } from './form/register.page.form';
 import { Router } from '@angular/router';
+import { HomePage } from '../home/home.page';
+import { ShuttleReservationPage } from '../shuttle-reservation/shuttle-reservation.page';
 
 declare var google;
 
@@ -52,6 +54,9 @@ export class RegisterPage implements OnInit, OnDestroy {
     this.registerForm.getForm().markAllAsTouched();
 
     if(this.registerForm.getForm().valid) {
+      HomePage.guest = "false";
+      ShuttleReservationPage.guest = "false";
+      
       this.store.dispatch(register({userRegister: this.registerForm.getForm().value}));
     }
   }
@@ -99,5 +104,4 @@ export class RegisterPage implements OnInit, OnDestroy {
   login(){
     this.router.navigate(['login'])
   }
-
 };

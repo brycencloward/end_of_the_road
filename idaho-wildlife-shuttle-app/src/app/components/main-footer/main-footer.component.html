@@ -4,7 +4,11 @@
           <ion-col>
             <ion-button color="danger" (click)="cancelation_policy()">Cancellation Policy</ion-button>
             <div></div>
-            <app-logout-button></app-logout-button>
+            <app-logout-button *ngIf="guestStatus == 'false'"></app-logout-button>
+            <div></div>
+            <ion-button *ngIf="guestStatus == 'true'" color="tertiary" (click)="signIn()">Sign In</ion-button>
+            <div></div>
+            <ion-button *ngIf="guestStatus == 'true'" color="warning" (click)="register()">Register</ion-button>
             <h6 float-right>&#169; Idaho Wilderness Shuttle</h6>
           </ion-col>
           <ion-col>

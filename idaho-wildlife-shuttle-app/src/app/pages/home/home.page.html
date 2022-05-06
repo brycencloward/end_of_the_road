@@ -6,15 +6,20 @@
         </ion-avatar> -->
 
         <ion-label>
-            <ion-title>Welcome, {{userName}}!</ion-title>
+            <ion-title *ngIf="guestStatus == 'false'">Welcome, {{userName}}!</ion-title>
+            <ion-title *ngIf="guestStatus == 'true'" class="ion-text-center">Idaho Wildlife Shuttle</ion-title>
         </ion-label>
 
-        <ion-button color="tertiary" shape="round" (click)="account()">Edit Your Profile</ion-button>
+        <ion-button *ngIf="guestStatus == 'false'" color="tertiary" shape="round" (click)="account()">Edit Your Profile</ion-button>
     </ion-item>
 
     <!-- TODO: add live-database shuttle reservation card population on home page-->
     <ion-item *ngFor="let entry of form">
         <app-shuttle-reservation-card id={{entry.name}} status={{entry.date_status}} reservedAt={{entry.date}} notes={{entry.description}} payment={{entry.price}} isPayed={{entry.payment_status}}></app-shuttle-reservation-card>
+    </ion-item>
+
+    <ion-item *ngIf="guestStatus == 'true'">
+        <app-shuttle-reservation-card id="1" status="finished" reservedAt={{currentDate}} notes="You haven't created an account yet! Register today so you can start planning your adventures!" payment="N/A" isPayed="true"></app-shuttle-reservation-card>
     </ion-item>
 
     <!-- <app-shuttle-reservation-card status="upcoming" startAt="01/30/22 @ 15:35:00" reservedAt="01/29/22 @ 15:35:00" notes="This customer needs space for ten people!" isPayed="false">
@@ -31,6 +36,6 @@
     <ion-row class="ion-justify-content-center">
         <ion-button shape="round" size="small" color="primary" (click)="shuttle_reservation()"><b>Create A Reservation</b></ion-button>
     </ion-row>
-
-    <app-main-footer></app-main-footer>
 </ion-content>
+
+<app-main-footer></app-main-footer>

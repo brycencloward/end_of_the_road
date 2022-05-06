@@ -23,17 +23,17 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-    , canLoad: [AuthGuard] // This adds the auth-guard fuctionality to any desired page.
+    // , canLoad: [AuthGuard] // This adds the auth-guard fuctionality to any desired page.
   },
   {
     path: 'shuttle-reservation',
     loadChildren: () => import('./pages/shuttle-reservation/shuttle-reservation.module').then( m => m.ShuttleReservationPageModule)
-    , canLoad: [AuthGuard]
+    // , canLoad: [AuthGuard]
   },
   {
     path: 'pay-pal-web',
     loadChildren: () => import('./pages/pay-pal-web/pay-pal-web.module').then( m => m.PayPalWebPageModule)
-    , canLoad: [AuthGuard]
+    // , canLoad: [AuthGuard]
   },
   {
     path: 'cancelpolicy',
@@ -42,7 +42,7 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
-    , canLoad: [AuthGuard]
+    // , canLoad: [AuthGuard]
   }
 ];
 

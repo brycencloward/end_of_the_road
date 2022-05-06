@@ -38,6 +38,9 @@ export class ShuttleReservationPage implements OnInit {
   name: string = "No package selected.";
   id: string;
 
+  static guest: string = "true";
+  guest: string = ShuttleReservationPage.guest;
+
   // Date picker:
   dateValue = (moment(new Date())).format('DD-MMM-YYYY HH:mm:ss');
   formattedString = (moment(this.dateValue).format('DD-MMM-YYYY HH:mm'));

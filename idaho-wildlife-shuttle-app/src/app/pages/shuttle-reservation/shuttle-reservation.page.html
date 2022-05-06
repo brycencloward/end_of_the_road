@@ -59,8 +59,8 @@
     </ion-list>
 
     <ion-row class="ion-justify-content-center">
-        <ion-button shape="round" size="small" color="primary" (click)="create_reservation()"><b>Save Your Reservation</b></ion-button>
-        <ion-button shape="round" size="small" color="primary" (click)="pay_now()"><b>Web Payment</b></ion-button>
+        <ion-button *ngIf="guestStatus == 'false'" shape="round" size="small" color="primary" (click)="create_reservation()"><b>Save Your Reservation</b></ion-button>
+        <ion-button *ngIf="name != 'No package selected.'" shape="round" size="small" color="primary" (click)="pay_now()"><b>Pay Now!</b></ion-button>
     </ion-row>
     
     <app-main-footer></app-main-footer>

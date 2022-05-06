@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { HomePage } from 'src/app/pages/home/home.page';
 import { AppState } from 'src/store/AppState';
 import { logout } from 'src/store/login/login.actions';
+import { MainFooterComponent } from '../main-footer/main-footer.component';
 
 @Component({
   selector: 'app-logout-button',
@@ -16,6 +18,12 @@ export class LogoutButtonComponent implements OnInit {
   ngOnInit() {}
 
   logout() {
+    HomePage.guest = "true";
+    MainFooterComponent.guest = "true";
+
+    console.log(HomePage.guest);
+    console.log(MainFooterComponent.guest);
+    
     this.store.dispatch(logout());
 
     this.router.navigate(['login']);
